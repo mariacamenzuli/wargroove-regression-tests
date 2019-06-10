@@ -1,16 +1,10 @@
 import cmp504
-import numpy as np
 from assertpy import assert_that
 
 
 def test_cherrystone_stronghold_exists():
-    static_templates = {
-        'cherrystone_dragon': 'data/cherrystone_dragon.png',
-        'cherrystone_stronghold': 'data/cherrystone_stronghold.png'
-    }
-    displayCtrl = cmp504.display_controller.DisplayController(static_templates)
-    mouseCtrl = cmp504.mouse_controller.MouseController()
-    screenshot = displayCtrl.read_image('data/test-screenshot.png')
-    match = displayCtrl.find_template('cherrystone_stronghold', image=screenshot)
+    computer_vision_ctrl = cmp504.computer_vision.CVController()
+    computer_vision_ctrl.load_frame("data/test-screenshot.png")
+    match = computer_vision_ctrl.find_template_match("data/cherrystone_stronghold.png")
 
-    assert_that(np.shape(match)[1]).is_equal_to(1)
+    assert_that(match).is_true()
