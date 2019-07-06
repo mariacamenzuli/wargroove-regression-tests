@@ -66,8 +66,15 @@ class GameState(object):
                                     source='map editor',
                                     dest='gameplay',
                                     before='click_editor_menu_and_play_buttons')
+        self.machine.add_transition(trigger='go_back_to_map_editor',
+                                    source='gameplay',
+                                    dest='map editor',
+                                    before='click_mission_and_exit_buttons')
 
     def reset_to_initial_state(self):
+        if self.state == 'gameplay':
+            self.go_back_to_map_editor()
+
         if self.state == 'map editor':
             self.go_back_to_main_menu()
 
@@ -80,13 +87,14 @@ class GameState(object):
         if self.state == 'custom content menu':
             self.go_back_to_main_menu()
 
-    def click_long_animation_button(self, button_name):
+    def click_long_animation_button(self, button_name, animation_wait_time=1.0):
         mouse.move_mouse(0, 0)
         time.sleep(0.1)
         mouse_over_ui_element(button_name)
         time.sleep(0.1)
         mouse.left_mouse_click()
-        time.sleep(1.0)
+        mouse.move_mouse(0, 0)
+        time.sleep(animation_wait_time)
         vision.capture_frame()
 
     def click_no_animation_button(self, button_name):
@@ -95,6 +103,17 @@ class GameState(object):
         mouse_over_ui_element(button_name)
         time.sleep(0.1)
         mouse.left_mouse_click()
+        mouse.move_mouse(0, 0)
+        time.sleep(0.1)
+        vision.capture_frame()
+
+    def click_tile(self, tile_template_name):
+        mouse.move_mouse(0, 0)
+        time.sleep(0.1)
+        mouse_over_tile(tile_template_name)
+        time.sleep(0.1)
+        mouse.left_mouse_click()
+        mouse.move_mouse(0, 0)
         time.sleep(0.1)
         vision.capture_frame()
 
@@ -123,7 +142,27 @@ class GameState(object):
 
     def click_editor_menu_and_play_buttons(self):
         self.click_no_animation_button('map_editor/editor_menu_button')
-        self.click_long_animation_button('map_editor/play_map_button')
+        self.click_long_animation_button('map_editor/play_map_button', animation_wait_time=3.0)
+
+    def click_mission_and_exit_buttons(self):
+        self.clear_turn_start_banner()
+        time.sleep(0.1)
+        self.click_tile('empty_water_tile')
+        self.click_no_animation_button('gameplay/menu/mission_button')
+        self.click_no_animation_button('gameplay/menu/exit_button')
+        self.click_long_animation_button('gameplay/menu/ok_button')
+
+    def is_showing_turn_start_banner(self):
+        return self.state == 'gameplay' and is_ui_element_visible('gameplay/turn_start_banner')
+
+    def clear_turn_start_banner(self):
+        if self.is_showing_turn_start_banner():
+            mouse_over_ui_element('gameplay/turn_start_banner')
+            mouse.left_mouse_press()
+            while self.is_showing_turn_start_banner():
+                time.sleep(0.1)
+                vision.capture_frame()
+            mouse.left_mouse_release()
 
 
 game_state = GameState()
@@ -135,6 +174,10 @@ def mouse_over_unit(unit_template_name, threshold=0.7):
 
 def mouse_over_building(building_template_name, threshold=0.8):
     return mouse_over_element("data/buildings/" + building_template_name + ".png", threshold)
+
+
+def mouse_over_tile(tile_template_name, threshold=0.9):
+    return mouse_over_element("data/tiles/" + tile_template_name + ".png", threshold)
 
 
 def mouse_over_ui_element(ui_element_template_name, threshold=0.9, mouse_move_offset_x=0, mouse_move_offset_y=0):

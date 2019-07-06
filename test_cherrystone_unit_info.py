@@ -18,4 +18,4 @@ class TestCherrystoneUnitInfo(unittest.TestCase):
         wargroove_ctrl.game_state.reset_to_initial_state()
 
     def test_thing(self):
-        assert_that('abc!').is_equal_to('abc!')
+        assert_that(wargroove_ctrl.game_state.is_showing_turn_start_banner()).is_true()
