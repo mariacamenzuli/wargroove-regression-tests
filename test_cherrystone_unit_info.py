@@ -1,6 +1,7 @@
 import wargroove_ctrl
 import unittest
 import time
+from unittest import skip
 from assertpy import assert_that
 
 
@@ -93,11 +94,76 @@ class TestCherrystoneUnitInfo(unittest.TestCase):
 
     def test_golem_info_panel_specifies_movement_walking_5(self):
         def golem_info_panel_test():
-            is_walking_3_displayed = wargroove_ctrl.is_ui_element_visible('unit_info/movement/walking_5',
+            is_walking_5_displayed = wargroove_ctrl.is_ui_element_visible('unit_info/movement/walking_5',
                                                                           threshold=0.999)
-            assert_that(is_walking_3_displayed).described_as('golem movement correctly displayed').is_true()
+            assert_that(is_walking_5_displayed).described_as('golem movement correctly displayed').is_true()
 
         self.open_unit_info_panel_and_run_test('cherrystone_golem', golem_info_panel_test)
+
+    def test_knight_info_panel_specifies_movement_riding_6(self):
+        def knight_info_panel_test():
+            is_riding_6_displayed = wargroove_ctrl.is_ui_element_visible('unit_info/movement/riding_6',
+                                                                          threshold=0.999)
+            assert_that(is_riding_6_displayed).described_as('knight movement correctly displayed').is_true()
+
+        self.open_unit_info_panel_and_run_test('cherrystone_knight', knight_info_panel_test)
+
+    def test_wagon_info_panel_specifies_movement_wheels_12(self):
+        def wagon_info_panel_test():
+            is_wheels_12_displayed = wargroove_ctrl.is_ui_element_visible('unit_info/movement/wheels_12',
+                                                                          threshold=0.999)
+            assert_that(is_wheels_12_displayed).described_as('wagon movement correctly displayed').is_true()
+
+        self.open_unit_info_panel_and_run_test('cherrystone_wagon', wagon_info_panel_test)
+
+    def test_ballista_info_panel_specifies_movement_wheels_6(self):
+        def ballista_info_panel_test():
+            is_wheels_6_displayed = wargroove_ctrl.is_ui_element_visible('unit_info/movement/wheels_6',
+                                                                         threshold=0.999)
+            assert_that(is_wheels_6_displayed).described_as('ballista movement correctly displayed').is_true()
+
+        self.open_unit_info_panel_and_run_test('cherrystone_ballista', ballista_info_panel_test)
+
+    def test_trebuchet_info_panel_specifies_movement_wheels_6(self):
+        def trebuchet_info_panel_test():
+            is_wheels_6_displayed = wargroove_ctrl.is_ui_element_visible('unit_info/movement/wheels_6',
+                                                                         threshold=0.999)
+            assert_that(is_wheels_6_displayed).described_as('trebuchet movement correctly displayed').is_true()
+
+        self.open_unit_info_panel_and_run_test('cherrystone_trebuchet', trebuchet_info_panel_test)
+
+    def test_balloon_info_panel_specifies_movement_flying_6(self):
+        def balloon_info_panel_test():
+            is_flying_6_displayed = wargroove_ctrl.is_ui_element_visible('unit_info/movement/flying_6',
+                                                                         threshold=0.999)
+            assert_that(is_flying_6_displayed).described_as('balloon movement correctly displayed').is_true()
+
+        self.open_unit_info_panel_and_run_test('cherrystone_balloon', balloon_info_panel_test)
+
+    def test_harpy_info_panel_specifies_movement_flying_5(self):
+        def harpy_info_panel_test():
+            is_flying_5_displayed = wargroove_ctrl.is_ui_element_visible('unit_info/movement/flying_5',
+                                                                         threshold=0.999)
+            assert_that(is_flying_5_displayed).described_as('harpy movement correctly displayed').is_true()
+
+        self.open_unit_info_panel_and_run_test('cherrystone_harpy', harpy_info_panel_test)
+
+    @skip("due to flakiness of locating witch")
+    def test_witch_info_panel_specifies_movement_flying_7(self):
+        def witch_info_panel_test():
+            is_flying_7_displayed = wargroove_ctrl.is_ui_element_visible('unit_info/movement/flying_7',
+                                                                         threshold=0.999)
+            assert_that(is_flying_7_displayed).described_as('witch movement correctly displayed').is_true()
+
+        self.open_unit_info_panel_and_run_test('cherrystone_witch', witch_info_panel_test)
+
+    def test_emberwing_info_panel_specifies_movement_flying_8(self):
+        def emberwing_info_panel_test():
+            is_flying_8_displayed = wargroove_ctrl.is_ui_element_visible('unit_info/movement/flying_8',
+                                                                         threshold=0.999)
+            assert_that(is_flying_8_displayed).described_as('emberwing movement correctly displayed').is_true()
+
+        self.open_unit_info_panel_and_run_test('cherrystone_emberwing', emberwing_info_panel_test)
 
     def test_barge_info_panel_specifies_movement_water_10(self):
         def barge_info_panel_test():
@@ -115,8 +181,33 @@ class TestCherrystoneUnitInfo(unittest.TestCase):
 
         self.open_unit_info_panel_and_run_test('cherrystone_sea_turtle', sea_turtle_info_panel_test)
 
+    def test_harpoon_ship_info_panel_specifies_movement_water_4(self):
+        def harpoon_ship_info_panel_test():
+            is_water_4_displayed = wargroove_ctrl.is_ui_element_visible('unit_info/movement/water_4',
+                                                                        threshold=0.999)
+            assert_that(is_water_4_displayed).described_as('harpoon ship movement correctly displayed').is_true()
+
+        self.open_unit_info_panel_and_run_test('cherrystone_harpoon_ship', harpoon_ship_info_panel_test)
+
+    def test_warship_info_panel_specifies_movement_water_8(self):
+        def warship_info_panel_test():
+            is_water_8_displayed = wargroove_ctrl.is_ui_element_visible('unit_info/movement/water_8',
+                                                                        threshold=0.999)
+            assert_that(is_water_8_displayed).described_as('warship movement correctly displayed').is_true()
+
+        self.open_unit_info_panel_and_run_test('cherrystone_warship', warship_info_panel_test)
+
+    def test_merfolk_info_panel_specifies_movement_amphibious_5(self):
+        def merfolk_info_panel_test():
+            is_amphibious_5_displayed = wargroove_ctrl.is_ui_element_visible('unit_info/movement/amphibious_5',
+                                                                             threshold=0.999)
+            assert_that(is_amphibious_5_displayed).described_as('merfolk movement correctly displayed').is_true()
+
+        self.open_unit_info_panel_and_run_test('cherrystone_merfolk', merfolk_info_panel_test)
+
     @staticmethod
     def open_unit_info_panel_and_run_test(unit_template_name, panel_test):
+        wargroove_ctrl.mouse.move_mouse(0, 0)
         wargroove_ctrl.vision.capture_frame()
         wargroove_ctrl.mouse_over_unit(unit_template_name)
         time.sleep(0.1)

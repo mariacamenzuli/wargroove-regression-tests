@@ -168,33 +168,83 @@ class GameState(object):
 game_state = GameState()
 
 
-def mouse_over_unit(unit_template_name, threshold=0.7):
-    return mouse_over_element("data/units/" + unit_template_name + ".png", threshold)
+def mouse_over_unit(unit_template_name, threshold=0.55, render_match: bool = False):
+    return mouse_over_bottom_of_element("data/units/" + unit_template_name + ".png",
+                                        threshold,
+                                        match_horizontal_mirror=True,
+                                        render_match=render_match)
 
 
 def mouse_over_building(building_template_name, threshold=0.8):
-    return mouse_over_element("data/buildings/" + building_template_name + ".png", threshold)
+    return mouse_over_center_of_element("data/buildings/" + building_template_name + ".png", threshold)
 
 
 def mouse_over_tile(tile_template_name, threshold=0.9):
-    return mouse_over_element("data/tiles/" + tile_template_name + ".png", threshold)
+    return mouse_over_center_of_element("data/tiles/" + tile_template_name + ".png", threshold)
 
 
 def mouse_over_ui_element(ui_element_template_name, threshold=0.9, mouse_move_offset_x=0, mouse_move_offset_y=0):
-    return mouse_over_element("data/ui/" + ui_element_template_name + ".png",
-                              threshold,
-                              mouse_move_offset_x,
-                              mouse_move_offset_y)
+    return mouse_over_center_of_element("data/ui/" + ui_element_template_name + ".png",
+                                        threshold,
+                                        mouse_move_offset_x,
+                                        mouse_move_offset_y)
 
 
-def mouse_over_element(template_path, threshold=0.9, mouse_move_offset_x=0, mouse_move_offset_y=0):
-    match = vision.find_template_match(template_path,
-                                       threshold=threshold,
-                                       method=cmp504.computer_vision.TemplateMatchingMethod.CROSS_CORRELATION_NORMALIZED)
+def mouse_over_center_of_element(template_path,
+                                 threshold=0.9,
+                                 mouse_move_offset_x=0,
+                                 mouse_move_offset_y=0,
+                                 template_pre_processing_chain: cmp504.image_processing.ImageProcessingStepChain = None,
+                                 frame_pre_processing_chain: cmp504.image_processing.ImageProcessingStepChain = None,
+                                 match_horizontal_mirror: bool = False,
+                                 render_match: bool = False):
+    match = find_element(template_path,
+                         threshold=threshold,
+                         template_pre_processing_chain=template_pre_processing_chain,
+                         frame_pre_processing_chain=frame_pre_processing_chain,
+                         match_horizontal_mirror=match_horizontal_mirror,
+                         render_match=render_match)
 
-    assert_that(match).described_as('mouse over target %s' % template_path).is_not_none()
     mouse.move_mouse(match.mid_point[0] + mouse_move_offset_x,
                      match.mid_point[1] + mouse_move_offset_y)
+    return match
+
+
+def mouse_over_bottom_of_element(template_path,
+                                 threshold=0.9,
+                                 mouse_move_offset_x=0,
+                                 mouse_move_offset_y=0,
+                                 template_pre_processing_chain: cmp504.image_processing.ImageProcessingStepChain = None,
+                                 frame_pre_processing_chain: cmp504.image_processing.ImageProcessingStepChain = None,
+                                 match_horizontal_mirror: bool = False,
+                                 render_match: bool = False):
+    match = find_element(template_path,
+                         threshold=threshold,
+                         template_pre_processing_chain=template_pre_processing_chain,
+                         frame_pre_processing_chain=frame_pre_processing_chain,
+                         match_horizontal_mirror=match_horizontal_mirror,
+                         render_match=render_match)
+
+    mouse.move_mouse(match.mid_point[0] + mouse_move_offset_x,
+                     match.bottom_right[1] + mouse_move_offset_y)
+    return match
+
+
+def find_element(template_path,
+                 threshold=0.9,
+                 template_pre_processing_chain: cmp504.image_processing.ImageProcessingStepChain = None,
+                 frame_pre_processing_chain: cmp504.image_processing.ImageProcessingStepChain = None,
+                 match_horizontal_mirror: bool = False,
+                 render_match: bool = False):
+    match = vision.find_template_match(template_path,
+                                       threshold=threshold,
+                                       method=cmp504.computer_vision.TemplateMatchingMethod.CROSS_CORRELATION_NORMALIZED,
+                                       template_pre_processing_chain=template_pre_processing_chain,
+                                       frame_pre_processing_chain=frame_pre_processing_chain,
+                                       match_horizontal_mirror=match_horizontal_mirror,
+                                       render_match=render_match)
+
+    assert_that(match).described_as('mouse over target %s' % template_path).is_not_none()
     return match
 
 
