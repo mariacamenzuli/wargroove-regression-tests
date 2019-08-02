@@ -1,11 +1,10 @@
 import wargroove_ctrl
 import unittest
 import time
-from unittest import skip
 from assertpy import assert_that
 
 
-class TestCherrystoneUnitInfo(unittest.TestCase):
+class TestCherrystoneUnitInfoTemplateMatching(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         wargroove_ctrl.game_state.go_to_custom_content()
@@ -148,7 +147,7 @@ class TestCherrystoneUnitInfo(unittest.TestCase):
 
         self.open_unit_info_panel_and_run_test('cherrystone_harpy', harpy_info_panel_test)
 
-    @skip("due to flakiness of locating witch")
+    # @skip("due to flakiness of locating witch")
     def test_witch_info_panel_specifies_movement_flying_7(self):
         def witch_info_panel_test():
             is_flying_7_displayed = wargroove_ctrl.is_ui_element_visible('unit_info/movement/flying_7',
@@ -209,7 +208,7 @@ class TestCherrystoneUnitInfo(unittest.TestCase):
     def open_unit_info_panel_and_run_test(unit_template_name, panel_test):
         wargroove_ctrl.mouse.move_mouse(0, 0)
         wargroove_ctrl.vision.capture_frame()
-        wargroove_ctrl.mouse_over_unit(unit_template_name)
+        wargroove_ctrl.mouse_over_unit(unit_template_name, threshold=0.6)
         time.sleep(0.1)
         wargroove_ctrl.mouse.right_mouse_click()
 

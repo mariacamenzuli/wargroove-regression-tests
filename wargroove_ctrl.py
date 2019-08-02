@@ -8,6 +8,10 @@ vision = cmp504.computer_vision.CVController()
 mouse = cmp504.mouse_controller.MouseController()
 
 
+def wait_for_screen_update(wait_length_in_seconds: float = 0.2):
+    time.sleep(wait_length_in_seconds)
+
+
 class GameState(object):
     states = [
         'main menu',
@@ -89,32 +93,35 @@ class GameState(object):
 
     def click_long_animation_button(self, button_name, animation_wait_time=1.0):
         mouse.move_mouse(0, 0)
-        time.sleep(0.1)
+        wait_for_screen_update()
         mouse_over_ui_element(button_name)
-        time.sleep(0.1)
+        wait_for_screen_update()
         mouse.left_mouse_click()
+        wait_for_screen_update()
         mouse.move_mouse(0, 0)
-        time.sleep(animation_wait_time)
+        wait_for_screen_update(animation_wait_time)
         vision.capture_frame()
 
     def click_no_animation_button(self, button_name):
         mouse.move_mouse(0, 0)
-        time.sleep(0.1)
+        wait_for_screen_update()
         mouse_over_ui_element(button_name)
-        time.sleep(0.1)
+        wait_for_screen_update()
         mouse.left_mouse_click()
+        wait_for_screen_update()
         mouse.move_mouse(0, 0)
-        time.sleep(0.1)
+        wait_for_screen_update()
         vision.capture_frame()
 
     def click_tile(self, tile_template_name):
         mouse.move_mouse(0, 0)
-        time.sleep(0.1)
+        wait_for_screen_update()
         mouse_over_tile(tile_template_name)
-        time.sleep(0.1)
+        wait_for_screen_update()
         mouse.left_mouse_click()
+        wait_for_screen_update()
         mouse.move_mouse(0, 0)
-        time.sleep(0.1)
+        wait_for_screen_update()
         vision.capture_frame()
 
     def click_custom_content_button(self):
@@ -146,7 +153,7 @@ class GameState(object):
 
     def click_mission_and_exit_buttons(self):
         self.clear_turn_start_banner()
-        time.sleep(0.1)
+        wait_for_screen_update()
         self.click_tile('empty_water_tile')
         self.click_no_animation_button('gameplay/menu/mission_button')
         self.click_no_animation_button('gameplay/menu/exit_button')
@@ -160,7 +167,7 @@ class GameState(object):
             mouse_over_ui_element('gameplay/turn_start_banner')
             mouse.left_mouse_press()
             while self.is_showing_turn_start_banner():
-                time.sleep(0.1)
+                wait_for_screen_update()
                 vision.capture_frame()
             mouse.left_mouse_release()
 
@@ -175,6 +182,12 @@ def mouse_over_unit(unit_template_name, threshold=0.55, render_match: bool = Fal
                                         render_match=render_match)
 
 
+def mouse_over_unit_sift(unit_template_name):
+    best_match = vision.find_best_feature_based_match_sift("data/units/" + unit_template_name + ".png")
+    mouse.move_mouse(best_match[0],
+                     best_match[1])
+
+
 def mouse_over_building(building_template_name, threshold=0.8):
     return mouse_over_center_of_element("data/buildings/" + building_template_name + ".png", threshold)
 
@@ -184,6 +197,8 @@ def mouse_over_tile(tile_template_name, threshold=0.9):
 
 
 def mouse_over_ui_element(ui_element_template_name, threshold=0.9, mouse_move_offset_x=0, mouse_move_offset_y=0):
+    # pre_processing_steps = cmp504.image_processing.ImageProcessingStepChain()
+    # pre_processing_steps.append(cmp504.image_processing.Resize(1.5, 1.5))
     return mouse_over_center_of_element("data/ui/" + ui_element_template_name + ".png",
                                         threshold,
                                         mouse_move_offset_x,
@@ -253,10 +268,6 @@ def is_ui_element_visible(ui_element_template_name, threshold=0.9):
                                        threshold=threshold,
                                        method=cmp504.computer_vision.TemplateMatchingMethod.CROSS_CORRELATION_NORMALIZED)
     return match is not None
-
-
-def wait_for_screen_update():
-    time.sleep(0.1)
 
 
 vision.capture_frame()
