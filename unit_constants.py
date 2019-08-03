@@ -15,6 +15,8 @@ cherrystone_harpy_standard_template_matching_threshold = 0.90
 cherrystone_witch_standard_template_matching_threshold = 0.65
 cherrystone_dragon_standard_template_matching_threshold = 0.90
 
+cherrystone_mercia_hu_moment_template_matching_threshold = 0.75
+
 cherrystone_mercia_sift_threshold = 50.0
 cherrystone_villager_sift_threshold = 50.0
 cherrystone_soldier_sift_threshold = 50.0

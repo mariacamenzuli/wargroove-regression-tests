@@ -8,7 +8,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     @staticmethod
     def __get_eval_folder():
-        return 'D:/Libraries/Dropbox/Abertay University/CMP504 - Masters Project/Evaluation Frames/Units & Buildings Tests/Partial Occlusion/'
+        return 'data/evaluation-frames/units-and-buildings/partial-occlusion/'
 
     # ----------------------------------------------------------------------------
     # ---------------------------------- MERCIA ----------------------------------
