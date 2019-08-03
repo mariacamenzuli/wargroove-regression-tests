@@ -1,11 +1,31 @@
 import cmp504
 import time
+import logging
 from assertpy import assert_that
 from transitions import Machine
 
 
 vision = cmp504.computer_vision.CVController()
 mouse = cmp504.mouse_controller.MouseController()
+
+
+def log_match_for_evaluation(label, match, threshold):
+    if match is not None:
+        if isinstance(match, cmp504.computer_vision.TemplateMatch):
+            logging.getLogger('evaluation').info("%s: FOUND [similarity: %f] [threshold: %f]",
+                                                 label,
+                                                 match.similarity_score,
+                                                 match.threshold)
+        elif isinstance(match, cmp504.computer_vision.FeatureBasedMatch):
+            logging.getLogger('evaluation').info("%s: FOUND [similarity: %f] [threshold: %f]",
+                                                 label,
+                                                 match.distance_score,
+                                                 match.threshold)
+
+    else:
+        logging.getLogger('evaluation').info("%s: NOT_FOUND [threshold: %f]",
+                                             label,
+                                             threshold)
 
 
 def wait_for_screen_update(wait_length_in_seconds: float = 0.2):
@@ -270,10 +290,31 @@ def is_ui_element_visible(ui_element_template_name, threshold=0.9):
     return match is not None
 
 
-vision.capture_frame()
-if not is_ui_element_visible('main_menu/wargroove_title'):
-    mouse_over_ui_element('wargroove_taskbar_icon')
-    mouse.left_mouse_click()
-    wait_for_screen_update()
-    vision.capture_frame()
-    mouse_over_ui_element('main_menu/wargroove_title')
+def is_unit_visible(unit_template_name, threshold=0.9, method=cmp504.computer_vision.TemplateMatchingMethod.CROSS_CORRELATION_NORMALIZED):
+    match = vision.find_template_match("data/units/" + unit_template_name + ".png",
+                                       threshold=threshold,
+                                       method=method,
+                                       render_match=True)
+    return match is not None
+
+
+def find_unit_with_template_matching(unit_template_name, threshold=0.5, render_match=False):
+    return vision.find_template_match("data/units/" + unit_template_name + ".png",
+                                      threshold=threshold,
+                                      method=cmp504.computer_vision.TemplateMatchingMethod.CROSS_CORRELATION_NORMALIZED,
+                                      match_horizontal_mirror=True,
+                                      render_match=render_match)
+
+
+def find_unit_with_sift(unit_template_name, threshold=50.0):
+    return vision.find_best_feature_based_match_sift("data/units/" + unit_template_name + ".png",
+                                                     threshold)
+
+
+# vision.capture_frame()
+# if not is_ui_element_visible('main_menu/wargroove_title'):
+#     mouse_over_ui_element('wargroove_taskbar_icon')
+#     mouse.left_mouse_click()
+#     wait_for_screen_update()
+#     vision.capture_frame()
+#     mouse_over_ui_element('main_menu/wargroove_title')
