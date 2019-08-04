@@ -16,6 +16,21 @@ cherrystone_witch_standard_template_matching_threshold = 0.65
 cherrystone_dragon_standard_template_matching_threshold = 0.90
 
 cherrystone_mercia_hu_moment_template_matching_threshold = 0.75
+cherrystone_villager_hu_moment_template_matching_threshold = 0.75
+cherrystone_soldier_hu_moment_template_matching_threshold = 0.75
+cherrystone_pikeman_hu_moment_template_matching_threshold = 0.75
+cherrystone_battlepup_hu_moment_template_matching_threshold = 0.75
+cherrystone_alchemist_hu_moment_template_matching_threshold = 0.75
+cherrystone_archer_hu_moment_template_matching_threshold = 0.75
+cherrystone_golem_hu_moment_template_matching_threshold = 0.75
+cherrystone_knight_hu_moment_template_matching_threshold = 0.25
+cherrystone_wagon_hu_moment_template_matching_threshold = 0.75
+cherrystone_ballista_hu_moment_template_matching_threshold = 0.75
+cherrystone_trebuchet_hu_moment_template_matching_threshold = 0.75
+cherrystone_balloon_hu_moment_template_matching_threshold = 0.75
+cherrystone_harpy_hu_moment_template_matching_threshold = 0.75
+cherrystone_witch_hu_moment_template_matching_threshold = 0.75
+cherrystone_dragon_hu_moment_template_matching_threshold = 0.75
 
 cherrystone_mercia_sift_threshold = 50.0
 cherrystone_villager_sift_threshold = 50.0

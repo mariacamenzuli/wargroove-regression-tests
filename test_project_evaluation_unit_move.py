@@ -29,12 +29,13 @@ class TestProjectEvaluationUnitMove(unittest.TestCase):
         assert_that(match.bottom_right[0]).is_equal_to(392)
         assert_that(match.bottom_right[1]).is_equal_to(176)
 
+    @unittest.skip("not evaluating custom... at least not for now")
     def test_frame_1_mercia_hu_moment_template_matching_method_custom(self):
         threshold = unit_constants.cherrystone_mercia_hu_moment_template_matching_threshold
         wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching_custom('cherrystone_commander_mercia',
                                                                                  threshold=threshold,
-                                                                                 binarization_threshold=100)
+                                                                                 binarization_threshold=80)
 
         wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
@@ -50,7 +51,7 @@ class TestProjectEvaluationUnitMove(unittest.TestCase):
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_commander_mercia',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_1,
-                                                                          binarization_threshold=100)
+                                                                          binarization_threshold=80)
 
         wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
@@ -66,7 +67,7 @@ class TestProjectEvaluationUnitMove(unittest.TestCase):
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_commander_mercia',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_2,
-                                                                          binarization_threshold=100)
+                                                                          binarization_threshold=80)
 
         wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
@@ -81,7 +82,8 @@ class TestProjectEvaluationUnitMove(unittest.TestCase):
         wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_commander_mercia',
                                                                           threshold=threshold,
-                                                                          method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_3)
+                                                                          method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_3,
+                                                                          binarization_threshold=80)
 
         wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
@@ -117,6 +119,54 @@ class TestProjectEvaluationUnitMove(unittest.TestCase):
         assert_that(match.bottom_right[0]).is_equal_to(920)
         assert_that(match.bottom_right[1]).is_equal_to(176)
 
+    def test_frame_2_mercia_hu_moment_template_matching_method_1(self):
+        threshold = unit_constants.cherrystone_mercia_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_2.png')
+        match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_commander_mercia',
+                                                                          threshold=threshold,
+                                                                          method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_1,
+                                                                          binarization_threshold=80)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(882, 4)
+        assert_that(match.top_left[1]).is_close_to(122, 4)
+        assert_that(match.bottom_right[0]).is_close_to(920, 4)
+        assert_that(match.bottom_right[1]).is_close_to(176, 4)
+
+    def test_frame_2_mercia_hu_moment_template_matching_method_2(self):
+        threshold = unit_constants.cherrystone_mercia_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_2.png')
+        match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_commander_mercia',
+                                                                          threshold=threshold,
+                                                                          method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_2,
+                                                                          binarization_threshold=80)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(882, 4)
+        assert_that(match.top_left[1]).is_close_to(122, 4)
+        assert_that(match.bottom_right[0]).is_close_to(920, 4)
+        assert_that(match.bottom_right[1]).is_close_to(176, 4)
+
+    def test_frame_2_mercia_hu_moment_template_matching_method_3(self):
+        threshold = unit_constants.cherrystone_mercia_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_2.png')
+        match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_commander_mercia',
+                                                                          threshold=threshold,
+                                                                          method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_3,
+                                                                          binarization_threshold=80)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(882, 4)
+        assert_that(match.top_left[1]).is_close_to(122, 4)
+        assert_that(match.bottom_right[0]).is_close_to(920, 4)
+        assert_that(match.bottom_right[1]).is_close_to(176, 4)
+
     def test_frame_2_mercia_sift(self):
         threshold = unit_constants.cherrystone_mercia_sift_threshold
         wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_2.png')
@@ -147,6 +197,54 @@ class TestProjectEvaluationUnitMove(unittest.TestCase):
         assert_that(match.bottom_right[0]).is_equal_to(536)
         assert_that(match.bottom_right[1]).is_equal_to(176)
 
+    def test_frame_1_villager_hu_moment_template_matching_method_1(self):
+        threshold = unit_constants.cherrystone_villager_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
+        match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_villager',
+                                                                          threshold=threshold,
+                                                                          method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_1,
+                                                                          binarization_threshold=80)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(506, 4)
+        assert_that(match.top_left[1]).is_close_to(124, 4)
+        assert_that(match.bottom_right[0]).is_close_to(536, 4)
+        assert_that(match.bottom_right[1]).is_close_to(176, 4)
+
+    def test_frame_1_villager_hu_moment_template_matching_method_2(self):
+        threshold = unit_constants.cherrystone_villager_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
+        match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_villager',
+                                                                          threshold=threshold,
+                                                                          method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_2,
+                                                                          binarization_threshold=80)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(506, 4)
+        assert_that(match.top_left[1]).is_close_to(124, 4)
+        assert_that(match.bottom_right[0]).is_close_to(536, 4)
+        assert_that(match.bottom_right[1]).is_close_to(176, 4)
+
+    def test_frame_1_villager_hu_moment_template_matching_method_3(self):
+        threshold = unit_constants.cherrystone_villager_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
+        match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_villager',
+                                                                          threshold=threshold,
+                                                                          method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_3,
+                                                                          binarization_threshold=80)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(506, 4)
+        assert_that(match.top_left[1]).is_close_to(124, 4)
+        assert_that(match.bottom_right[0]).is_close_to(536, 4)
+        assert_that(match.bottom_right[1]).is_close_to(176, 4)
+
     def test_frame_1_villager_sift(self):
         threshold = unit_constants.cherrystone_villager_sift_threshold
         wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
@@ -172,6 +270,54 @@ class TestProjectEvaluationUnitMove(unittest.TestCase):
         assert_that(match.top_left[1]).is_equal_to(124)
         assert_that(match.bottom_right[0]).is_equal_to(776)
         assert_that(match.bottom_right[1]).is_equal_to(176)
+
+    def test_frame_2_villager_hu_moment_template_matching_method_1(self):
+        threshold = unit_constants.cherrystone_villager_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_2.png')
+        match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_villager',
+                                                                          threshold=threshold,
+                                                                          method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_1,
+                                                                          binarization_threshold=80)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(746, 4)
+        assert_that(match.top_left[1]).is_close_to(124, 4)
+        assert_that(match.bottom_right[0]).is_close_to(776, 4)
+        assert_that(match.bottom_right[1]).is_close_to(176, 4)
+
+    def test_frame_2_villager_hu_moment_template_matching_method_2(self):
+        threshold = unit_constants.cherrystone_villager_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_2.png')
+        match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_villager',
+                                                                          threshold=threshold,
+                                                                          method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_2,
+                                                                          binarization_threshold=80)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(746, 4)
+        assert_that(match.top_left[1]).is_close_to(124, 4)
+        assert_that(match.bottom_right[0]).is_close_to(776, 4)
+        assert_that(match.bottom_right[1]).is_close_to(176, 4)
+
+    def test_frame_2_villager_hu_moment_template_matching_method_3(self):
+        threshold = unit_constants.cherrystone_villager_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_2.png')
+        match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_villager',
+                                                                          threshold=threshold,
+                                                                          method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_3,
+                                                                          binarization_threshold=80)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(746, 4)
+        assert_that(match.top_left[1]).is_close_to(124, 4)
+        assert_that(match.bottom_right[0]).is_close_to(776, 4)
+        assert_that(match.bottom_right[1]).is_close_to(176, 4)
 
     def test_frame_2_villager_sift(self):
         threshold = unit_constants.cherrystone_villager_sift_threshold
@@ -203,6 +349,54 @@ class TestProjectEvaluationUnitMove(unittest.TestCase):
         assert_that(match.bottom_right[0]).is_equal_to(536)
         assert_that(match.bottom_right[1]).is_equal_to(272)
 
+    def test_frame_1_soldier_hu_moment_template_matching_method_1(self):
+        threshold = unit_constants.cherrystone_soldier_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
+        match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_soldier',
+                                                                          threshold=threshold,
+                                                                          method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_1,
+                                                                          binarization_threshold=80)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(500, 4)
+        assert_that(match.top_left[1]).is_close_to(218, 4)
+        assert_that(match.bottom_right[0]).is_close_to(536, 4)
+        assert_that(match.bottom_right[1]).is_close_to(272, 4)
+
+    def test_frame_1_soldier_hu_moment_template_matching_method_2(self):
+        threshold = unit_constants.cherrystone_soldier_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
+        match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_soldier',
+                                                                          threshold=threshold,
+                                                                          method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_2,
+                                                                          binarization_threshold=80)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(500, 4)
+        assert_that(match.top_left[1]).is_close_to(218, 4)
+        assert_that(match.bottom_right[0]).is_close_to(536, 4)
+        assert_that(match.bottom_right[1]).is_close_to(272, 4)
+
+    def test_frame_1_soldier_hu_moment_template_matching_method_3(self):
+        threshold = unit_constants.cherrystone_soldier_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
+        match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_soldier',
+                                                                          threshold=threshold,
+                                                                          method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_3,
+                                                                          binarization_threshold=80)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(500, 4)
+        assert_that(match.top_left[1]).is_close_to(218, 4)
+        assert_that(match.bottom_right[0]).is_close_to(536, 4)
+        assert_that(match.bottom_right[1]).is_close_to(272, 4)
+
     def test_frame_1_soldier_sift(self):
         threshold = unit_constants.cherrystone_soldier_sift_threshold
         wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
@@ -228,6 +422,54 @@ class TestProjectEvaluationUnitMove(unittest.TestCase):
         assert_that(match.top_left[1]).is_equal_to(218)
         assert_that(match.bottom_right[0]).is_equal_to(776)
         assert_that(match.bottom_right[1]).is_equal_to(272)
+
+    def test_frame_2_soldier_hu_moment_template_matching_method_1(self):
+        threshold = unit_constants.cherrystone_soldier_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_2.png')
+        match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_soldier',
+                                                                          threshold=threshold,
+                                                                          method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_1,
+                                                                          binarization_threshold=80)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(740, 4)
+        assert_that(match.top_left[1]).is_close_to(218, 4)
+        assert_that(match.bottom_right[0]).is_close_to(776, 4)
+        assert_that(match.bottom_right[1]).is_close_to(272, 4)
+
+    def test_frame_2_soldier_hu_moment_template_matching_method_2(self):
+        threshold = unit_constants.cherrystone_soldier_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_2.png')
+        match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_soldier',
+                                                                          threshold=threshold,
+                                                                          method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_2,
+                                                                          binarization_threshold=80)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(740, 4)
+        assert_that(match.top_left[1]).is_close_to(218, 4)
+        assert_that(match.bottom_right[0]).is_close_to(776, 4)
+        assert_that(match.bottom_right[1]).is_close_to(272, 4)
+
+    def test_frame_2_soldier_hu_moment_template_matching_method_3(self):
+        threshold = unit_constants.cherrystone_soldier_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_2.png')
+        match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_soldier',
+                                                                          threshold=threshold,
+                                                                          method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_3,
+                                                                          binarization_threshold=80)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(740, 4)
+        assert_that(match.top_left[1]).is_close_to(218, 4)
+        assert_that(match.bottom_right[0]).is_close_to(776, 4)
+        assert_that(match.bottom_right[1]).is_close_to(272, 4)
 
     def test_frame_2_soldier_sift(self):
         threshold = unit_constants.cherrystone_soldier_sift_threshold
@@ -259,6 +501,54 @@ class TestProjectEvaluationUnitMove(unittest.TestCase):
         assert_that(match.bottom_right[0]).is_equal_to(554)
         assert_that(match.bottom_right[1]).is_equal_to(368)
 
+    def test_frame_1_pikeman_hu_moment_template_matching_method_1(self):
+        threshold = unit_constants.cherrystone_pikeman_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
+        match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_pikeman',
+                                                                          threshold=threshold,
+                                                                          method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_1,
+                                                                          binarization_threshold=80)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(502, 4)
+        assert_that(match.top_left[1]).is_close_to(324, 4)
+        assert_that(match.bottom_right[0]).is_close_to(554, 4)
+        assert_that(match.bottom_right[1]).is_close_to(368, 4)
+
+    def test_frame_1_pikeman_hu_moment_template_matching_method_2(self):
+        threshold = unit_constants.cherrystone_pikeman_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
+        match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_pikeman',
+                                                                          threshold=threshold,
+                                                                          method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_2,
+                                                                          binarization_threshold=80)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(502, 4)
+        assert_that(match.top_left[1]).is_close_to(324, 4)
+        assert_that(match.bottom_right[0]).is_close_to(554, 4)
+        assert_that(match.bottom_right[1]).is_close_to(368, 4)
+
+    def test_frame_1_pikeman_hu_moment_template_matching_method_3(self):
+        threshold = unit_constants.cherrystone_pikeman_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
+        match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_pikeman',
+                                                                          threshold=threshold,
+                                                                          method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_3,
+                                                                          binarization_threshold=80)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(502, 4)
+        assert_that(match.top_left[1]).is_close_to(324, 4)
+        assert_that(match.bottom_right[0]).is_close_to(554, 4)
+        assert_that(match.bottom_right[1]).is_close_to(368, 4)
+
     def test_frame_1_pikeman_sift(self):
         threshold = unit_constants.cherrystone_pikeman_sift_threshold
         wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
@@ -284,6 +574,54 @@ class TestProjectEvaluationUnitMove(unittest.TestCase):
         assert_that(match.top_left[1]).is_equal_to(324)
         assert_that(match.bottom_right[0]).is_equal_to(794)
         assert_that(match.bottom_right[1]).is_equal_to(368)
+
+    def test_frame_2_pikeman_hu_moment_template_matching_method_1(self):
+        threshold = unit_constants.cherrystone_pikeman_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_2.png')
+        match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_pikeman',
+                                                                          threshold=threshold,
+                                                                          method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_1,
+                                                                          binarization_threshold=80)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(742, 4)
+        assert_that(match.top_left[1]).is_close_to(324, 4)
+        assert_that(match.bottom_right[0]).is_close_to(794, 4)
+        assert_that(match.bottom_right[1]).is_close_to(368, 4)
+
+    def test_frame_2_pikeman_hu_moment_template_matching_method_2(self):
+        threshold = unit_constants.cherrystone_pikeman_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_2.png')
+        match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_pikeman',
+                                                                          threshold=threshold,
+                                                                          method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_2,
+                                                                          binarization_threshold=80)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(742, 4)
+        assert_that(match.top_left[1]).is_close_to(324, 4)
+        assert_that(match.bottom_right[0]).is_close_to(794, 4)
+        assert_that(match.bottom_right[1]).is_close_to(368, 4)
+
+    def test_frame_2_pikeman_hu_moment_template_matching_method_3(self):
+        threshold = unit_constants.cherrystone_pikeman_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_2.png')
+        match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_pikeman',
+                                                                          threshold=threshold,
+                                                                          method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_3,
+                                                                          binarization_threshold=80)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(742, 4)
+        assert_that(match.top_left[1]).is_close_to(324, 4)
+        assert_that(match.bottom_right[0]).is_close_to(794, 4)
+        assert_that(match.bottom_right[1]).is_close_to(368, 4)
 
     def test_frame_2_pikeman_sift(self):
         threshold = unit_constants.cherrystone_pikeman_sift_threshold
@@ -315,6 +653,54 @@ class TestProjectEvaluationUnitMove(unittest.TestCase):
         assert_that(match.bottom_right[0]).is_equal_to(642)
         assert_that(match.bottom_right[1]).is_equal_to(176)
 
+    def test_frame_1_battlepup_hu_moment_template_matching_method_1(self):
+        threshold = unit_constants.cherrystone_battlepup_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
+        match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_battle_pup',
+                                                                          threshold=threshold,
+                                                                          method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_1,
+                                                                          binarization_threshold=80)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(596, 4)
+        assert_that(match.top_left[1]).is_close_to(138, 4)
+        assert_that(match.bottom_right[0]).is_close_to(642, 4)
+        assert_that(match.bottom_right[1]).is_close_to(176, 4)
+
+    def test_frame_1_battlepup_hu_moment_template_matching_method_2(self):
+        threshold = unit_constants.cherrystone_battlepup_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
+        match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_battle_pup',
+                                                                          threshold=threshold,
+                                                                          method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_2,
+                                                                          binarization_threshold=80)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(596, 4)
+        assert_that(match.top_left[1]).is_close_to(138, 4)
+        assert_that(match.bottom_right[0]).is_close_to(642, 4)
+        assert_that(match.bottom_right[1]).is_close_to(176, 4)
+
+    def test_frame_1_battlepup_hu_moment_template_matching_method_3(self):
+        threshold = unit_constants.cherrystone_battlepup_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
+        match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_battle_pup',
+                                                                          threshold=threshold,
+                                                                          method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_3,
+                                                                          binarization_threshold=80)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(596, 4)
+        assert_that(match.top_left[1]).is_close_to(138, 4)
+        assert_that(match.bottom_right[0]).is_close_to(642, 4)
+        assert_that(match.bottom_right[1]).is_close_to(176, 4)
+
     def test_frame_1_battlepup_sift(self):
         threshold = unit_constants.cherrystone_battlepup_sift_threshold
         wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
@@ -340,6 +726,54 @@ class TestProjectEvaluationUnitMove(unittest.TestCase):
         assert_that(match.top_left[1]).is_equal_to(138)
         assert_that(match.bottom_right[0]).is_equal_to(690)
         assert_that(match.bottom_right[1]).is_equal_to(176)
+
+    def test_frame_2_battlepup_hu_moment_template_matching_method_1(self):
+        threshold = unit_constants.cherrystone_battlepup_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_2.png')
+        match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_battle_pup',
+                                                                          threshold=threshold,
+                                                                          method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_1,
+                                                                          binarization_threshold=80)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(644, 4)
+        assert_that(match.top_left[1]).is_close_to(138, 4)
+        assert_that(match.bottom_right[0]).is_close_to(690, 4)
+        assert_that(match.bottom_right[1]).is_close_to(176, 4)
+
+    def test_frame_2_battlepup_hu_moment_template_matching_method_2(self):
+        threshold = unit_constants.cherrystone_battlepup_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_2.png')
+        match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_battle_pup',
+                                                                          threshold=threshold,
+                                                                          method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_2,
+                                                                          binarization_threshold=80)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(644, 4)
+        assert_that(match.top_left[1]).is_close_to(138, 4)
+        assert_that(match.bottom_right[0]).is_close_to(690, 4)
+        assert_that(match.bottom_right[1]).is_close_to(176, 4)
+
+    def test_frame_2_battlepup_hu_moment_template_matching_method_3(self):
+        threshold = unit_constants.cherrystone_battlepup_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_2.png')
+        match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_battle_pup',
+                                                                          threshold=threshold,
+                                                                          method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_3,
+                                                                          binarization_threshold=80)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(644, 4)
+        assert_that(match.top_left[1]).is_close_to(138, 4)
+        assert_that(match.bottom_right[0]).is_close_to(690, 4)
+        assert_that(match.bottom_right[1]).is_close_to(176, 4)
 
     def test_frame_2_battlepup_sift(self):
         threshold = unit_constants.cherrystone_battlepup_sift_threshold
@@ -371,6 +805,54 @@ class TestProjectEvaluationUnitMove(unittest.TestCase):
         assert_that(match.bottom_right[0]).is_equal_to(636)
         assert_that(match.bottom_right[1]).is_equal_to(272)
 
+    def test_frame_1_alchemist_hu_moment_template_matching_method_1(self):
+        threshold = unit_constants.cherrystone_alchemist_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
+        match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_alchemist',
+                                                                          threshold=threshold,
+                                                                          method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_1,
+                                                                          binarization_threshold=80)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(592, 4)
+        assert_that(match.top_left[1]).is_close_to(222, 4)
+        assert_that(match.bottom_right[0]).is_close_to(636, 4)
+        assert_that(match.bottom_right[1]).is_close_to(272, 4)
+
+    def test_frame_1_alchemist_hu_moment_template_matching_method_2(self):
+        threshold = unit_constants.cherrystone_alchemist_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
+        match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_alchemist',
+                                                                          threshold=threshold,
+                                                                          method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_2,
+                                                                          binarization_threshold=80)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(592, 4)
+        assert_that(match.top_left[1]).is_close_to(222, 4)
+        assert_that(match.bottom_right[0]).is_close_to(636, 4)
+        assert_that(match.bottom_right[1]).is_close_to(272, 4)
+
+    def test_frame_1_alchemist_hu_moment_template_matching_method_3(self):
+        threshold = unit_constants.cherrystone_alchemist_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
+        match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_alchemist',
+                                                                          threshold=threshold,
+                                                                          method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_3,
+                                                                          binarization_threshold=80)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(592, 4)
+        assert_that(match.top_left[1]).is_close_to(222, 4)
+        assert_that(match.bottom_right[0]).is_close_to(636, 4)
+        assert_that(match.bottom_right[1]).is_close_to(272, 4)
+
     def test_frame_1_alchemist_sift(self):
         threshold = unit_constants.cherrystone_alchemist_sift_threshold
         wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
@@ -396,6 +878,54 @@ class TestProjectEvaluationUnitMove(unittest.TestCase):
         assert_that(match.top_left[1]).is_equal_to(222)
         assert_that(match.bottom_right[0]).is_equal_to(684)
         assert_that(match.bottom_right[1]).is_equal_to(272)
+
+    def test_frame_2_alchemist_hu_moment_template_matching_method_1(self):
+        threshold = unit_constants.cherrystone_alchemist_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_2.png')
+        match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_alchemist',
+                                                                          threshold=threshold,
+                                                                          method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_1,
+                                                                          binarization_threshold=80)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(640, 4)
+        assert_that(match.top_left[1]).is_close_to(222, 4)
+        assert_that(match.bottom_right[0]).is_close_to(684, 4)
+        assert_that(match.bottom_right[1]).is_close_to(272, 4)
+
+    def test_frame_2_alchemist_hu_moment_template_matching_method_2(self):
+        threshold = unit_constants.cherrystone_alchemist_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_2.png')
+        match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_alchemist',
+                                                                          threshold=threshold,
+                                                                          method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_2,
+                                                                          binarization_threshold=80)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(640, 4)
+        assert_that(match.top_left[1]).is_close_to(222, 4)
+        assert_that(match.bottom_right[0]).is_close_to(684, 4)
+        assert_that(match.bottom_right[1]).is_close_to(272, 4)
+
+    def test_frame_2_alchemist_hu_moment_template_matching_method_3(self):
+        threshold = unit_constants.cherrystone_alchemist_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_2.png')
+        match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_alchemist',
+                                                                          threshold=threshold,
+                                                                          method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_3,
+                                                                          binarization_threshold=80)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(640, 4)
+        assert_that(match.top_left[1]).is_close_to(222, 4)
+        assert_that(match.bottom_right[0]).is_close_to(684, 4)
+        assert_that(match.bottom_right[1]).is_close_to(272, 4)
 
     def test_frame_2_alchemist_sift(self):
         threshold = unit_constants.cherrystone_alchemist_sift_threshold
@@ -427,6 +957,54 @@ class TestProjectEvaluationUnitMove(unittest.TestCase):
         assert_that(match.bottom_right[0]).is_equal_to(634)
         assert_that(match.bottom_right[1]).is_equal_to(370)
 
+    def test_frame_1_archer_hu_moment_template_matching_method_1(self):
+        threshold = unit_constants.cherrystone_archer_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
+        match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_archer',
+                                                                          threshold=threshold,
+                                                                          method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_1,
+                                                                          binarization_threshold=80)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(590, 4)
+        assert_that(match.top_left[1]).is_close_to(314, 4)
+        assert_that(match.bottom_right[0]).is_close_to(634, 4)
+        assert_that(match.bottom_right[1]).is_close_to(370, 4)
+
+    def test_frame_1_archer_hu_moment_template_matching_method_2(self):
+        threshold = unit_constants.cherrystone_archer_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
+        match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_archer',
+                                                                          threshold=threshold,
+                                                                          method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_2,
+                                                                          binarization_threshold=80)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(590, 4)
+        assert_that(match.top_left[1]).is_close_to(314, 4)
+        assert_that(match.bottom_right[0]).is_close_to(634, 4)
+        assert_that(match.bottom_right[1]).is_close_to(370, 4)
+
+    def test_frame_1_archer_hu_moment_template_matching_method_3(self):
+        threshold = unit_constants.cherrystone_archer_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
+        match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_archer',
+                                                                          threshold=threshold,
+                                                                          method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_3,
+                                                                          binarization_threshold=80)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(590, 4)
+        assert_that(match.top_left[1]).is_close_to(314, 4)
+        assert_that(match.bottom_right[0]).is_close_to(634, 4)
+        assert_that(match.bottom_right[1]).is_close_to(370, 4)
+
     def test_frame_1_archer_sift(self):
         threshold = unit_constants.cherrystone_archer_sift_threshold
         wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
@@ -452,6 +1030,54 @@ class TestProjectEvaluationUnitMove(unittest.TestCase):
         assert_that(match.top_left[1]).is_equal_to(314)
         assert_that(match.bottom_right[0]).is_equal_to(682)
         assert_that(match.bottom_right[1]).is_equal_to(370)
+
+    def test_frame_2_archer_hu_moment_template_matching_method_1(self):
+        threshold = unit_constants.cherrystone_archer_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_2.png')
+        match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_archer',
+                                                                          threshold=threshold,
+                                                                          method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_1,
+                                                                          binarization_threshold=80)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(638, 4)
+        assert_that(match.top_left[1]).is_close_to(314, 4)
+        assert_that(match.bottom_right[0]).is_close_to(682, 4)
+        assert_that(match.bottom_right[1]).is_close_to(370, 4)
+
+    def test_frame_2_archer_hu_moment_template_matching_method_2(self):
+        threshold = unit_constants.cherrystone_archer_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_2.png')
+        match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_archer',
+                                                                          threshold=threshold,
+                                                                          method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_2,
+                                                                          binarization_threshold=80)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(638, 4)
+        assert_that(match.top_left[1]).is_close_to(314, 4)
+        assert_that(match.bottom_right[0]).is_close_to(682, 4)
+        assert_that(match.bottom_right[1]).is_close_to(370, 4)
+
+    def test_frame_2_archer_hu_moment_template_matching_method_3(self):
+        threshold = unit_constants.cherrystone_archer_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_2.png')
+        match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_archer',
+                                                                          threshold=threshold,
+                                                                          method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_3,
+                                                                          binarization_threshold=80)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(638, 4)
+        assert_that(match.top_left[1]).is_close_to(314, 4)
+        assert_that(match.bottom_right[0]).is_close_to(682, 4)
+        assert_that(match.bottom_right[1]).is_close_to(370, 4)
 
     def test_frame_2_archer_sift(self):
         threshold = unit_constants.cherrystone_archer_sift_threshold
@@ -483,6 +1109,54 @@ class TestProjectEvaluationUnitMove(unittest.TestCase):
         assert_that(match.bottom_right[0]).is_equal_to(732)
         assert_that(match.bottom_right[1]).is_equal_to(178)
 
+    def test_frame_1_golem_hu_moment_template_matching_method_1(self):
+        threshold = unit_constants.cherrystone_golem_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
+        match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_golem',
+                                                                          threshold=threshold,
+                                                                          method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_1,
+                                                                          binarization_threshold=80)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(692, 4)
+        assert_that(match.top_left[1]).is_close_to(108, 4)
+        assert_that(match.bottom_right[0]).is_close_to(732, 4)
+        assert_that(match.bottom_right[1]).is_close_to(178, 4)
+
+    def test_frame_1_golem_hu_moment_template_matching_method_2(self):
+        threshold = unit_constants.cherrystone_golem_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
+        match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_golem',
+                                                                          threshold=threshold,
+                                                                          method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_2,
+                                                                          binarization_threshold=80)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(692, 4)
+        assert_that(match.top_left[1]).is_close_to(108, 4)
+        assert_that(match.bottom_right[0]).is_close_to(732, 4)
+        assert_that(match.bottom_right[1]).is_close_to(178, 4)
+
+    def test_frame_1_golem_hu_moment_template_matching_method_3(self):
+        threshold = unit_constants.cherrystone_golem_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
+        match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_golem',
+                                                                          threshold=threshold,
+                                                                          method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_3,
+                                                                          binarization_threshold=80)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(692, 4)
+        assert_that(match.top_left[1]).is_close_to(108, 4)
+        assert_that(match.bottom_right[0]).is_close_to(732, 4)
+        assert_that(match.bottom_right[1]).is_close_to(178, 4)
+
     def test_frame_1_golem_sift(self):
         threshold = unit_constants.cherrystone_golem_sift_threshold
         wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
@@ -508,6 +1182,54 @@ class TestProjectEvaluationUnitMove(unittest.TestCase):
         assert_that(match.top_left[1]).is_equal_to(108)
         assert_that(match.bottom_right[0]).is_equal_to(588)
         assert_that(match.bottom_right[1]).is_equal_to(178)
+
+    def test_frame_2_golem_hu_moment_template_matching_method_1(self):
+        threshold = unit_constants.cherrystone_golem_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_2.png')
+        match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_golem',
+                                                                          threshold=threshold,
+                                                                          method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_1,
+                                                                          binarization_threshold=80)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(548, 4)
+        assert_that(match.top_left[1]).is_close_to(108, 4)
+        assert_that(match.bottom_right[0]).is_close_to(588, 4)
+        assert_that(match.bottom_right[1]).is_close_to(178, 4)
+
+    def test_frame_2_golem_hu_moment_template_matching_method_2(self):
+        threshold = unit_constants.cherrystone_golem_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_2.png')
+        match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_golem',
+                                                                          threshold=threshold,
+                                                                          method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_2,
+                                                                          binarization_threshold=80)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(548, 4)
+        assert_that(match.top_left[1]).is_close_to(108, 4)
+        assert_that(match.bottom_right[0]).is_close_to(588, 4)
+        assert_that(match.bottom_right[1]).is_close_to(178, 4)
+
+    def test_frame_2_golem_hu_moment_template_matching_method_3(self):
+        threshold = unit_constants.cherrystone_golem_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_2.png')
+        match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_golem',
+                                                                          threshold=threshold,
+                                                                          method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_3,
+                                                                          binarization_threshold=80)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(548, 4)
+        assert_that(match.top_left[1]).is_close_to(108, 4)
+        assert_that(match.bottom_right[0]).is_close_to(588, 4)
+        assert_that(match.bottom_right[1]).is_close_to(178, 4)
 
     def test_frame_2_golem_sift(self):
         threshold = unit_constants.cherrystone_golem_sift_threshold
@@ -539,6 +1261,54 @@ class TestProjectEvaluationUnitMove(unittest.TestCase):
         assert_that(match.bottom_right[0]).is_equal_to(744)
         assert_that(match.bottom_right[1]).is_equal_to(272)
 
+    def test_frame_1_knight_hu_moment_template_matching_method_1(self):
+        threshold = unit_constants.cherrystone_knight_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
+        match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_knight',
+                                                                          threshold=threshold,
+                                                                          method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_1,
+                                                                          binarization_threshold=80)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(693, 4)
+        assert_that(match.top_left[1]).is_close_to(208, 4)
+        assert_that(match.bottom_right[0]).is_close_to(744, 4)
+        assert_that(match.bottom_right[1]).is_close_to(272, 4)
+
+    def test_frame_1_knight_hu_moment_template_matching_method_2(self):
+        threshold = unit_constants.cherrystone_knight_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
+        match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_knight',
+                                                                          threshold=threshold,
+                                                                          method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_2,
+                                                                          binarization_threshold=80)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(693, 4)
+        assert_that(match.top_left[1]).is_close_to(208, 4)
+        assert_that(match.bottom_right[0]).is_close_to(744, 4)
+        assert_that(match.bottom_right[1]).is_close_to(272, 4)
+
+    def test_frame_1_knight_hu_moment_template_matching_method_3(self):
+        threshold = unit_constants.cherrystone_knight_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
+        match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_knight',
+                                                                          threshold=threshold,
+                                                                          method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_3,
+                                                                          binarization_threshold=80)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(693, 4)
+        assert_that(match.top_left[1]).is_close_to(208, 4)
+        assert_that(match.bottom_right[0]).is_close_to(744, 4)
+        assert_that(match.bottom_right[1]).is_close_to(272, 4)
+
     def test_frame_1_knight_sift(self):
         threshold = unit_constants.cherrystone_knight_sift_threshold
         wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
@@ -564,6 +1334,54 @@ class TestProjectEvaluationUnitMove(unittest.TestCase):
         assert_that(match.top_left[1]).is_equal_to(208)
         assert_that(match.bottom_right[0]).is_equal_to(600)
         assert_that(match.bottom_right[1]).is_equal_to(272)
+
+    def test_frame_2_knight_hu_moment_template_matching_method_1(self):
+        threshold = unit_constants.cherrystone_knight_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_2.png')
+        match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_knight',
+                                                                          threshold=threshold,
+                                                                          method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_1,
+                                                                          binarization_threshold=80)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(549, 4)
+        assert_that(match.top_left[1]).is_close_to(208, 4)
+        assert_that(match.bottom_right[0]).is_close_to(600, 4)
+        assert_that(match.bottom_right[1]).is_close_to(272, 4)
+
+    def test_frame_2_knight_hu_moment_template_matching_method_2(self):
+        threshold = unit_constants.cherrystone_knight_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_2.png')
+        match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_knight',
+                                                                          threshold=threshold,
+                                                                          method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_2,
+                                                                          binarization_threshold=80)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(549, 4)
+        assert_that(match.top_left[1]).is_close_to(208, 4)
+        assert_that(match.bottom_right[0]).is_close_to(600, 4)
+        assert_that(match.bottom_right[1]).is_close_to(272, 4)
+
+    def test_frame_2_knight_hu_moment_template_matching_method_3(self):
+        threshold = unit_constants.cherrystone_knight_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_2.png')
+        match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_knight',
+                                                                          threshold=threshold,
+                                                                          method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_3,
+                                                                          binarization_threshold=80)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(549, 4)
+        assert_that(match.top_left[1]).is_close_to(208, 4)
+        assert_that(match.bottom_right[0]).is_close_to(600, 4)
+        assert_that(match.bottom_right[1]).is_close_to(272, 4)
 
     def test_frame_2_knight_sift(self):
         threshold = unit_constants.cherrystone_knight_sift_threshold
@@ -595,6 +1413,54 @@ class TestProjectEvaluationUnitMove(unittest.TestCase):
         assert_that(match.bottom_right[0]).is_equal_to(742)
         assert_that(match.bottom_right[1]).is_equal_to(370)
 
+    def test_frame_1_wagon_hu_moment_template_matching_method_1(self):
+        threshold = unit_constants.cherrystone_wagon_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
+        match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_wagon',
+                                                                          threshold=threshold,
+                                                                          method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_1,
+                                                                          binarization_threshold=80)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(686, 4)
+        assert_that(match.top_left[1]).is_close_to(319, 4)
+        assert_that(match.bottom_right[0]).is_close_to(742, 4)
+        assert_that(match.bottom_right[1]).is_close_to(370, 4)
+
+    def test_frame_1_wagon_hu_moment_template_matching_method_2(self):
+        threshold = unit_constants.cherrystone_wagon_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
+        match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_wagon',
+                                                                          threshold=threshold,
+                                                                          method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_2,
+                                                                          binarization_threshold=80)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(686, 4)
+        assert_that(match.top_left[1]).is_close_to(319, 4)
+        assert_that(match.bottom_right[0]).is_close_to(742, 4)
+        assert_that(match.bottom_right[1]).is_close_to(370, 4)
+
+    def test_frame_1_wagon_hu_moment_template_matching_method_3(self):
+        threshold = unit_constants.cherrystone_wagon_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
+        match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_wagon',
+                                                                          threshold=threshold,
+                                                                          method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_3,
+                                                                          binarization_threshold=80)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(686, 4)
+        assert_that(match.top_left[1]).is_close_to(319, 4)
+        assert_that(match.bottom_right[0]).is_close_to(742, 4)
+        assert_that(match.bottom_right[1]).is_close_to(370, 4)
+
     def test_frame_1_wagon_sift(self):
         threshold = unit_constants.cherrystone_wagon_sift_threshold
         wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
@@ -620,6 +1486,54 @@ class TestProjectEvaluationUnitMove(unittest.TestCase):
         assert_that(match.top_left[1]).is_equal_to(319)
         assert_that(match.bottom_right[0]).is_equal_to(598)
         assert_that(match.bottom_right[1]).is_equal_to(370)
+
+    def test_frame_2_wagon_hu_moment_template_matching_method_1(self):
+        threshold = unit_constants.cherrystone_wagon_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_2.png')
+        match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_wagon',
+                                                                          threshold=threshold,
+                                                                          method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_1,
+                                                                          binarization_threshold=80)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(542, 4)
+        assert_that(match.top_left[1]).is_close_to(319, 4)
+        assert_that(match.bottom_right[0]).is_close_to(598, 4)
+        assert_that(match.bottom_right[1]).is_close_to(370, 4)
+
+    def test_frame_2_wagon_hu_moment_template_matching_method_2(self):
+        threshold = unit_constants.cherrystone_wagon_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_2.png')
+        match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_wagon',
+                                                                          threshold=threshold,
+                                                                          method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_2,
+                                                                          binarization_threshold=80)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(542, 4)
+        assert_that(match.top_left[1]).is_close_to(319, 4)
+        assert_that(match.bottom_right[0]).is_close_to(598, 4)
+        assert_that(match.bottom_right[1]).is_close_to(370, 4)
+
+    def test_frame_2_wagon_hu_moment_template_matching_method_3(self):
+        threshold = unit_constants.cherrystone_wagon_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_2.png')
+        match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_wagon',
+                                                                          threshold=threshold,
+                                                                          method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_3,
+                                                                          binarization_threshold=80)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(542, 4)
+        assert_that(match.top_left[1]).is_close_to(319, 4)
+        assert_that(match.bottom_right[0]).is_close_to(598, 4)
+        assert_that(match.bottom_right[1]).is_close_to(370, 4)
 
     def test_frame_2_wagon_sift(self):
         threshold = unit_constants.cherrystone_wagon_sift_threshold
@@ -651,6 +1565,54 @@ class TestProjectEvaluationUnitMove(unittest.TestCase):
         assert_that(match.bottom_right[0]).is_equal_to(842)
         assert_that(match.bottom_right[1]).is_equal_to(180)
 
+    def test_frame_1_ballista_hu_moment_template_matching_method_1(self):
+        threshold = unit_constants.cherrystone_ballista_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
+        match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_ballista',
+                                                                          threshold=threshold,
+                                                                          method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_1,
+                                                                          binarization_threshold=80)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(782, 4)
+        assert_that(match.top_left[1]).is_close_to(138, 4)
+        assert_that(match.bottom_right[0]).is_close_to(842, 4)
+        assert_that(match.bottom_right[1]).is_close_to(180, 4)
+
+    def test_frame_1_ballista_hu_moment_template_matching_method_2(self):
+        threshold = unit_constants.cherrystone_ballista_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
+        match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_ballista',
+                                                                          threshold=threshold,
+                                                                          method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_2,
+                                                                          binarization_threshold=80)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(782, 4)
+        assert_that(match.top_left[1]).is_close_to(138, 4)
+        assert_that(match.bottom_right[0]).is_close_to(842, 4)
+        assert_that(match.bottom_right[1]).is_close_to(180, 4)
+
+    def test_frame_1_ballista_hu_moment_template_matching_method_3(self):
+        threshold = unit_constants.cherrystone_ballista_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
+        match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_ballista',
+                                                                          threshold=threshold,
+                                                                          method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_3,
+                                                                          binarization_threshold=80)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(782, 4)
+        assert_that(match.top_left[1]).is_close_to(138, 4)
+        assert_that(match.bottom_right[0]).is_close_to(842, 4)
+        assert_that(match.bottom_right[1]).is_close_to(180, 4)
+
     def test_frame_1_ballista_sift(self):
         threshold = unit_constants.cherrystone_ballista_sift_threshold
         wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
@@ -676,6 +1638,54 @@ class TestProjectEvaluationUnitMove(unittest.TestCase):
         assert_that(match.top_left[1]).is_equal_to(138)
         assert_that(match.bottom_right[0]).is_equal_to(506)
         assert_that(match.bottom_right[1]).is_equal_to(180)
+
+    def test_frame_2_ballista_hu_moment_template_matching_method_1(self):
+        threshold = unit_constants.cherrystone_ballista_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_2.png')
+        match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_ballista',
+                                                                          threshold=threshold,
+                                                                          method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_1,
+                                                                          binarization_threshold=80)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(446, 4)
+        assert_that(match.top_left[1]).is_close_to(138, 4)
+        assert_that(match.bottom_right[0]).is_close_to(506, 4)
+        assert_that(match.bottom_right[1]).is_close_to(180, 4)
+
+    def test_frame_2_ballista_hu_moment_template_matching_method_2(self):
+        threshold = unit_constants.cherrystone_ballista_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_2.png')
+        match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_ballista',
+                                                                          threshold=threshold,
+                                                                          method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_2,
+                                                                          binarization_threshold=80)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(446, 4)
+        assert_that(match.top_left[1]).is_close_to(138, 4)
+        assert_that(match.bottom_right[0]).is_close_to(506, 4)
+        assert_that(match.bottom_right[1]).is_close_to(180, 4)
+
+    def test_frame_2_ballista_hu_moment_template_matching_method_3(self):
+        threshold = unit_constants.cherrystone_ballista_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_2.png')
+        match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_ballista',
+                                                                          threshold=threshold,
+                                                                          method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_3,
+                                                                          binarization_threshold=80)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(446, 4)
+        assert_that(match.top_left[1]).is_close_to(138, 4)
+        assert_that(match.bottom_right[0]).is_close_to(506, 4)
+        assert_that(match.bottom_right[1]).is_close_to(180, 4)
 
     def test_frame_2_ballista_sift(self):
         threshold = unit_constants.cherrystone_ballista_sift_threshold
@@ -707,6 +1717,54 @@ class TestProjectEvaluationUnitMove(unittest.TestCase):
         assert_that(match.bottom_right[0]).is_equal_to(844)
         assert_that(match.bottom_right[1]).is_equal_to(276)
 
+    def test_frame_1_trebuchet_hu_moment_template_matching_method_1(self):
+        threshold = unit_constants.cherrystone_trebuchet_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
+        match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_trebuchet',
+                                                                          threshold=threshold,
+                                                                          method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_1,
+                                                                          binarization_threshold=80)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(782, 4)
+        assert_that(match.top_left[1]).is_close_to(226, 4)
+        assert_that(match.bottom_right[0]).is_close_to(844, 4)
+        assert_that(match.bottom_right[1]).is_close_to(276, 4)
+
+    def test_frame_1_trebuchet_hu_moment_template_matching_method_2(self):
+        threshold = unit_constants.cherrystone_trebuchet_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
+        match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_trebuchet',
+                                                                          threshold=threshold,
+                                                                          method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_2,
+                                                                          binarization_threshold=80)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(782, 4)
+        assert_that(match.top_left[1]).is_close_to(226, 4)
+        assert_that(match.bottom_right[0]).is_close_to(844, 4)
+        assert_that(match.bottom_right[1]).is_close_to(276, 4)
+
+    def test_frame_1_trebuchet_hu_moment_template_matching_method_3(self):
+        threshold = unit_constants.cherrystone_trebuchet_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
+        match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_trebuchet',
+                                                                          threshold=threshold,
+                                                                          method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_3,
+                                                                          binarization_threshold=80)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(782, 4)
+        assert_that(match.top_left[1]).is_close_to(226, 4)
+        assert_that(match.bottom_right[0]).is_close_to(844, 4)
+        assert_that(match.bottom_right[1]).is_close_to(276, 4)
+
     def test_frame_1_trebuchet_sift(self):
         threshold = unit_constants.cherrystone_trebuchet_sift_threshold
         wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
@@ -732,6 +1790,54 @@ class TestProjectEvaluationUnitMove(unittest.TestCase):
         assert_that(match.top_left[1]).is_equal_to(226)
         assert_that(match.bottom_right[0]).is_equal_to(508)
         assert_that(match.bottom_right[1]).is_equal_to(276)
+
+    def test_frame_2_trebuchet_hu_moment_template_matching_method_1(self):
+        threshold = unit_constants.cherrystone_trebuchet_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_2.png')
+        match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_trebuchet',
+                                                                          threshold=threshold,
+                                                                          method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_1,
+                                                                          binarization_threshold=80)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(446, 4)
+        assert_that(match.top_left[1]).is_close_to(226, 4)
+        assert_that(match.bottom_right[0]).is_close_to(508, 4)
+        assert_that(match.bottom_right[1]).is_close_to(276, 4)
+
+    def test_frame_2_trebuchet_hu_moment_template_matching_method_2(self):
+        threshold = unit_constants.cherrystone_trebuchet_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_2.png')
+        match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_trebuchet',
+                                                                          threshold=threshold,
+                                                                          method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_2,
+                                                                          binarization_threshold=80)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(446, 4)
+        assert_that(match.top_left[1]).is_close_to(226, 4)
+        assert_that(match.bottom_right[0]).is_close_to(508, 4)
+        assert_that(match.bottom_right[1]).is_close_to(276, 4)
+
+    def test_frame_2_trebuchet_hu_moment_template_matching_method_3(self):
+        threshold = unit_constants.cherrystone_trebuchet_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_2.png')
+        match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_trebuchet',
+                                                                          threshold=threshold,
+                                                                          method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_3,
+                                                                          binarization_threshold=80)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(446, 4)
+        assert_that(match.top_left[1]).is_close_to(226, 4)
+        assert_that(match.bottom_right[0]).is_close_to(508, 4)
+        assert_that(match.bottom_right[1]).is_close_to(276, 4)
 
     def test_frame_2_trebuchet_sift(self):
         threshold = unit_constants.cherrystone_trebuchet_sift_threshold
@@ -763,6 +1869,54 @@ class TestProjectEvaluationUnitMove(unittest.TestCase):
         assert_that(match.bottom_right[0]).is_equal_to(830)
         assert_that(match.bottom_right[1]).is_equal_to(362)
 
+    def test_frame_1_balloon_hu_moment_template_matching_method_1(self):
+        threshold = unit_constants.cherrystone_balloon_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
+        match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_balloon',
+                                                                          threshold=threshold,
+                                                                          method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_1,
+                                                                          binarization_threshold=80)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(770, 4)
+        assert_that(match.top_left[1]).is_close_to(300, 4)
+        assert_that(match.bottom_right[0]).is_close_to(830, 4)
+        assert_that(match.bottom_right[1]).is_close_to(362, 4)
+
+    def test_frame_1_balloon_hu_moment_template_matching_method_2(self):
+        threshold = unit_constants.cherrystone_balloon_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
+        match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_balloon',
+                                                                          threshold=threshold,
+                                                                          method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_2,
+                                                                          binarization_threshold=80)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(770, 4)
+        assert_that(match.top_left[1]).is_close_to(300, 4)
+        assert_that(match.bottom_right[0]).is_close_to(830, 4)
+        assert_that(match.bottom_right[1]).is_close_to(362, 4)
+
+    def test_frame_1_balloon_hu_moment_template_matching_method_3(self):
+        threshold = unit_constants.cherrystone_balloon_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
+        match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_balloon',
+                                                                          threshold=threshold,
+                                                                          method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_3,
+                                                                          binarization_threshold=80)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(770, 4)
+        assert_that(match.top_left[1]).is_close_to(300, 4)
+        assert_that(match.bottom_right[0]).is_close_to(830, 4)
+        assert_that(match.bottom_right[1]).is_close_to(362, 4)
+
     def test_frame_1_balloon_sift(self):
         threshold = unit_constants.cherrystone_balloon_sift_threshold
         wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
@@ -788,6 +1942,54 @@ class TestProjectEvaluationUnitMove(unittest.TestCase):
         assert_that(match.top_left[1]).is_equal_to(300)
         assert_that(match.bottom_right[0]).is_equal_to(494)
         assert_that(match.bottom_right[1]).is_equal_to(362)
+
+    def test_frame_2_balloon_hu_moment_template_matching_method_1(self):
+        threshold = unit_constants.cherrystone_balloon_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_2.png')
+        match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_balloon',
+                                                                          threshold=threshold,
+                                                                          method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_1,
+                                                                          binarization_threshold=80)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(434, 4)
+        assert_that(match.top_left[1]).is_close_to(300, 4)
+        assert_that(match.bottom_right[0]).is_close_to(494, 4)
+        assert_that(match.bottom_right[1]).is_close_to(362, 4)
+
+    def test_frame_2_balloon_hu_moment_template_matching_method_2(self):
+        threshold = unit_constants.cherrystone_balloon_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_2.png')
+        match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_balloon',
+                                                                          threshold=threshold,
+                                                                          method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_2,
+                                                                          binarization_threshold=80)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(434, 4)
+        assert_that(match.top_left[1]).is_close_to(300, 4)
+        assert_that(match.bottom_right[0]).is_close_to(494, 4)
+        assert_that(match.bottom_right[1]).is_close_to(362, 4)
+
+    def test_frame_2_balloon_hu_moment_template_matching_method_3(self):
+        threshold = unit_constants.cherrystone_balloon_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_2.png')
+        match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_balloon',
+                                                                          threshold=threshold,
+                                                                          method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_3,
+                                                                          binarization_threshold=80)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(434, 4)
+        assert_that(match.top_left[1]).is_close_to(300, 4)
+        assert_that(match.bottom_right[0]).is_close_to(494, 4)
+        assert_that(match.bottom_right[1]).is_close_to(362, 4)
 
     def test_frame_2_balloon_sift(self):
         threshold = unit_constants.cherrystone_balloon_sift_threshold
@@ -819,6 +2021,54 @@ class TestProjectEvaluationUnitMove(unittest.TestCase):
         assert_that(match.bottom_right[0]).is_equal_to(938)
         assert_that(match.bottom_right[1]).is_equal_to(168)
 
+    def test_frame_1_harpy_hu_moment_template_matching_method_1(self):
+        threshold = unit_constants.cherrystone_harpy_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
+        match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_harpy',
+                                                                          threshold=threshold,
+                                                                          method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_1,
+                                                                          binarization_threshold=80)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(876, 4)
+        assert_that(match.top_left[1]).is_close_to(112, 4)
+        assert_that(match.bottom_right[0]).is_close_to(938, 4)
+        assert_that(match.bottom_right[1]).is_close_to(168, 4)
+
+    def test_frame_1_harpy_hu_moment_template_matching_method_2(self):
+        threshold = unit_constants.cherrystone_harpy_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
+        match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_harpy',
+                                                                          threshold=threshold,
+                                                                          method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_2,
+                                                                          binarization_threshold=80)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(876, 4)
+        assert_that(match.top_left[1]).is_close_to(112, 4)
+        assert_that(match.bottom_right[0]).is_close_to(938, 4)
+        assert_that(match.bottom_right[1]).is_close_to(168, 4)
+
+    def test_frame_1_harpy_hu_moment_template_matching_method_3(self):
+        threshold = unit_constants.cherrystone_harpy_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
+        match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_harpy',
+                                                                          threshold=threshold,
+                                                                          method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_3,
+                                                                          binarization_threshold=80)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(876, 4)
+        assert_that(match.top_left[1]).is_close_to(112, 4)
+        assert_that(match.bottom_right[0]).is_close_to(938, 4)
+        assert_that(match.bottom_right[1]).is_close_to(168, 4)
+
     def test_frame_1_harpy_sift(self):
         threshold = unit_constants.cherrystone_harpy_sift_threshold
         wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
@@ -844,6 +2094,54 @@ class TestProjectEvaluationUnitMove(unittest.TestCase):
         assert_that(match.top_left[1]).is_equal_to(112)
         assert_that(match.bottom_right[0]).is_equal_to(408)
         assert_that(match.bottom_right[1]).is_equal_to(168)
+
+    def test_frame_2_harpy_hu_moment_template_matching_method_1(self):
+        threshold = unit_constants.cherrystone_harpy_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_2.png')
+        match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_harpy',
+                                                                          threshold=threshold,
+                                                                          method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_1,
+                                                                          binarization_threshold=80)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(346, 4)
+        assert_that(match.top_left[1]).is_close_to(112, 4)
+        assert_that(match.bottom_right[0]).is_close_to(408, 4)
+        assert_that(match.bottom_right[1]).is_close_to(168, 4)
+
+    def test_frame_2_harpy_hu_moment_template_matching_method_2(self):
+        threshold = unit_constants.cherrystone_harpy_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_2.png')
+        match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_harpy',
+                                                                          threshold=threshold,
+                                                                          method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_2,
+                                                                          binarization_threshold=80)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(346, 4)
+        assert_that(match.top_left[1]).is_close_to(112, 4)
+        assert_that(match.bottom_right[0]).is_close_to(408, 4)
+        assert_that(match.bottom_right[1]).is_close_to(168, 4)
+
+    def test_frame_2_harpy_hu_moment_template_matching_method_3(self):
+        threshold = unit_constants.cherrystone_harpy_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_2.png')
+        match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_harpy',
+                                                                          threshold=threshold,
+                                                                          method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_3,
+                                                                          binarization_threshold=80)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(346, 4)
+        assert_that(match.top_left[1]).is_close_to(112, 4)
+        assert_that(match.bottom_right[0]).is_close_to(408, 4)
+        assert_that(match.bottom_right[1]).is_close_to(168, 4)
 
     def test_frame_2_harpy_sift(self):
         threshold = unit_constants.cherrystone_harpy_sift_threshold
@@ -875,6 +2173,54 @@ class TestProjectEvaluationUnitMove(unittest.TestCase):
         assert_that(match.bottom_right[0]).is_equal_to(926)
         assert_that(match.bottom_right[1]).is_equal_to(264)
 
+    def test_frame_1_witch_hu_moment_template_matching_method_1(self):
+        threshold = unit_constants.cherrystone_witch_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
+        match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_witch',
+                                                                          threshold=threshold,
+                                                                          method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_1,
+                                                                          binarization_threshold=80)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(878, 4)
+        assert_that(match.top_left[1]).is_close_to(214, 4)
+        assert_that(match.bottom_right[0]).is_close_to(926, 4)
+        assert_that(match.bottom_right[1]).is_close_to(264, 4)
+
+    def test_frame_1_witch_hu_moment_template_matching_method_2(self):
+        threshold = unit_constants.cherrystone_witch_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
+        match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_witch',
+                                                                          threshold=threshold,
+                                                                          method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_2,
+                                                                          binarization_threshold=80)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(878, 4)
+        assert_that(match.top_left[1]).is_close_to(214, 4)
+        assert_that(match.bottom_right[0]).is_close_to(926, 4)
+        assert_that(match.bottom_right[1]).is_close_to(264, 4)
+
+    def test_frame_1_witch_hu_moment_template_matching_method_3(self):
+        threshold = unit_constants.cherrystone_witch_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
+        match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_witch',
+                                                                          threshold=threshold,
+                                                                          method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_3,
+                                                                          binarization_threshold=80)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(878, 4)
+        assert_that(match.top_left[1]).is_close_to(214, 4)
+        assert_that(match.bottom_right[0]).is_close_to(926, 4)
+        assert_that(match.bottom_right[1]).is_close_to(264, 4)
+
     def test_frame_1_witch_sift(self):
         threshold = unit_constants.cherrystone_witch_sift_threshold
         wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
@@ -900,6 +2246,54 @@ class TestProjectEvaluationUnitMove(unittest.TestCase):
         assert_that(match.top_left[1]).is_equal_to(214)
         assert_that(match.bottom_right[0]).is_equal_to(396)
         assert_that(match.bottom_right[1]).is_equal_to(264)
+
+    def test_frame_2_witch_hu_moment_template_matching_method_1(self):
+        threshold = unit_constants.cherrystone_witch_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_2.png')
+        match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_witch',
+                                                                          threshold=threshold,
+                                                                          method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_1,
+                                                                          binarization_threshold=80)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(348, 4)
+        assert_that(match.top_left[1]).is_close_to(214, 4)
+        assert_that(match.bottom_right[0]).is_close_to(396, 4)
+        assert_that(match.bottom_right[1]).is_close_to(264, 4)
+
+    def test_frame_2_witch_hu_moment_template_matching_method_2(self):
+        threshold = unit_constants.cherrystone_witch_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_2.png')
+        match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_witch',
+                                                                          threshold=threshold,
+                                                                          method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_2,
+                                                                          binarization_threshold=80)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(348, 4)
+        assert_that(match.top_left[1]).is_close_to(214, 4)
+        assert_that(match.bottom_right[0]).is_close_to(396, 4)
+        assert_that(match.bottom_right[1]).is_close_to(264, 4)
+
+    def test_frame_2_witch_hu_moment_template_matching_method_3(self):
+        threshold = unit_constants.cherrystone_witch_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_2.png')
+        match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_witch',
+                                                                          threshold=threshold,
+                                                                          method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_3,
+                                                                          binarization_threshold=80)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(348, 4)
+        assert_that(match.top_left[1]).is_close_to(214, 4)
+        assert_that(match.bottom_right[0]).is_close_to(396, 4)
+        assert_that(match.bottom_right[1]).is_close_to(264, 4)
 
     def test_frame_2_witch_sift(self):
         threshold = unit_constants.cherrystone_witch_sift_threshold
@@ -931,6 +2325,54 @@ class TestProjectEvaluationUnitMove(unittest.TestCase):
         assert_that(match.bottom_right[0]).is_equal_to(934)
         assert_that(match.bottom_right[1]).is_equal_to(354)
 
+    def test_frame_1_dragon_hu_moment_template_matching_method_1(self):
+        threshold = unit_constants.cherrystone_dragon_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
+        match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_emberwing',
+                                                                          threshold=threshold,
+                                                                          method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_1,
+                                                                          binarization_threshold=80)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(872, 4)
+        assert_that(match.top_left[1]).is_close_to(320, 4)
+        assert_that(match.bottom_right[0]).is_close_to(934, 4)
+        assert_that(match.bottom_right[1]).is_close_to(354, 4)
+
+    def test_frame_1_dragon_hu_moment_template_matching_method_2(self):
+        threshold = unit_constants.cherrystone_dragon_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
+        match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_emberwing',
+                                                                          threshold=threshold,
+                                                                          method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_2,
+                                                                          binarization_threshold=80)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(872, 4)
+        assert_that(match.top_left[1]).is_close_to(320, 4)
+        assert_that(match.bottom_right[0]).is_close_to(934, 4)
+        assert_that(match.bottom_right[1]).is_close_to(354, 4)
+
+    def test_frame_1_dragon_hu_moment_template_matching_method_3(self):
+        threshold = unit_constants.cherrystone_dragon_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
+        match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_emberwing',
+                                                                          threshold=threshold,
+                                                                          method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_3,
+                                                                          binarization_threshold=80)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(872, 4)
+        assert_that(match.top_left[1]).is_close_to(320, 4)
+        assert_that(match.bottom_right[0]).is_close_to(934, 4)
+        assert_that(match.bottom_right[1]).is_close_to(354, 4)
+
     def test_frame_1_dragon_sift(self):
         threshold = unit_constants.cherrystone_dragon_sift_threshold
         wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
@@ -956,6 +2398,54 @@ class TestProjectEvaluationUnitMove(unittest.TestCase):
         assert_that(match.top_left[1]).is_equal_to(320)
         assert_that(match.bottom_right[0]).is_equal_to(404)
         assert_that(match.bottom_right[1]).is_equal_to(354)
+
+    def test_frame_2_dragon_hu_moment_template_matching_method_1(self):
+        threshold = unit_constants.cherrystone_dragon_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_2.png')
+        match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_emberwing',
+                                                                          threshold=threshold,
+                                                                          method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_1,
+                                                                          binarization_threshold=80)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(342, 4)
+        assert_that(match.top_left[1]).is_close_to(320, 4)
+        assert_that(match.bottom_right[0]).is_close_to(404, 4)
+        assert_that(match.bottom_right[1]).is_close_to(354, 4)
+
+    def test_frame_2_dragon_hu_moment_template_matching_method_2(self):
+        threshold = unit_constants.cherrystone_dragon_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_2.png')
+        match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_emberwing',
+                                                                          threshold=threshold,
+                                                                          method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_2,
+                                                                          binarization_threshold=80)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(342, 4)
+        assert_that(match.top_left[1]).is_close_to(320, 4)
+        assert_that(match.bottom_right[0]).is_close_to(404, 4)
+        assert_that(match.bottom_right[1]).is_close_to(354, 4)
+
+    def test_frame_2_dragon_hu_moment_template_matching_method_3(self):
+        threshold = unit_constants.cherrystone_dragon_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_2.png')
+        match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_emberwing',
+                                                                          threshold=threshold,
+                                                                          method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_3,
+                                                                          binarization_threshold=80)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(342, 4)
+        assert_that(match.top_left[1]).is_close_to(320, 4)
+        assert_that(match.bottom_right[0]).is_close_to(404, 4)
+        assert_that(match.bottom_right[1]).is_close_to(354, 4)
 
     def test_frame_2_dragon_sift(self):
         threshold = unit_constants.cherrystone_dragon_sift_threshold
