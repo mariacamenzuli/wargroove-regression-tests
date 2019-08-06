@@ -298,10 +298,13 @@ def is_unit_visible(unit_template_name, threshold=0.9, method=cmp504.computer_vi
     return match is not None
 
 
-def find_unit_with_template_matching(unit_template_name, threshold=0.5, render_match=False):
+def find_unit_with_template_matching(unit_template_name,
+                                     threshold=0.5,
+                                     method=cmp504.computer_vision.TemplateMatchingMethod.CROSS_CORRELATION_NORMALIZED,
+                                     render_match=False):
     return vision.find_template_match("data/units/" + unit_template_name + ".png",
                                       threshold=threshold,
-                                      method=cmp504.computer_vision.TemplateMatchingMethod.CROSS_CORRELATION_NORMALIZED,
+                                      method=method,
                                       match_horizontal_mirror=True,
                                       render_match=render_match)
 
