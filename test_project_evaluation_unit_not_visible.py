@@ -1486,3 +1486,905 @@ class TestProjectEvaluationUnitNotVisible(unittest.TestCase):
         wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
         assert_that(match).is_none()
+
+    # ----------------------------------------------------------------------------
+    # ---------------------------------- BARGE ----------------------------------
+    # ----------------------------------------------------------------------------
+
+    def test_barge_standard_template_matching_cross_corr(self):
+        threshold = unit_constants.cherrystone_barge_standard_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'barge-missing.png')
+        match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_barge',
+                                                                threshold=threshold)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_none()
+
+    def test_barge_standard_template_matching_corr_coeff(self):
+        threshold = unit_constants.cherrystone_barge_standard_template_matching_corr_coeff_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'barge-missing.png')
+        match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_barge',
+                                                                threshold=threshold,
+                                                                method=cmp504.computer_vision.TemplateMatchingMethod.CORRELATION_COEFFICIENT_NORMALIZED)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_none()
+
+    def test_barge_standard_template_matching_square_diff(self):
+        threshold = unit_constants.cherrystone_barge_standard_template_matching_square_diff_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'barge-missing.png')
+        match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_barge',
+                                                                threshold=threshold,
+                                                                method=cmp504.computer_vision.TemplateMatchingMethod.SQUARE_DIFFERENCE_NORMALIZED)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_none()
+
+    def test_barge_hu_moment_template_matching_method_1(self):
+        threshold = unit_constants.cherrystone_barge_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'barge-missing.png')
+        match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_barge',
+                                                                          threshold=threshold,
+                                                                          method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_1,
+                                                                          binarization_threshold=50)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_none()
+
+    def test_barge_hu_moment_template_matching_method_2(self):
+        threshold = unit_constants.cherrystone_barge_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'barge-missing.png')
+        match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_barge',
+                                                                          threshold=threshold,
+                                                                          method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_2,
+                                                                          binarization_threshold=50)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_none()
+
+    def test_barge_hu_moment_template_matching_method_3(self):
+        threshold = unit_constants.cherrystone_barge_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'barge-missing.png')
+        match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_barge',
+                                                                          threshold=threshold,
+                                                                          method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_3,
+                                                                          binarization_threshold=50)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_none()
+
+    def test_barge_sift(self):
+        threshold = unit_constants.cherrystone_barge_sift_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'barge-missing.png')
+        match = wargroove_ctrl.find_unit_with_sift('cherrystone_barge',
+                                                   threshold=threshold)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_none()
+
+    # ----------------------------------------------------------------------------
+    # ---------------------------------- SEA TURTLE ----------------------------------
+    # ----------------------------------------------------------------------------
+
+    def test_seaturtle_standard_template_matching_cross_corr(self):
+        threshold = unit_constants.cherrystone_seaturtle_standard_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'turtle-missing.png')
+        match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_sea_turtle',
+                                                                threshold=threshold)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_none()
+
+    def test_seaturtle_standard_template_matching_corr_coeff(self):
+        threshold = unit_constants.cherrystone_seaturtle_standard_template_matching_corr_coeff_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'turtle-missing.png')
+        match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_sea_turtle',
+                                                                threshold=threshold,
+                                                                method=cmp504.computer_vision.TemplateMatchingMethod.CORRELATION_COEFFICIENT_NORMALIZED)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_none()
+
+    def test_seaturtle_standard_template_matching_square_diff(self):
+        threshold = unit_constants.cherrystone_seaturtle_standard_template_matching_square_diff_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'turtle-missing.png')
+        match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_sea_turtle',
+                                                                threshold=threshold,
+                                                                method=cmp504.computer_vision.TemplateMatchingMethod.SQUARE_DIFFERENCE_NORMALIZED)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_none()
+
+    def test_seaturtle_hu_moment_template_matching_method_1(self):
+        threshold = unit_constants.cherrystone_seaturtle_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'turtle-missing.png')
+        match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_sea_turtle',
+                                                                          threshold=threshold,
+                                                                          method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_1,
+                                                                          binarization_threshold=50)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_none()
+
+    def test_seaturtle_hu_moment_template_matching_method_2(self):
+        threshold = unit_constants.cherrystone_seaturtle_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'turtle-missing.png')
+        match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_sea_turtle',
+                                                                          threshold=threshold,
+                                                                          method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_2,
+                                                                          binarization_threshold=50)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_none()
+
+    def test_seaturtle_hu_moment_template_matching_method_3(self):
+        threshold = unit_constants.cherrystone_seaturtle_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'turtle-missing.png')
+        match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_sea_turtle',
+                                                                          threshold=threshold,
+                                                                          method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_3,
+                                                                          binarization_threshold=50)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_none()
+
+    def test_seaturtle_sift(self):
+        threshold = unit_constants.cherrystone_seaturtle_sift_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'turtle-missing.png')
+        match = wargroove_ctrl.find_unit_with_sift('cherrystone_sea_turtle',
+                                                   threshold=threshold)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_none()
+
+    # ----------------------------------------------------------------------------
+    # ---------------------------------- HARPOON SHIP ----------------------------------
+    # ----------------------------------------------------------------------------
+
+    def test_harpoonship_standard_template_matching_cross_corr(self):
+        threshold = unit_constants.cherrystone_harpoonship_standard_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'harpoon-missing.png')
+        match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_harpoon_ship',
+                                                                threshold=threshold)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_none()
+
+    def test_harpoonship_standard_template_matching_corr_coeff(self):
+        threshold = unit_constants.cherrystone_harpoonship_standard_template_matching_corr_coeff_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'harpoon-missing.png')
+        match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_harpoon_ship',
+                                                                threshold=threshold,
+                                                                method=cmp504.computer_vision.TemplateMatchingMethod.CORRELATION_COEFFICIENT_NORMALIZED)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_none()
+
+    def test_harpoonship_standard_template_matching_square_diff(self):
+        threshold = unit_constants.cherrystone_harpoonship_standard_template_matching_square_diff_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'harpoon-missing.png')
+        match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_harpoon_ship',
+                                                                threshold=threshold,
+                                                                method=cmp504.computer_vision.TemplateMatchingMethod.SQUARE_DIFFERENCE_NORMALIZED)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_none()
+
+    def test_harpoonship_hu_moment_template_matching_method_1(self):
+        threshold = unit_constants.cherrystone_harpoonship_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'harpoon-missing.png')
+        match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_harpoon_ship',
+                                                                          threshold=threshold,
+                                                                          method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_1,
+                                                                          binarization_threshold=50)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_none()
+
+    def test_harpoonship_hu_moment_template_matching_method_2(self):
+        threshold = unit_constants.cherrystone_harpoonship_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'harpoon-missing.png')
+        match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_harpoon_ship',
+                                                                          threshold=threshold,
+                                                                          method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_2,
+                                                                          binarization_threshold=50)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_none()
+
+    def test_harpoonship_hu_moment_template_matching_method_3(self):
+        threshold = unit_constants.cherrystone_harpoonship_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'harpoon-missing.png')
+        match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_harpoon_ship',
+                                                                          threshold=threshold,
+                                                                          method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_3,
+                                                                          binarization_threshold=50)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_none()
+
+    def test_harpoonship_sift(self):
+        threshold = unit_constants.cherrystone_harpoonship_sift_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'harpoon-missing.png')
+        match = wargroove_ctrl.find_unit_with_sift('cherrystone_harpoon_ship',
+                                                   threshold=threshold)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_none()
+
+    # ----------------------------------------------------------------------------
+    # ---------------------------------- WARSHIP ----------------------------------
+    # ----------------------------------------------------------------------------
+
+    def test_warship_standard_template_matching_cross_corr(self):
+        threshold = unit_constants.cherrystone_warship_standard_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'warship-missing.png')
+        match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_warship',
+                                                                threshold=threshold)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_none()
+
+    def test_warship_standard_template_matching_corr_coeff(self):
+        threshold = unit_constants.cherrystone_warship_standard_template_matching_corr_coeff_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'warship-missing.png')
+        match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_warship',
+                                                                threshold=threshold,
+                                                                method=cmp504.computer_vision.TemplateMatchingMethod.CORRELATION_COEFFICIENT_NORMALIZED)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_none()
+
+    def test_warship_standard_template_matching_square_diff(self):
+        threshold = unit_constants.cherrystone_warship_standard_template_matching_square_diff_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'warship-missing.png')
+        match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_warship',
+                                                                threshold=threshold,
+                                                                method=cmp504.computer_vision.TemplateMatchingMethod.SQUARE_DIFFERENCE_NORMALIZED)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_none()
+
+    def test_warship_hu_moment_template_matching_method_1(self):
+        threshold = unit_constants.cherrystone_warship_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'warship-missing.png')
+        match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_warship',
+                                                                          threshold=threshold,
+                                                                          method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_1,
+                                                                          binarization_threshold=50)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_none()
+
+    def test_warship_hu_moment_template_matching_method_2(self):
+        threshold = unit_constants.cherrystone_warship_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'warship-missing.png')
+        match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_warship',
+                                                                          threshold=threshold,
+                                                                          method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_2,
+                                                                          binarization_threshold=50)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_none()
+
+    def test_warship_hu_moment_template_matching_method_3(self):
+        threshold = unit_constants.cherrystone_warship_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'warship-missing.png')
+        match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_warship',
+                                                                          threshold=threshold,
+                                                                          method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_3,
+                                                                          binarization_threshold=50)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_none()
+
+    def test_warship_sift(self):
+        threshold = unit_constants.cherrystone_warship_sift_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'warship-missing.png')
+        match = wargroove_ctrl.find_unit_with_sift('cherrystone_warship',
+                                                   threshold=threshold)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_none()
+
+    # ----------------------------------------------------------------------------
+    # ---------------------------------- MERFOLK ----------------------------------
+    # ----------------------------------------------------------------------------
+
+    def test_merfolk_standard_template_matching_cross_corr(self):
+        threshold = unit_constants.cherrystone_merfolk_standard_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'merfolk-missing.png')
+        match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_merfolk',
+                                                                threshold=threshold)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_none()
+
+    def test_merfolk_standard_template_matching_corr_coeff(self):
+        threshold = unit_constants.cherrystone_merfolk_standard_template_matching_corr_coeff_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'merfolk-missing.png')
+        match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_merfolk',
+                                                                threshold=threshold,
+                                                                method=cmp504.computer_vision.TemplateMatchingMethod.CORRELATION_COEFFICIENT_NORMALIZED)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_none()
+
+    def test_merfolk_standard_template_matching_square_diff(self):
+        threshold = unit_constants.cherrystone_merfolk_standard_template_matching_square_diff_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'merfolk-missing.png')
+        match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_merfolk',
+                                                                threshold=threshold,
+                                                                method=cmp504.computer_vision.TemplateMatchingMethod.SQUARE_DIFFERENCE_NORMALIZED)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_none()
+
+    def test_merfolk_hu_moment_template_matching_method_1(self):
+        threshold = unit_constants.cherrystone_merfolk_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'merfolk-missing.png')
+        match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_merfolk',
+                                                                          threshold=threshold,
+                                                                          method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_1,
+                                                                          binarization_threshold=40)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_none()
+
+    def test_merfolk_hu_moment_template_matching_method_2(self):
+        threshold = unit_constants.cherrystone_merfolk_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'merfolk-missing.png')
+        match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_merfolk',
+                                                                          threshold=threshold,
+                                                                          method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_2,
+                                                                          binarization_threshold=40)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_none()
+
+    def test_merfolk_hu_moment_template_matching_method_3(self):
+        threshold = unit_constants.cherrystone_merfolk_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'merfolk-missing.png')
+        match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_merfolk',
+                                                                          threshold=threshold,
+                                                                          method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_3,
+                                                                          binarization_threshold=40)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_none()
+
+    def test_merfolk_sift(self):
+        threshold = unit_constants.cherrystone_merfolk_sift_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'merfolk-missing.png')
+        match = wargroove_ctrl.find_unit_with_sift('cherrystone_merfolk',
+                                                   threshold=threshold)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_none()
+
+    # ----------------------------------------------------------------------------
+    # ---------------------------------- BARRACKS ----------------------------------
+    # ----------------------------------------------------------------------------
+
+    def test_barracks_standard_template_matching_cross_corr(self):
+        threshold = unit_constants.cherrystone_barracks_standard_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'barracks-missing.png')
+        match = wargroove_ctrl.find_building_with_template_matching('cherrystone_barracks',
+                                                                    threshold=threshold)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_none()
+
+    def test_barracks_standard_template_matching_corr_coeff(self):
+        threshold = unit_constants.cherrystone_barracks_standard_template_matching_corr_coeff_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'barracks-missing.png')
+        match = wargroove_ctrl.find_building_with_template_matching('cherrystone_barracks',
+                                                                    threshold=threshold,
+                                                                    method=cmp504.computer_vision.TemplateMatchingMethod.CORRELATION_COEFFICIENT_NORMALIZED)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_none()
+
+    def test_barracks_standard_template_matching_square_diff(self):
+        threshold = unit_constants.cherrystone_barracks_standard_template_matching_square_diff_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'barracks-missing.png')
+        match = wargroove_ctrl.find_building_with_template_matching('cherrystone_barracks',
+                                                                    threshold=threshold,
+                                                                    method=cmp504.computer_vision.TemplateMatchingMethod.SQUARE_DIFFERENCE_NORMALIZED)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_none()
+
+    def test_barracks_hu_moment_template_matching_method_1(self):
+        threshold = unit_constants.cherrystone_barracks_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'barracks-missing.png')
+        match = wargroove_ctrl.find_building_with_hu_moment_template_matching('cherrystone_barracks',
+                                                                              threshold=threshold,
+                                                                              method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_1,
+                                                                              binarization_threshold=40)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_none()
+
+    def test_barracks_hu_moment_template_matching_method_2(self):
+        threshold = unit_constants.cherrystone_barracks_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'barracks-missing.png')
+        match = wargroove_ctrl.find_building_with_hu_moment_template_matching('cherrystone_barracks',
+                                                                              threshold=threshold,
+                                                                              method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_2,
+                                                                              binarization_threshold=40)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_none()
+
+    def test_barracks_hu_moment_template_matching_method_3(self):
+        threshold = unit_constants.cherrystone_barracks_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'barracks-missing.png')
+        match = wargroove_ctrl.find_building_with_hu_moment_template_matching('cherrystone_barracks',
+                                                                              threshold=threshold,
+                                                                              method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_3,
+                                                                              binarization_threshold=40)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_none()
+
+    def test_barracks_sift(self):
+        threshold = unit_constants.cherrystone_barracks_sift_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'barracks-missing.png')
+        match = wargroove_ctrl.find_building_with_sift('cherrystone_barracks',
+                                                        threshold=threshold)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_none()
+
+    # ----------------------------------------------------------------------------
+    # ---------------------------------- PORT ----------------------------------
+    # ----------------------------------------------------------------------------
+
+    def test_port_standard_template_matching_cross_corr(self):
+        threshold = unit_constants.cherrystone_port_standard_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'port-missing.png')
+        match = wargroove_ctrl.find_building_with_template_matching('cherrystone_port',
+                                                                    threshold=threshold)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_none()
+
+    def test_port_standard_template_matching_corr_coeff(self):
+        threshold = unit_constants.cherrystone_port_standard_template_matching_corr_coeff_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'port-missing.png')
+        match = wargroove_ctrl.find_building_with_template_matching('cherrystone_port',
+                                                                    threshold=threshold,
+                                                                    method=cmp504.computer_vision.TemplateMatchingMethod.CORRELATION_COEFFICIENT_NORMALIZED)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_none()
+
+    def test_port_standard_template_matching_square_diff(self):
+        threshold = unit_constants.cherrystone_port_standard_template_matching_square_diff_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'port-missing.png')
+        match = wargroove_ctrl.find_building_with_template_matching('cherrystone_port',
+                                                                    threshold=threshold,
+                                                                    method=cmp504.computer_vision.TemplateMatchingMethod.SQUARE_DIFFERENCE_NORMALIZED)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_none()
+
+    def test_port_hu_moment_template_matching_method_1(self):
+        threshold = unit_constants.cherrystone_port_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'port-missing.png')
+        match = wargroove_ctrl.find_building_with_hu_moment_template_matching('cherrystone_port',
+                                                                              threshold=threshold,
+                                                                              method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_1,
+                                                                              binarization_threshold=40)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_none()
+
+    def test_port_hu_moment_template_matching_method_2(self):
+        threshold = unit_constants.cherrystone_port_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'port-missing.png')
+        match = wargroove_ctrl.find_building_with_hu_moment_template_matching('cherrystone_port',
+                                                                              threshold=threshold,
+                                                                              method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_2,
+                                                                              binarization_threshold=40)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_none()
+
+    def test_port_hu_moment_template_matching_method_3(self):
+        threshold = unit_constants.cherrystone_port_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'port-missing.png')
+        match = wargroove_ctrl.find_building_with_hu_moment_template_matching('cherrystone_port',
+                                                                              threshold=threshold,
+                                                                              method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_3,
+                                                                              binarization_threshold=40)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_none()
+
+    def test_port_sift(self):
+        threshold = unit_constants.cherrystone_port_sift_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'port-missing.png')
+        match = wargroove_ctrl.find_building_with_sift('cherrystone_port',
+                                                       threshold=threshold)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_none()
+
+    # ----------------------------------------------------------------------------
+    # ---------------------------------- STRONGHOLD ----------------------------------
+    # ----------------------------------------------------------------------------
+
+    def test_stronghold_standard_template_matching_cross_corr(self):
+        threshold = unit_constants.cherrystone_stronghold_standard_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'stronghold-missing.png')
+        match = wargroove_ctrl.find_building_with_template_matching('cherrystone_stronghold',
+                                                                    threshold=threshold)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_none()
+
+    def test_stronghold_standard_template_matching_corr_coeff(self):
+        threshold = unit_constants.cherrystone_stronghold_standard_template_matching_corr_coeff_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'stronghold-missing.png')
+        match = wargroove_ctrl.find_building_with_template_matching('cherrystone_stronghold',
+                                                                    threshold=threshold,
+                                                                    method=cmp504.computer_vision.TemplateMatchingMethod.CORRELATION_COEFFICIENT_NORMALIZED)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_none()
+
+    def test_stronghold_standard_template_matching_square_diff(self):
+        threshold = unit_constants.cherrystone_stronghold_standard_template_matching_square_diff_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'stronghold-missing.png')
+        match = wargroove_ctrl.find_building_with_template_matching('cherrystone_stronghold',
+                                                                    threshold=threshold,
+                                                                    method=cmp504.computer_vision.TemplateMatchingMethod.SQUARE_DIFFERENCE_NORMALIZED)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_none()
+
+    def test_stronghold_hu_moment_template_matching_method_1(self):
+        threshold = unit_constants.cherrystone_stronghold_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'stronghold-missing.png')
+        match = wargroove_ctrl.find_building_with_hu_moment_template_matching('cherrystone_stronghold',
+                                                                              threshold=threshold,
+                                                                              method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_1,
+                                                                              binarization_threshold=40)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_none()
+
+    def test_stronghold_hu_moment_template_matching_method_2(self):
+        threshold = unit_constants.cherrystone_stronghold_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'stronghold-missing.png')
+        match = wargroove_ctrl.find_building_with_hu_moment_template_matching('cherrystone_stronghold',
+                                                                              threshold=threshold,
+                                                                              method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_2,
+                                                                              binarization_threshold=40)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_none()
+
+    def test_stronghold_hu_moment_template_matching_method_3(self):
+        threshold = unit_constants.cherrystone_stronghold_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'stronghold-missing.png')
+        match = wargroove_ctrl.find_building_with_hu_moment_template_matching('cherrystone_stronghold',
+                                                                              threshold=threshold,
+                                                                              method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_3,
+                                                                              binarization_threshold=40)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_none()
+
+    def test_stronghold_sift(self):
+        threshold = unit_constants.cherrystone_stronghold_sift_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'stronghold-missing.png')
+        match = wargroove_ctrl.find_building_with_sift('cherrystone_stronghold',
+                                                       threshold=threshold)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_none()
+
+    # ----------------------------------------------------------------------------
+    # ---------------------------------- TOWER ----------------------------------
+    # ----------------------------------------------------------------------------
+
+    def test_tower_standard_template_matching_cross_corr(self):
+        threshold = unit_constants.cherrystone_tower_standard_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'tower-missing.png')
+        match = wargroove_ctrl.find_building_with_template_matching('cherrystone_tower',
+                                                                    threshold=threshold)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_none()
+
+    def test_tower_standard_template_matching_corr_coeff(self):
+        threshold = unit_constants.cherrystone_tower_standard_template_matching_corr_coeff_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'tower-missing.png')
+        match = wargroove_ctrl.find_building_with_template_matching('cherrystone_tower',
+                                                                    threshold=threshold,
+                                                                    method=cmp504.computer_vision.TemplateMatchingMethod.CORRELATION_COEFFICIENT_NORMALIZED)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_none()
+
+    def test_tower_standard_template_matching_square_diff(self):
+        threshold = unit_constants.cherrystone_tower_standard_template_matching_square_diff_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'tower-missing.png')
+        match = wargroove_ctrl.find_building_with_template_matching('cherrystone_tower',
+                                                                    threshold=threshold,
+                                                                    method=cmp504.computer_vision.TemplateMatchingMethod.SQUARE_DIFFERENCE_NORMALIZED)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_none()
+
+    def test_tower_hu_moment_template_matching_method_1(self):
+        threshold = unit_constants.cherrystone_tower_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'tower-missing.png')
+        match = wargroove_ctrl.find_building_with_hu_moment_template_matching('cherrystone_tower',
+                                                                              threshold=threshold,
+                                                                              method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_1,
+                                                                              binarization_threshold=40)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_none()
+
+    def test_tower_hu_moment_template_matching_method_2(self):
+        threshold = unit_constants.cherrystone_tower_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'tower-missing.png')
+        match = wargroove_ctrl.find_building_with_hu_moment_template_matching('cherrystone_tower',
+                                                                              threshold=threshold,
+                                                                              method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_2,
+                                                                              binarization_threshold=40)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_none()
+
+    def test_tower_hu_moment_template_matching_method_3(self):
+        threshold = unit_constants.cherrystone_tower_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'tower-missing.png')
+        match = wargroove_ctrl.find_building_with_hu_moment_template_matching('cherrystone_tower',
+                                                                              threshold=threshold,
+                                                                              method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_3,
+                                                                              binarization_threshold=40)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_none()
+
+    def test_tower_sift(self):
+        threshold = unit_constants.cherrystone_tower_sift_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'tower-missing.png')
+        match = wargroove_ctrl.find_building_with_sift('cherrystone_tower',
+                                                       threshold=threshold)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_none()
+
+    # ----------------------------------------------------------------------------
+    # ---------------------------------- VILLAGE ----------------------------------
+    # ----------------------------------------------------------------------------
+
+    def test_village_standard_template_matching_cross_corr(self):
+        threshold = unit_constants.cherrystone_village_standard_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'village-missing.png')
+        match = wargroove_ctrl.find_building_with_template_matching('cherrystone_village',
+                                                                    threshold=threshold)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_none()
+
+    def test_village_standard_template_matching_corr_coeff(self):
+        threshold = unit_constants.cherrystone_village_standard_template_matching_corr_coeff_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'village-missing.png')
+        match = wargroove_ctrl.find_building_with_template_matching('cherrystone_village',
+                                                                    threshold=threshold,
+                                                                    method=cmp504.computer_vision.TemplateMatchingMethod.CORRELATION_COEFFICIENT_NORMALIZED)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_none()
+
+    def test_village_standard_template_matching_square_diff(self):
+        threshold = unit_constants.cherrystone_village_standard_template_matching_square_diff_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'village-missing.png')
+        match = wargroove_ctrl.find_building_with_template_matching('cherrystone_village',
+                                                                    threshold=threshold,
+                                                                    method=cmp504.computer_vision.TemplateMatchingMethod.SQUARE_DIFFERENCE_NORMALIZED)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_none()
+
+    def test_village_hu_moment_template_matching_method_1(self):
+        threshold = unit_constants.cherrystone_village_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'village-missing.png')
+        match = wargroove_ctrl.find_building_with_hu_moment_template_matching('cherrystone_village',
+                                                                              threshold=threshold,
+                                                                              method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_1,
+                                                                              binarization_threshold=40)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_none()
+
+    def test_village_hu_moment_template_matching_method_2(self):
+        threshold = unit_constants.cherrystone_village_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'village-missing.png')
+        match = wargroove_ctrl.find_building_with_hu_moment_template_matching('cherrystone_village',
+                                                                              threshold=threshold,
+                                                                              method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_2,
+                                                                              binarization_threshold=40)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_none()
+
+    def test_village_hu_moment_template_matching_method_3(self):
+        threshold = unit_constants.cherrystone_village_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'village-missing.png')
+        match = wargroove_ctrl.find_building_with_hu_moment_template_matching('cherrystone_village',
+                                                                              threshold=threshold,
+                                                                              method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_3,
+                                                                              binarization_threshold=40)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_none()
+
+    def test_village_sift(self):
+        threshold = unit_constants.cherrystone_village_sift_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'village-missing.png')
+        match = wargroove_ctrl.find_building_with_sift('cherrystone_village',
+                                                       threshold=threshold)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_none()
+
+    # ----------------------------------------------------------------------------
+    # ---------------------------------- WATER VILLAGE ----------------------------------
+    # ----------------------------------------------------------------------------
+
+    def test_watervillage_standard_template_matching_cross_corr(self):
+        threshold = unit_constants.cherrystone_watervillage_standard_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'water-village-missing.png')
+        match = wargroove_ctrl.find_building_with_template_matching('cherrystone_watervillage',
+                                                                    threshold=threshold)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_none()
+
+    def test_watervillage_standard_template_matching_corr_coeff(self):
+        threshold = unit_constants.cherrystone_watervillage_standard_template_matching_corr_coeff_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'water-village-missing.png')
+        match = wargroove_ctrl.find_building_with_template_matching('cherrystone_watervillage',
+                                                                    threshold=threshold,
+                                                                    method=cmp504.computer_vision.TemplateMatchingMethod.CORRELATION_COEFFICIENT_NORMALIZED)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_none()
+
+    def test_watervillage_standard_template_matching_square_diff(self):
+        threshold = unit_constants.cherrystone_watervillage_standard_template_matching_square_diff_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'water-village-missing.png')
+        match = wargroove_ctrl.find_building_with_template_matching('cherrystone_watervillage',
+                                                                    threshold=threshold,
+                                                                    method=cmp504.computer_vision.TemplateMatchingMethod.SQUARE_DIFFERENCE_NORMALIZED)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_none()
+
+    def test_watervillage_hu_moment_template_matching_method_1(self):
+        threshold = unit_constants.cherrystone_watervillage_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'water-village-missing.png')
+        match = wargroove_ctrl.find_building_with_hu_moment_template_matching('cherrystone_watervillage',
+                                                                              threshold=threshold,
+                                                                              method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_1,
+                                                                              binarization_threshold=40)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_none()
+
+    def test_watervillage_hu_moment_template_matching_method_2(self):
+        threshold = unit_constants.cherrystone_watervillage_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'water-village-missing.png')
+        match = wargroove_ctrl.find_building_with_hu_moment_template_matching('cherrystone_watervillage',
+                                                                              threshold=threshold,
+                                                                              method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_2,
+                                                                              binarization_threshold=40)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_none()
+
+    def test_watervillage_hu_moment_template_matching_method_3(self):
+        threshold = unit_constants.cherrystone_watervillage_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'water-village-missing.png')
+        match = wargroove_ctrl.find_building_with_hu_moment_template_matching('cherrystone_watervillage',
+                                                                              threshold=threshold,
+                                                                              method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_3,
+                                                                              binarization_threshold=40)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_none()
+
+    def test_watervillage_sift(self):
+        threshold = unit_constants.cherrystone_watervillage_sift_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'water-village-missing.png')
+        match = wargroove_ctrl.find_building_with_sift('cherrystone_watervillage',
+                                                       threshold=threshold)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_none()
