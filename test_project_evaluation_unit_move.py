@@ -4886,3 +4886,1275 @@ class TestProjectEvaluationUnitMove(unittest.TestCase):
         assert_that(match).is_not_none()
         assert_that(match.location[0]).is_between(408, 454)
         assert_that(match.location[1]).is_between(520, 562)
+
+    # ----------------------------------------------------------------------------
+    # ---------------------------------- BARRACKS ----------------------------------
+    # ----------------------------------------------------------------------------
+
+    def test_frame_1_barracks_standard_template_matching_cross_corr(self):
+        threshold = unit_constants.cherrystone_barracks_standard_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
+        match = wargroove_ctrl.find_building_with_template_matching('cherrystone_barracks',
+                                                                    threshold=threshold)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_equal_to(546)
+        assert_that(match.top_left[1]).is_equal_to(420)
+        assert_that(match.bottom_right[0]).is_equal_to(596)
+        assert_that(match.bottom_right[1]).is_equal_to(480)
+
+    def test_frame_1_barracks_standard_template_matching_corr_coeff(self):
+        threshold = unit_constants.cherrystone_barracks_standard_template_matching_corr_coeff_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
+        match = wargroove_ctrl.find_building_with_template_matching('cherrystone_barracks',
+                                                                    threshold=threshold,
+                                                                    method=cmp504.computer_vision.TemplateMatchingMethod.CORRELATION_COEFFICIENT_NORMALIZED)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_equal_to(546)
+        assert_that(match.top_left[1]).is_equal_to(420)
+        assert_that(match.bottom_right[0]).is_equal_to(596)
+        assert_that(match.bottom_right[1]).is_equal_to(480)
+
+    def test_frame_1_barracks_standard_template_matching_square_diff(self):
+        threshold = unit_constants.cherrystone_barracks_standard_template_matching_square_diff_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
+        match = wargroove_ctrl.find_building_with_template_matching('cherrystone_barracks',
+                                                                    threshold=threshold,
+                                                                    method=cmp504.computer_vision.TemplateMatchingMethod.SQUARE_DIFFERENCE_NORMALIZED)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_equal_to(546)
+        assert_that(match.top_left[1]).is_equal_to(420)
+        assert_that(match.bottom_right[0]).is_equal_to(596)
+        assert_that(match.bottom_right[1]).is_equal_to(480)
+
+    def test_frame_1_barracks_hu_moment_template_matching_method_1(self):
+        threshold = unit_constants.cherrystone_barracks_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
+        match = wargroove_ctrl.find_building_with_hu_moment_template_matching('cherrystone_barracks',
+                                                                              threshold=threshold,
+                                                                              method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_1,
+                                                                              binarization_threshold=40)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(546, 4)
+        assert_that(match.top_left[1]).is_close_to(420, 4)
+        assert_that(match.bottom_right[0]).is_close_to(596, 4)
+        assert_that(match.bottom_right[1]).is_close_to(480, 4)
+
+    def test_frame_1_barracks_hu_moment_template_matching_method_2(self):
+        threshold = unit_constants.cherrystone_barracks_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
+        match = wargroove_ctrl.find_building_with_hu_moment_template_matching('cherrystone_barracks',
+                                                                              threshold=threshold,
+                                                                              method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_2,
+                                                                              binarization_threshold=40)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(546, 4)
+        assert_that(match.top_left[1]).is_close_to(420, 4)
+        assert_that(match.bottom_right[0]).is_close_to(596, 4)
+        assert_that(match.bottom_right[1]).is_close_to(480, 4)
+
+    def test_frame_1_barracks_hu_moment_template_matching_method_3(self):
+        threshold = unit_constants.cherrystone_barracks_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
+        match = wargroove_ctrl.find_building_with_hu_moment_template_matching('cherrystone_barracks',
+                                                                              threshold=threshold,
+                                                                              method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_3,
+                                                                              binarization_threshold=40)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(546, 4)
+        assert_that(match.top_left[1]).is_close_to(420, 4)
+        assert_that(match.bottom_right[0]).is_close_to(596, 4)
+        assert_that(match.bottom_right[1]).is_close_to(480, 4)
+
+    def test_frame_1_barracks_sift(self):
+        threshold = unit_constants.cherrystone_barracks_sift_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
+        match = wargroove_ctrl.find_building_with_sift('cherrystone_barracks',
+                                                        threshold=threshold)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.location[0]).is_between(546, 596)
+        assert_that(match.location[1]).is_between(420, 480)
+
+    def test_frame_2_barracks_standard_template_matching_cross_corr(self):
+        threshold = unit_constants.cherrystone_barracks_standard_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_2.png')
+        match = wargroove_ctrl.find_building_with_template_matching('cherrystone_barracks',
+                                                                    threshold=threshold)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_equal_to(642)
+        assert_that(match.top_left[1]).is_equal_to(420)
+        assert_that(match.bottom_right[0]).is_equal_to(692)
+        assert_that(match.bottom_right[1]).is_equal_to(480)
+
+    def test_frame_2_barracks_standard_template_matching_corr_coeff(self):
+        threshold = unit_constants.cherrystone_barracks_standard_template_matching_corr_coeff_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_2.png')
+        match = wargroove_ctrl.find_building_with_template_matching('cherrystone_barracks',
+                                                                    threshold=threshold,
+                                                                    method=cmp504.computer_vision.TemplateMatchingMethod.CORRELATION_COEFFICIENT_NORMALIZED)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_equal_to(642)
+        assert_that(match.top_left[1]).is_equal_to(420)
+        assert_that(match.bottom_right[0]).is_equal_to(692)
+        assert_that(match.bottom_right[1]).is_equal_to(480)
+
+    def test_frame_2_barracks_standard_template_matching_square_diff(self):
+        threshold = unit_constants.cherrystone_barracks_standard_template_matching_square_diff_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_2.png')
+        match = wargroove_ctrl.find_building_with_template_matching('cherrystone_barracks',
+                                                                    threshold=threshold,
+                                                                    method=cmp504.computer_vision.TemplateMatchingMethod.SQUARE_DIFFERENCE_NORMALIZED)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_equal_to(642)
+        assert_that(match.top_left[1]).is_equal_to(420)
+        assert_that(match.bottom_right[0]).is_equal_to(692)
+        assert_that(match.bottom_right[1]).is_equal_to(480)
+
+    def test_frame_2_barracks_hu_moment_template_matching_method_1(self):
+        threshold = unit_constants.cherrystone_barracks_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_2.png')
+        match = wargroove_ctrl.find_building_with_hu_moment_template_matching('cherrystone_barracks',
+                                                                              threshold=threshold,
+                                                                              method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_1,
+                                                                              binarization_threshold=40)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(642, 4)
+        assert_that(match.top_left[1]).is_close_to(420, 4)
+        assert_that(match.bottom_right[0]).is_close_to(692, 4)
+        assert_that(match.bottom_right[1]).is_close_to(480, 4)
+
+    def test_frame_2_barracks_hu_moment_template_matching_method_2(self):
+        threshold = unit_constants.cherrystone_barracks_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_2.png')
+        match = wargroove_ctrl.find_building_with_hu_moment_template_matching('cherrystone_barracks',
+                                                                              threshold=threshold,
+                                                                              method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_2,
+                                                                              binarization_threshold=40)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(642, 4)
+        assert_that(match.top_left[1]).is_close_to(420, 4)
+        assert_that(match.bottom_right[0]).is_close_to(692, 4)
+        assert_that(match.bottom_right[1]).is_close_to(480, 4)
+
+    def test_frame_2_barracks_hu_moment_template_matching_method_3(self):
+        threshold = unit_constants.cherrystone_barracks_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_2.png')
+        match = wargroove_ctrl.find_building_with_hu_moment_template_matching('cherrystone_barracks',
+                                                                              threshold=threshold,
+                                                                              method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_3,
+                                                                              binarization_threshold=40)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(642, 4)
+        assert_that(match.top_left[1]).is_close_to(420, 4)
+        assert_that(match.bottom_right[0]).is_close_to(692, 4)
+        assert_that(match.bottom_right[1]).is_close_to(480, 4)
+
+    def test_frame_2_barracks_sift(self):
+        threshold = unit_constants.cherrystone_barracks_sift_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_2.png')
+        match = wargroove_ctrl.find_building_with_sift('cherrystone_barracks',
+                                                        threshold=threshold)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.location[0]).is_between(642, 692)
+        assert_that(match.location[1]).is_between(420, 480)
+
+    # ----------------------------------------------------------------------------
+    # ---------------------------------- PORT ----------------------------------
+    # ----------------------------------------------------------------------------
+
+    def test_frame_1_port_standard_template_matching_cross_corr(self):
+        threshold = unit_constants.cherrystone_port_standard_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
+        match = wargroove_ctrl.find_building_with_template_matching('cherrystone_port',
+                                                                    threshold=threshold)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_equal_to(972)
+        assert_that(match.top_left[1]).is_equal_to(516)
+        assert_that(match.bottom_right[0]).is_equal_to(1026)
+        assert_that(match.bottom_right[1]).is_equal_to(578)
+
+    def test_frame_1_port_standard_template_matching_corr_coeff(self):
+        threshold = unit_constants.cherrystone_port_standard_template_matching_corr_coeff_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
+        match = wargroove_ctrl.find_building_with_template_matching('cherrystone_port',
+                                                                    threshold=threshold,
+                                                                    method=cmp504.computer_vision.TemplateMatchingMethod.CORRELATION_COEFFICIENT_NORMALIZED)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_equal_to(972)
+        assert_that(match.top_left[1]).is_equal_to(516)
+        assert_that(match.bottom_right[0]).is_equal_to(1026)
+        assert_that(match.bottom_right[1]).is_equal_to(578)
+
+    def test_frame_1_port_standard_template_matching_square_diff(self):
+        threshold = unit_constants.cherrystone_port_standard_template_matching_square_diff_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
+        match = wargroove_ctrl.find_building_with_template_matching('cherrystone_port',
+                                                                    threshold=threshold,
+                                                                    method=cmp504.computer_vision.TemplateMatchingMethod.SQUARE_DIFFERENCE_NORMALIZED)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_equal_to(972)
+        assert_that(match.top_left[1]).is_equal_to(516)
+        assert_that(match.bottom_right[0]).is_equal_to(1026)
+        assert_that(match.bottom_right[1]).is_equal_to(578)
+
+    def test_frame_1_port_hu_moment_template_matching_method_1(self):
+        threshold = unit_constants.cherrystone_port_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
+        match = wargroove_ctrl.find_building_with_hu_moment_template_matching('cherrystone_port',
+                                                                              threshold=threshold,
+                                                                              method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_1,
+                                                                              binarization_threshold=40)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(972, 6)
+        assert_that(match.top_left[1]).is_close_to(516, 6)
+        assert_that(match.bottom_right[0]).is_close_to(1026, 6)
+        assert_that(match.bottom_right[1]).is_close_to(578, 6)
+
+    def test_frame_1_port_hu_moment_template_matching_method_2(self):
+        threshold = unit_constants.cherrystone_port_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
+        match = wargroove_ctrl.find_building_with_hu_moment_template_matching('cherrystone_port',
+                                                                              threshold=threshold,
+                                                                              method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_2,
+                                                                              binarization_threshold=40)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(972, 6)
+        assert_that(match.top_left[1]).is_close_to(516, 6)
+        assert_that(match.bottom_right[0]).is_close_to(1026, 6)
+        assert_that(match.bottom_right[1]).is_close_to(578, 6)
+
+    def test_frame_1_port_hu_moment_template_matching_method_3(self):
+        threshold = unit_constants.cherrystone_port_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
+        match = wargroove_ctrl.find_building_with_hu_moment_template_matching('cherrystone_port',
+                                                                              threshold=threshold,
+                                                                              method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_3,
+                                                                              binarization_threshold=40)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(972, 6)
+        assert_that(match.top_left[1]).is_close_to(516, 6)
+        assert_that(match.bottom_right[0]).is_close_to(1026, 6)
+        assert_that(match.bottom_right[1]).is_close_to(578, 6)
+
+    def test_frame_1_port_sift(self):
+        threshold = unit_constants.cherrystone_port_sift_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
+        match = wargroove_ctrl.find_building_with_sift('cherrystone_port',
+                                                       threshold=threshold)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.location[0]).is_between(972, 1026)
+        assert_that(match.location[1]).is_between(516, 578)
+
+    def test_frame_2_port_standard_template_matching_cross_corr(self):
+        threshold = unit_constants.cherrystone_port_standard_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_2.png')
+        match = wargroove_ctrl.find_building_with_template_matching('cherrystone_port',
+                                                                    threshold=threshold)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_equal_to(299)
+        assert_that(match.top_left[1]).is_equal_to(516)
+        assert_that(match.bottom_right[0]).is_equal_to(353)
+        assert_that(match.bottom_right[1]).is_equal_to(578)
+
+    def test_frame_2_port_standard_template_matching_corr_coeff(self):
+        threshold = unit_constants.cherrystone_port_standard_template_matching_corr_coeff_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_2.png')
+        match = wargroove_ctrl.find_building_with_template_matching('cherrystone_port',
+                                                                    threshold=threshold,
+                                                                    method=cmp504.computer_vision.TemplateMatchingMethod.CORRELATION_COEFFICIENT_NORMALIZED)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_equal_to(299)
+        assert_that(match.top_left[1]).is_equal_to(516)
+        assert_that(match.bottom_right[0]).is_equal_to(353)
+        assert_that(match.bottom_right[1]).is_equal_to(578)
+
+    def test_frame_2_port_standard_template_matching_square_diff(self):
+        threshold = unit_constants.cherrystone_port_standard_template_matching_square_diff_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_2.png')
+        match = wargroove_ctrl.find_building_with_template_matching('cherrystone_port',
+                                                                    threshold=threshold,
+                                                                    method=cmp504.computer_vision.TemplateMatchingMethod.SQUARE_DIFFERENCE_NORMALIZED)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_equal_to(299)
+        assert_that(match.top_left[1]).is_equal_to(516)
+        assert_that(match.bottom_right[0]).is_equal_to(353)
+        assert_that(match.bottom_right[1]).is_equal_to(578)
+
+    def test_frame_2_port_hu_moment_template_matching_method_1(self):
+        threshold = unit_constants.cherrystone_port_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_2.png')
+        match = wargroove_ctrl.find_building_with_hu_moment_template_matching('cherrystone_port',
+                                                                              threshold=threshold,
+                                                                              method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_1,
+                                                                              binarization_threshold=40)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(299, 6)
+        assert_that(match.top_left[1]).is_close_to(516, 6)
+        assert_that(match.bottom_right[0]).is_close_to(353, 6)
+        assert_that(match.bottom_right[1]).is_close_to(578, 6)
+
+    def test_frame_2_port_hu_moment_template_matching_method_2(self):
+        threshold = unit_constants.cherrystone_port_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_2.png')
+        match = wargroove_ctrl.find_building_with_hu_moment_template_matching('cherrystone_port',
+                                                                              threshold=threshold,
+                                                                              method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_2,
+                                                                              binarization_threshold=40)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(299, 6)
+        assert_that(match.top_left[1]).is_close_to(516, 6)
+        assert_that(match.bottom_right[0]).is_close_to(353, 6)
+        assert_that(match.bottom_right[1]).is_close_to(578, 6)
+
+    def test_frame_2_port_hu_moment_template_matching_method_3(self):
+        threshold = unit_constants.cherrystone_port_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_2.png')
+        match = wargroove_ctrl.find_building_with_hu_moment_template_matching('cherrystone_port',
+                                                                              threshold=threshold,
+                                                                              method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_3,
+                                                                              binarization_threshold=40)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(299, 6)
+        assert_that(match.top_left[1]).is_close_to(516, 6)
+        assert_that(match.bottom_right[0]).is_close_to(353, 6)
+        assert_that(match.bottom_right[1]).is_close_to(578, 6)
+
+    def test_frame_2_port_sift(self):
+        threshold = unit_constants.cherrystone_port_sift_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_2.png')
+        match = wargroove_ctrl.find_building_with_sift('cherrystone_port',
+                                                       threshold=threshold)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.location[0]).is_between(299, 353)
+        assert_that(match.location[1]).is_between(516, 578)
+
+    # ----------------------------------------------------------------------------
+    # ---------------------------------- STRONGHOLD ----------------------------------
+    # ----------------------------------------------------------------------------
+
+    def test_frame_1_stronghold_standard_template_matching_cross_corr(self):
+        threshold = unit_constants.cherrystone_stronghold_standard_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
+        match = wargroove_ctrl.find_building_with_template_matching('cherrystone_stronghold',
+                                                                    threshold=threshold)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_equal_to(446)
+        assert_that(match.top_left[1]).is_equal_to(402)
+        assert_that(match.bottom_right[0]).is_equal_to(496)
+        assert_that(match.bottom_right[1]).is_equal_to(482)
+
+    def test_frame_1_stronghold_standard_template_matching_corr_coeff(self):
+        threshold = unit_constants.cherrystone_stronghold_standard_template_matching_corr_coeff_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
+        match = wargroove_ctrl.find_building_with_template_matching('cherrystone_stronghold',
+                                                                    threshold=threshold,
+                                                                    method=cmp504.computer_vision.TemplateMatchingMethod.CORRELATION_COEFFICIENT_NORMALIZED)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_equal_to(446)
+        assert_that(match.top_left[1]).is_equal_to(402)
+        assert_that(match.bottom_right[0]).is_equal_to(496)
+        assert_that(match.bottom_right[1]).is_equal_to(482)
+
+    def test_frame_1_stronghold_standard_template_matching_square_diff(self):
+        threshold = unit_constants.cherrystone_stronghold_standard_template_matching_square_diff_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
+        match = wargroove_ctrl.find_building_with_template_matching('cherrystone_stronghold',
+                                                                    threshold=threshold,
+                                                                    method=cmp504.computer_vision.TemplateMatchingMethod.SQUARE_DIFFERENCE_NORMALIZED)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_equal_to(446)
+        assert_that(match.top_left[1]).is_equal_to(402)
+        assert_that(match.bottom_right[0]).is_equal_to(496)
+        assert_that(match.bottom_right[1]).is_equal_to(482)
+
+    def test_frame_1_stronghold_hu_moment_template_matching_method_1(self):
+        threshold = unit_constants.cherrystone_stronghold_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
+        match = wargroove_ctrl.find_building_with_hu_moment_template_matching('cherrystone_stronghold',
+                                                                              threshold=threshold,
+                                                                              method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_1,
+                                                                              binarization_threshold=40)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(446, 4)
+        assert_that(match.top_left[1]).is_close_to(402, 4)
+        assert_that(match.bottom_right[0]).is_close_to(496, 4)
+        assert_that(match.bottom_right[1]).is_close_to(482, 4)
+
+    def test_frame_1_stronghold_hu_moment_template_matching_method_2(self):
+        threshold = unit_constants.cherrystone_stronghold_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
+        match = wargroove_ctrl.find_building_with_hu_moment_template_matching('cherrystone_stronghold',
+                                                                              threshold=threshold,
+                                                                              method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_2,
+                                                                              binarization_threshold=40)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(446, 4)
+        assert_that(match.top_left[1]).is_close_to(402, 4)
+        assert_that(match.bottom_right[0]).is_close_to(496, 4)
+        assert_that(match.bottom_right[1]).is_close_to(482, 4)
+
+    def test_frame_1_stronghold_hu_moment_template_matching_method_3(self):
+        threshold = unit_constants.cherrystone_stronghold_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
+        match = wargroove_ctrl.find_building_with_hu_moment_template_matching('cherrystone_stronghold',
+                                                                              threshold=threshold,
+                                                                              method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_3,
+                                                                              binarization_threshold=40)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(446, 4)
+        assert_that(match.top_left[1]).is_close_to(402, 4)
+        assert_that(match.bottom_right[0]).is_close_to(496, 4)
+        assert_that(match.bottom_right[1]).is_close_to(482, 4)
+
+    def test_frame_1_stronghold_sift(self):
+        threshold = unit_constants.cherrystone_stronghold_sift_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
+        match = wargroove_ctrl.find_building_with_sift('cherrystone_stronghold',
+                                                       threshold=threshold)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.location[0]).is_between(446, 496)
+        assert_that(match.location[1]).is_between(402, 482)
+
+    def test_frame_2_stronghold_standard_template_matching_cross_corr(self):
+        threshold = unit_constants.cherrystone_stronghold_standard_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_2.png')
+        match = wargroove_ctrl.find_building_with_template_matching('cherrystone_stronghold',
+                                                                    threshold=threshold)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_equal_to(736)
+        assert_that(match.top_left[1]).is_equal_to(402)
+        assert_that(match.bottom_right[0]).is_equal_to(786)
+        assert_that(match.bottom_right[1]).is_equal_to(482)
+
+    def test_frame_2_stronghold_standard_template_matching_corr_coeff(self):
+        threshold = unit_constants.cherrystone_stronghold_standard_template_matching_corr_coeff_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_2.png')
+        match = wargroove_ctrl.find_building_with_template_matching('cherrystone_stronghold',
+                                                                    threshold=threshold,
+                                                                    method=cmp504.computer_vision.TemplateMatchingMethod.CORRELATION_COEFFICIENT_NORMALIZED)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_equal_to(736)
+        assert_that(match.top_left[1]).is_equal_to(402)
+        assert_that(match.bottom_right[0]).is_equal_to(786)
+        assert_that(match.bottom_right[1]).is_equal_to(482)
+
+    def test_frame_2_stronghold_standard_template_matching_square_diff(self):
+        threshold = unit_constants.cherrystone_stronghold_standard_template_matching_square_diff_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_2.png')
+        match = wargroove_ctrl.find_building_with_template_matching('cherrystone_stronghold',
+                                                                    threshold=threshold,
+                                                                    method=cmp504.computer_vision.TemplateMatchingMethod.SQUARE_DIFFERENCE_NORMALIZED)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_equal_to(736)
+        assert_that(match.top_left[1]).is_equal_to(402)
+        assert_that(match.bottom_right[0]).is_equal_to(786)
+        assert_that(match.bottom_right[1]).is_equal_to(482)
+
+    def test_frame_2_stronghold_hu_moment_template_matching_method_1(self):
+        threshold = unit_constants.cherrystone_stronghold_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_2.png')
+        match = wargroove_ctrl.find_building_with_hu_moment_template_matching('cherrystone_stronghold',
+                                                                              threshold=threshold,
+                                                                              method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_1,
+                                                                              binarization_threshold=40)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(736, 4)
+        assert_that(match.top_left[1]).is_close_to(402, 4)
+        assert_that(match.bottom_right[0]).is_close_to(786, 4)
+        assert_that(match.bottom_right[1]).is_close_to(482, 4)
+
+    def test_frame_2_stronghold_hu_moment_template_matching_method_2(self):
+        threshold = unit_constants.cherrystone_stronghold_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_2.png')
+        match = wargroove_ctrl.find_building_with_hu_moment_template_matching('cherrystone_stronghold',
+                                                                              threshold=threshold,
+                                                                              method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_2,
+                                                                              binarization_threshold=40)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(736, 4)
+        assert_that(match.top_left[1]).is_close_to(402, 4)
+        assert_that(match.bottom_right[0]).is_close_to(786, 4)
+        assert_that(match.bottom_right[1]).is_close_to(482, 4)
+
+    def test_frame_2_stronghold_hu_moment_template_matching_method_3(self):
+        threshold = unit_constants.cherrystone_stronghold_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_2.png')
+        match = wargroove_ctrl.find_building_with_hu_moment_template_matching('cherrystone_stronghold',
+                                                                              threshold=threshold,
+                                                                              method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_3,
+                                                                              binarization_threshold=40)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(736, 4)
+        assert_that(match.top_left[1]).is_close_to(402, 4)
+        assert_that(match.bottom_right[0]).is_close_to(786, 4)
+        assert_that(match.bottom_right[1]).is_close_to(482, 4)
+
+    def test_frame_2_stronghold_sift(self):
+        threshold = unit_constants.cherrystone_stronghold_sift_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_2.png')
+        match = wargroove_ctrl.find_building_with_sift('cherrystone_stronghold',
+                                                       threshold=threshold)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.location[0]).is_between(736, 786)
+        assert_that(match.location[1]).is_between(402, 482)
+
+    # ----------------------------------------------------------------------------
+    # ---------------------------------- TOWER ----------------------------------
+    # ----------------------------------------------------------------------------
+
+    def test_frame_1_tower_standard_template_matching_cross_corr(self):
+        threshold = unit_constants.cherrystone_tower_standard_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
+        match = wargroove_ctrl.find_building_with_template_matching('cherrystone_tower',
+                                                                    threshold=threshold)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_equal_to(738)
+        assert_that(match.top_left[1]).is_equal_to(416)
+        assert_that(match.bottom_right[0]).is_equal_to(784)
+        assert_that(match.bottom_right[1]).is_equal_to(476)
+
+    def test_frame_1_tower_standard_template_matching_corr_coeff(self):
+        threshold = unit_constants.cherrystone_tower_standard_template_matching_corr_coeff_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
+        match = wargroove_ctrl.find_building_with_template_matching('cherrystone_tower',
+                                                                    threshold=threshold,
+                                                                    method=cmp504.computer_vision.TemplateMatchingMethod.CORRELATION_COEFFICIENT_NORMALIZED)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_equal_to(738)
+        assert_that(match.top_left[1]).is_equal_to(416)
+        assert_that(match.bottom_right[0]).is_equal_to(784)
+        assert_that(match.bottom_right[1]).is_equal_to(476)
+
+    def test_frame_1_tower_standard_template_matching_square_diff(self):
+        threshold = unit_constants.cherrystone_tower_standard_template_matching_square_diff_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
+        match = wargroove_ctrl.find_building_with_template_matching('cherrystone_tower',
+                                                                    threshold=threshold,
+                                                                    method=cmp504.computer_vision.TemplateMatchingMethod.SQUARE_DIFFERENCE_NORMALIZED)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_equal_to(738)
+        assert_that(match.top_left[1]).is_equal_to(416)
+        assert_that(match.bottom_right[0]).is_equal_to(784)
+        assert_that(match.bottom_right[1]).is_equal_to(476)
+
+    def test_frame_1_tower_hu_moment_template_matching_method_1(self):
+        threshold = unit_constants.cherrystone_tower_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
+        match = wargroove_ctrl.find_building_with_hu_moment_template_matching('cherrystone_tower',
+                                                                              threshold=threshold,
+                                                                              method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_1,
+                                                                              binarization_threshold=40)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(738, 6)
+        assert_that(match.top_left[1]).is_close_to(416, 6)
+        assert_that(match.bottom_right[0]).is_close_to(784, 6)
+        assert_that(match.bottom_right[1]).is_close_to(476, 6)
+
+    def test_frame_1_tower_hu_moment_template_matching_method_2(self):
+        threshold = unit_constants.cherrystone_tower_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
+        match = wargroove_ctrl.find_building_with_hu_moment_template_matching('cherrystone_tower',
+                                                                              threshold=threshold,
+                                                                              method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_2,
+                                                                              binarization_threshold=40)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(738, 6)
+        assert_that(match.top_left[1]).is_close_to(416, 6)
+        assert_that(match.bottom_right[0]).is_close_to(784, 6)
+        assert_that(match.bottom_right[1]).is_close_to(476, 6)
+
+    def test_frame_1_tower_hu_moment_template_matching_method_3(self):
+        threshold = unit_constants.cherrystone_tower_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
+        match = wargroove_ctrl.find_building_with_hu_moment_template_matching('cherrystone_tower',
+                                                                              threshold=threshold,
+                                                                              method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_3,
+                                                                              binarization_threshold=40)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(738, 6)
+        assert_that(match.top_left[1]).is_close_to(416, 6)
+        assert_that(match.bottom_right[0]).is_close_to(784, 6)
+        assert_that(match.bottom_right[1]).is_close_to(476, 6)
+
+    def test_frame_1_tower_sift(self):
+        threshold = unit_constants.cherrystone_tower_sift_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
+        match = wargroove_ctrl.find_building_with_sift('cherrystone_tower',
+                                                       threshold=threshold)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.location[0]).is_between(738, 784)
+        assert_that(match.location[1]).is_between(416, 476)
+
+    def test_frame_2_tower_standard_template_matching_cross_corr(self):
+        threshold = unit_constants.cherrystone_tower_standard_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_2.png')
+        match = wargroove_ctrl.find_building_with_template_matching('cherrystone_tower',
+                                                                    threshold=threshold)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_equal_to(450)
+        assert_that(match.top_left[1]).is_equal_to(416)
+        assert_that(match.bottom_right[0]).is_equal_to(496)
+        assert_that(match.bottom_right[1]).is_equal_to(476)
+
+    def test_frame_2_tower_standard_template_matching_corr_coeff(self):
+        threshold = unit_constants.cherrystone_tower_standard_template_matching_corr_coeff_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_2.png')
+        match = wargroove_ctrl.find_building_with_template_matching('cherrystone_tower',
+                                                                    threshold=threshold,
+                                                                    method=cmp504.computer_vision.TemplateMatchingMethod.CORRELATION_COEFFICIENT_NORMALIZED)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_equal_to(450)
+        assert_that(match.top_left[1]).is_equal_to(416)
+        assert_that(match.bottom_right[0]).is_equal_to(496)
+        assert_that(match.bottom_right[1]).is_equal_to(476)
+
+    def test_frame_2_tower_standard_template_matching_square_diff(self):
+        threshold = unit_constants.cherrystone_tower_standard_template_matching_square_diff_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_2.png')
+        match = wargroove_ctrl.find_building_with_template_matching('cherrystone_tower',
+                                                                    threshold=threshold,
+                                                                    method=cmp504.computer_vision.TemplateMatchingMethod.SQUARE_DIFFERENCE_NORMALIZED)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_equal_to(450)
+        assert_that(match.top_left[1]).is_equal_to(416)
+        assert_that(match.bottom_right[0]).is_equal_to(496)
+        assert_that(match.bottom_right[1]).is_equal_to(476)
+
+    def test_frame_2_tower_hu_moment_template_matching_method_1(self):
+        threshold = unit_constants.cherrystone_tower_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_2.png')
+        match = wargroove_ctrl.find_building_with_hu_moment_template_matching('cherrystone_tower',
+                                                                              threshold=threshold,
+                                                                              method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_1,
+                                                                              binarization_threshold=40)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(450, 6)
+        assert_that(match.top_left[1]).is_close_to(416, 6)
+        assert_that(match.bottom_right[0]).is_close_to(496, 6)
+        assert_that(match.bottom_right[1]).is_close_to(476, 6)
+
+    def test_frame_2_tower_hu_moment_template_matching_method_2(self):
+        threshold = unit_constants.cherrystone_tower_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_2.png')
+        match = wargroove_ctrl.find_building_with_hu_moment_template_matching('cherrystone_tower',
+                                                                              threshold=threshold,
+                                                                              method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_2,
+                                                                              binarization_threshold=40)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(450, 6)
+        assert_that(match.top_left[1]).is_close_to(416, 6)
+        assert_that(match.bottom_right[0]).is_close_to(496, 6)
+        assert_that(match.bottom_right[1]).is_close_to(476, 6)
+
+    def test_frame_2_tower_hu_moment_template_matching_method_3(self):
+        threshold = unit_constants.cherrystone_tower_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_2.png')
+        match = wargroove_ctrl.find_building_with_hu_moment_template_matching('cherrystone_tower',
+                                                                              threshold=threshold,
+                                                                              method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_3,
+                                                                              binarization_threshold=40)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(450, 6)
+        assert_that(match.top_left[1]).is_close_to(416, 6)
+        assert_that(match.bottom_right[0]).is_close_to(496, 6)
+        assert_that(match.bottom_right[1]).is_close_to(476, 6)
+
+    def test_frame_2_tower_sift(self):
+        threshold = unit_constants.cherrystone_tower_sift_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_2.png')
+        match = wargroove_ctrl.find_building_with_sift('cherrystone_tower',
+                                                       threshold=threshold)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.location[0]).is_between(450, 496)
+        assert_that(match.location[1]).is_between(416, 476)
+
+    # ----------------------------------------------------------------------------
+    # ---------------------------------- VILLAGE ----------------------------------
+    # ----------------------------------------------------------------------------
+
+    def test_frame_1_village_standard_template_matching_cross_corr(self):
+        threshold = unit_constants.cherrystone_village_standard_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
+        match = wargroove_ctrl.find_building_with_template_matching('cherrystone_village',
+                                                                    threshold=threshold)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_equal_to(638)
+        assert_that(match.top_left[1]).is_equal_to(424)
+        assert_that(match.bottom_right[0]).is_equal_to(690)
+        assert_that(match.bottom_right[1]).is_equal_to(480)
+
+    def test_frame_1_village_standard_template_matching_corr_coeff(self):
+        threshold = unit_constants.cherrystone_village_standard_template_matching_corr_coeff_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
+        match = wargroove_ctrl.find_building_with_template_matching('cherrystone_village',
+                                                                    threshold=threshold,
+                                                                    method=cmp504.computer_vision.TemplateMatchingMethod.CORRELATION_COEFFICIENT_NORMALIZED)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_equal_to(638)
+        assert_that(match.top_left[1]).is_equal_to(424)
+        assert_that(match.bottom_right[0]).is_equal_to(690)
+        assert_that(match.bottom_right[1]).is_equal_to(480)
+
+    def test_frame_1_village_standard_template_matching_square_diff(self):
+        threshold = unit_constants.cherrystone_village_standard_template_matching_square_diff_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
+        match = wargroove_ctrl.find_building_with_template_matching('cherrystone_village',
+                                                                    threshold=threshold,
+                                                                    method=cmp504.computer_vision.TemplateMatchingMethod.SQUARE_DIFFERENCE_NORMALIZED)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_equal_to(638)
+        assert_that(match.top_left[1]).is_equal_to(424)
+        assert_that(match.bottom_right[0]).is_equal_to(690)
+        assert_that(match.bottom_right[1]).is_equal_to(480)
+
+    def test_frame_1_village_hu_moment_template_matching_method_1(self):
+        threshold = unit_constants.cherrystone_village_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
+        match = wargroove_ctrl.find_building_with_hu_moment_template_matching('cherrystone_village',
+                                                                              threshold=threshold,
+                                                                              method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_1,
+                                                                              binarization_threshold=40)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(638, 6)
+        assert_that(match.top_left[1]).is_close_to(424, 6)
+        assert_that(match.bottom_right[0]).is_close_to(690, 6)
+        assert_that(match.bottom_right[1]).is_close_to(480, 6)
+
+    def test_frame_1_village_hu_moment_template_matching_method_2(self):
+        threshold = unit_constants.cherrystone_village_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
+        match = wargroove_ctrl.find_building_with_hu_moment_template_matching('cherrystone_village',
+                                                                              threshold=threshold,
+                                                                              method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_2,
+                                                                              binarization_threshold=40)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(638, 6)
+        assert_that(match.top_left[1]).is_close_to(424, 6)
+        assert_that(match.bottom_right[0]).is_close_to(690, 6)
+        assert_that(match.bottom_right[1]).is_close_to(480, 6)
+
+    def test_frame_1_village_hu_moment_template_matching_method_3(self):
+        threshold = unit_constants.cherrystone_village_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
+        match = wargroove_ctrl.find_building_with_hu_moment_template_matching('cherrystone_village',
+                                                                              threshold=threshold,
+                                                                              method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_3,
+                                                                              binarization_threshold=40)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(638, 6)
+        assert_that(match.top_left[1]).is_close_to(424, 6)
+        assert_that(match.bottom_right[0]).is_close_to(690, 6)
+        assert_that(match.bottom_right[1]).is_close_to(480, 6)
+
+    def test_frame_1_village_sift(self):
+        threshold = unit_constants.cherrystone_village_sift_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
+        match = wargroove_ctrl.find_building_with_sift('cherrystone_village',
+                                                       threshold=threshold)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.location[0]).is_between(638, 690)
+        assert_that(match.location[1]).is_between(424, 480)
+
+    def test_frame_2_village_standard_template_matching_cross_corr(self):
+        threshold = unit_constants.cherrystone_village_standard_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_2.png')
+        match = wargroove_ctrl.find_building_with_template_matching('cherrystone_village',
+                                                                    threshold=threshold)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_equal_to(542)
+        assert_that(match.top_left[1]).is_equal_to(424)
+        assert_that(match.bottom_right[0]).is_equal_to(594)
+        assert_that(match.bottom_right[1]).is_equal_to(480)
+
+    def test_frame_2_village_standard_template_matching_corr_coeff(self):
+        threshold = unit_constants.cherrystone_village_standard_template_matching_corr_coeff_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_2.png')
+        match = wargroove_ctrl.find_building_with_template_matching('cherrystone_village',
+                                                                    threshold=threshold,
+                                                                    method=cmp504.computer_vision.TemplateMatchingMethod.CORRELATION_COEFFICIENT_NORMALIZED)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_equal_to(542)
+        assert_that(match.top_left[1]).is_equal_to(424)
+        assert_that(match.bottom_right[0]).is_equal_to(594)
+        assert_that(match.bottom_right[1]).is_equal_to(480)
+
+    def test_frame_2_village_standard_template_matching_square_diff(self):
+        threshold = unit_constants.cherrystone_village_standard_template_matching_square_diff_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_2.png')
+        match = wargroove_ctrl.find_building_with_template_matching('cherrystone_village',
+                                                                    threshold=threshold,
+                                                                    method=cmp504.computer_vision.TemplateMatchingMethod.SQUARE_DIFFERENCE_NORMALIZED)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_equal_to(542)
+        assert_that(match.top_left[1]).is_equal_to(424)
+        assert_that(match.bottom_right[0]).is_equal_to(594)
+        assert_that(match.bottom_right[1]).is_equal_to(480)
+
+    def test_frame_2_village_hu_moment_template_matching_method_1(self):
+        threshold = unit_constants.cherrystone_village_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_2.png')
+        match = wargroove_ctrl.find_building_with_hu_moment_template_matching('cherrystone_village',
+                                                                              threshold=threshold,
+                                                                              method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_1,
+                                                                              binarization_threshold=40)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(542, 6)
+        assert_that(match.top_left[1]).is_close_to(424, 6)
+        assert_that(match.bottom_right[0]).is_close_to(594, 6)
+        assert_that(match.bottom_right[1]).is_close_to(480, 6)
+
+    def test_frame_2_village_hu_moment_template_matching_method_2(self):
+        threshold = unit_constants.cherrystone_village_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_2.png')
+        match = wargroove_ctrl.find_building_with_hu_moment_template_matching('cherrystone_village',
+                                                                              threshold=threshold,
+                                                                              method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_2,
+                                                                              binarization_threshold=40)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(542, 6)
+        assert_that(match.top_left[1]).is_close_to(424, 6)
+        assert_that(match.bottom_right[0]).is_close_to(594, 6)
+        assert_that(match.bottom_right[1]).is_close_to(480, 6)
+
+    def test_frame_2_village_hu_moment_template_matching_method_3(self):
+        threshold = unit_constants.cherrystone_village_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_2.png')
+        match = wargroove_ctrl.find_building_with_hu_moment_template_matching('cherrystone_village',
+                                                                              threshold=threshold,
+                                                                              method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_3,
+                                                                              binarization_threshold=40)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(542, 6)
+        assert_that(match.top_left[1]).is_close_to(424, 6)
+        assert_that(match.bottom_right[0]).is_close_to(594, 6)
+        assert_that(match.bottom_right[1]).is_close_to(480, 6)
+
+    def test_frame_2_village_sift(self):
+        threshold = unit_constants.cherrystone_village_sift_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_2.png')
+        match = wargroove_ctrl.find_building_with_sift('cherrystone_village',
+                                                       threshold=threshold)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.location[0]).is_between(542, 594)
+        assert_that(match.location[1]).is_between(424, 480)
+
+    # ----------------------------------------------------------------------------
+    # ---------------------------------- WATER VILLAGE ----------------------------------
+    # ----------------------------------------------------------------------------
+
+    def test_frame_1_watervillage_standard_template_matching_cross_corr(self):
+        threshold = unit_constants.cherrystone_watervillage_standard_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
+        match = wargroove_ctrl.find_building_with_template_matching('cherrystone_watervillage',
+                                                                    threshold=threshold)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_equal_to(302)
+        assert_that(match.top_left[1]).is_equal_to(516)
+        assert_that(match.bottom_right[0]).is_equal_to(352)
+        assert_that(match.bottom_right[1]).is_equal_to(574)
+
+    def test_frame_1_watervillage_standard_template_matching_corr_coeff(self):
+        threshold = unit_constants.cherrystone_watervillage_standard_template_matching_corr_coeff_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
+        match = wargroove_ctrl.find_building_with_template_matching('cherrystone_watervillage',
+                                                                    threshold=threshold,
+                                                                    method=cmp504.computer_vision.TemplateMatchingMethod.CORRELATION_COEFFICIENT_NORMALIZED)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_equal_to(302)
+        assert_that(match.top_left[1]).is_equal_to(516)
+        assert_that(match.bottom_right[0]).is_equal_to(352)
+        assert_that(match.bottom_right[1]).is_equal_to(574)
+
+    def test_frame_1_watervillage_standard_template_matching_square_diff(self):
+        threshold = unit_constants.cherrystone_watervillage_standard_template_matching_square_diff_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
+        match = wargroove_ctrl.find_building_with_template_matching('cherrystone_watervillage',
+                                                                    threshold=threshold,
+                                                                    method=cmp504.computer_vision.TemplateMatchingMethod.SQUARE_DIFFERENCE_NORMALIZED)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_equal_to(302)
+        assert_that(match.top_left[1]).is_equal_to(516)
+        assert_that(match.bottom_right[0]).is_equal_to(352)
+        assert_that(match.bottom_right[1]).is_equal_to(574)
+
+    def test_frame_1_watervillage_hu_moment_template_matching_method_1(self):
+        threshold = unit_constants.cherrystone_watervillage_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
+        match = wargroove_ctrl.find_building_with_hu_moment_template_matching('cherrystone_watervillage',
+                                                                              threshold=threshold,
+                                                                              method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_1,
+                                                                              binarization_threshold=40)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(302, 6)
+        assert_that(match.top_left[1]).is_close_to(516, 6)
+        assert_that(match.bottom_right[0]).is_close_to(354, 6)
+        assert_that(match.bottom_right[1]).is_close_to(574, 6)
+
+    def test_frame_1_watervillage_hu_moment_template_matching_method_2(self):
+        threshold = unit_constants.cherrystone_watervillage_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
+        match = wargroove_ctrl.find_building_with_hu_moment_template_matching('cherrystone_watervillage',
+                                                                              threshold=threshold,
+                                                                              method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_2,
+                                                                              binarization_threshold=40)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(302, 6)
+        assert_that(match.top_left[1]).is_close_to(516, 6)
+        assert_that(match.bottom_right[0]).is_close_to(354, 6)
+        assert_that(match.bottom_right[1]).is_close_to(574, 6)
+
+    def test_frame_1_watervillage_hu_moment_template_matching_method_3(self):
+        threshold = unit_constants.cherrystone_watervillage_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
+        match = wargroove_ctrl.find_building_with_hu_moment_template_matching('cherrystone_watervillage',
+                                                                              threshold=threshold,
+                                                                              method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_3,
+                                                                              binarization_threshold=40)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(302, 6)
+        assert_that(match.top_left[1]).is_close_to(516, 6)
+        assert_that(match.bottom_right[0]).is_close_to(354, 6)
+        assert_that(match.bottom_right[1]).is_close_to(574, 6)
+
+    def test_frame_1_watervillage_sift(self):
+        threshold = unit_constants.cherrystone_watervillage_sift_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
+        match = wargroove_ctrl.find_building_with_sift('cherrystone_watervillage',
+                                                       threshold=threshold)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.location[0]).is_between(302, 354)
+        assert_that(match.location[1]).is_between(516, 574)
+
+    def test_frame_2_watervillage_standard_template_matching_cross_corr(self):
+        threshold = unit_constants.cherrystone_watervillage_standard_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_2.png')
+        match = wargroove_ctrl.find_building_with_template_matching('cherrystone_watervillage',
+                                                                    threshold=threshold)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_equal_to(974)
+        assert_that(match.top_left[1]).is_equal_to(516)
+        assert_that(match.bottom_right[0]).is_equal_to(1024)
+        assert_that(match.bottom_right[1]).is_equal_to(574)
+
+    def test_frame_2_watervillage_standard_template_matching_corr_coeff(self):
+        threshold = unit_constants.cherrystone_watervillage_standard_template_matching_corr_coeff_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_2.png')
+        match = wargroove_ctrl.find_building_with_template_matching('cherrystone_watervillage',
+                                                                    threshold=threshold,
+                                                                    method=cmp504.computer_vision.TemplateMatchingMethod.CORRELATION_COEFFICIENT_NORMALIZED)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_equal_to(974)
+        assert_that(match.top_left[1]).is_equal_to(516)
+        assert_that(match.bottom_right[0]).is_equal_to(1024)
+        assert_that(match.bottom_right[1]).is_equal_to(574)
+
+    def test_frame_2_watervillage_standard_template_matching_square_diff(self):
+        threshold = unit_constants.cherrystone_watervillage_standard_template_matching_square_diff_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_2.png')
+        match = wargroove_ctrl.find_building_with_template_matching('cherrystone_watervillage',
+                                                                    threshold=threshold,
+                                                                    method=cmp504.computer_vision.TemplateMatchingMethod.SQUARE_DIFFERENCE_NORMALIZED)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_equal_to(974)
+        assert_that(match.top_left[1]).is_equal_to(516)
+        assert_that(match.bottom_right[0]).is_equal_to(1024)
+        assert_that(match.bottom_right[1]).is_equal_to(574)
+
+    def test_frame_2_watervillage_hu_moment_template_matching_method_1(self):
+        threshold = unit_constants.cherrystone_watervillage_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_2.png')
+        match = wargroove_ctrl.find_building_with_hu_moment_template_matching('cherrystone_watervillage',
+                                                                              threshold=threshold,
+                                                                              method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_1,
+                                                                              binarization_threshold=40)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(974, 6)
+        assert_that(match.top_left[1]).is_close_to(516, 6)
+        assert_that(match.bottom_right[0]).is_close_to(1024, 6)
+        assert_that(match.bottom_right[1]).is_close_to(574, 6)
+
+    def test_frame_2_watervillage_hu_moment_template_matching_method_2(self):
+        threshold = unit_constants.cherrystone_watervillage_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_2.png')
+        match = wargroove_ctrl.find_building_with_hu_moment_template_matching('cherrystone_watervillage',
+                                                                              threshold=threshold,
+                                                                              method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_2,
+                                                                              binarization_threshold=40)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(974, 6)
+        assert_that(match.top_left[1]).is_close_to(516, 6)
+        assert_that(match.bottom_right[0]).is_close_to(1024, 6)
+        assert_that(match.bottom_right[1]).is_close_to(574, 6)
+
+    def test_frame_2_watervillage_hu_moment_template_matching_method_3(self):
+        threshold = unit_constants.cherrystone_watervillage_hu_moment_template_matching_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_2.png')
+        match = wargroove_ctrl.find_building_with_hu_moment_template_matching('cherrystone_watervillage',
+                                                                              threshold=threshold,
+                                                                              method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_3,
+                                                                              binarization_threshold=40)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.top_left[0]).is_close_to(974, 6)
+        assert_that(match.top_left[1]).is_close_to(516, 6)
+        assert_that(match.bottom_right[0]).is_close_to(1024, 6)
+        assert_that(match.bottom_right[1]).is_close_to(574, 6)
+
+    def test_frame_2_watervillage_sift(self):
+        threshold = unit_constants.cherrystone_watervillage_sift_threshold
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_2.png')
+        match = wargroove_ctrl.find_building_with_sift('cherrystone_watervillage',
+                                                       threshold=threshold)
+
+        wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
+
+        assert_that(match).is_not_none()
+        assert_that(match.location[0]).is_between(974, 1024)
+        assert_that(match.location[1]).is_between(516, 574)
