@@ -30,7 +30,7 @@ class TestProjectEvaluationUnitMove(unittest.TestCase):
         assert_that(match.bottom_right[1]).is_equal_to(176)
 
     def test_frame_1_mercia_standard_template_matching_corr_coeff(self):
-        threshold = unit_constants.cherrystone_mercia_standard_template_matching_threshold
+        threshold = unit_constants.cherrystone_mercia_standard_template_matching_corr_coeff_threshold
         wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
         match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_commander_mercia',
                                                                 threshold=threshold,
@@ -134,7 +134,7 @@ class TestProjectEvaluationUnitMove(unittest.TestCase):
         assert_that(match.bottom_right[1]).is_equal_to(176)
 
     def test_frame_2_mercia_standard_template_matching_corr_coeff(self):
-        threshold = unit_constants.cherrystone_mercia_standard_template_matching_threshold
+        threshold = unit_constants.cherrystone_mercia_standard_template_matching_corr_coeff_threshold
         wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_2.png')
         match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_commander_mercia',
                                                                 threshold=threshold,
@@ -242,7 +242,7 @@ class TestProjectEvaluationUnitMove(unittest.TestCase):
         assert_that(match.bottom_right[1]).is_equal_to(274)
 
     def test_frame_1_emeric_standard_template_matching_corr_coeff(self):
-        threshold = unit_constants.cherrystone_emeric_standard_template_matching_threshold
+        threshold = unit_constants.cherrystone_emeric_standard_template_matching_corr_coeff_threshold
         wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
         match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_commander_emeric',
                                                                 threshold=threshold,
@@ -346,7 +346,7 @@ class TestProjectEvaluationUnitMove(unittest.TestCase):
         assert_that(match.bottom_right[1]).is_equal_to(274)
 
     def test_frame_2_emeric_standard_template_matching_corr_coeff(self):
-        threshold = unit_constants.cherrystone_emeric_standard_template_matching_threshold
+        threshold = unit_constants.cherrystone_emeric_standard_template_matching_corr_coeff_threshold
         wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_2.png')
         match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_commander_emeric',
                                                                 threshold=threshold,
@@ -454,7 +454,7 @@ class TestProjectEvaluationUnitMove(unittest.TestCase):
         assert_that(match.bottom_right[1]).is_equal_to(368)
 
     def test_frame_1_caesar_standard_template_matching_corr_coeff(self):
-        threshold = unit_constants.cherrystone_caesar_standard_template_matching_threshold
+        threshold = unit_constants.cherrystone_caesar_standard_template_matching_corr_coeff_threshold
         wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
         match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_commander_caesar',
                                                                 threshold=threshold,
@@ -558,7 +558,7 @@ class TestProjectEvaluationUnitMove(unittest.TestCase):
         assert_that(match.bottom_right[1]).is_equal_to(368)
 
     def test_frame_2_caesar_standard_template_matching_corr_coeff(self):
-        threshold = unit_constants.cherrystone_caesar_standard_template_matching_threshold
+        threshold = unit_constants.cherrystone_caesar_standard_template_matching_corr_coeff_threshold
         wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_2.png')
         match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_commander_caesar',
                                                                 threshold=threshold,
@@ -666,7 +666,7 @@ class TestProjectEvaluationUnitMove(unittest.TestCase):
         assert_that(match.bottom_right[1]).is_equal_to(176)
 
     def test_frame_1_villager_standard_template_matching_corr_coeff(self):
-        threshold = unit_constants.cherrystone_villager_standard_template_matching_threshold
+        threshold = unit_constants.cherrystone_villager_standard_template_matching_corr_coeff_threshold
         wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
         match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_villager',
                                                                 threshold=threshold,
@@ -770,7 +770,7 @@ class TestProjectEvaluationUnitMove(unittest.TestCase):
         assert_that(match.bottom_right[1]).is_equal_to(176)
 
     def test_frame_2_villager_standard_template_matching_corr_coeff(self):
-        threshold = unit_constants.cherrystone_villager_standard_template_matching_threshold
+        threshold = unit_constants.cherrystone_villager_standard_template_matching_corr_coeff_threshold
         wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_2.png')
         match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_villager',
                                                                 threshold=threshold,
@@ -878,7 +878,7 @@ class TestProjectEvaluationUnitMove(unittest.TestCase):
         assert_that(match.bottom_right[1]).is_equal_to(272)
 
     def test_frame_1_soldier_standard_template_matching_corr_coeff(self):
-        threshold = unit_constants.cherrystone_soldier_standard_template_matching_threshold
+        threshold = unit_constants.cherrystone_soldier_standard_template_matching_corr_coeff_threshold
         wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
         match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_soldier',
                                                                 threshold=threshold,
@@ -982,7 +982,7 @@ class TestProjectEvaluationUnitMove(unittest.TestCase):
         assert_that(match.bottom_right[1]).is_equal_to(272)
 
     def test_frame_2_soldier_standard_template_matching_corr_coeff(self):
-        threshold = unit_constants.cherrystone_soldier_standard_template_matching_threshold
+        threshold = unit_constants.cherrystone_soldier_standard_template_matching_corr_coeff_threshold
         wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_2.png')
         match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_soldier',
                                                                 threshold=threshold,
@@ -1090,7 +1090,7 @@ class TestProjectEvaluationUnitMove(unittest.TestCase):
         assert_that(match.bottom_right[1]).is_equal_to(368)
 
     def test_frame_1_pikeman_standard_template_matching_corr_coeff(self):
-        threshold = unit_constants.cherrystone_pikeman_standard_template_matching_threshold
+        threshold = unit_constants.cherrystone_pikeman_standard_template_matching_corr_coeff_threshold
         wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
         match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_pikeman',
                                                                 threshold=threshold,
@@ -1194,7 +1194,7 @@ class TestProjectEvaluationUnitMove(unittest.TestCase):
         assert_that(match.bottom_right[1]).is_equal_to(368)
 
     def test_frame_2_pikeman_standard_template_matching_corr_coeff(self):
-        threshold = unit_constants.cherrystone_pikeman_standard_template_matching_threshold
+        threshold = unit_constants.cherrystone_pikeman_standard_template_matching_corr_coeff_threshold
         wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_2.png')
         match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_pikeman',
                                                                 threshold=threshold,
@@ -1302,7 +1302,7 @@ class TestProjectEvaluationUnitMove(unittest.TestCase):
         assert_that(match.bottom_right[1]).is_equal_to(176)
 
     def test_frame_1_battlepup_standard_template_matching_corr_coeff(self):
-        threshold = unit_constants.cherrystone_battlepup_standard_template_matching_threshold
+        threshold = unit_constants.cherrystone_battlepup_standard_template_matching_corr_coeff_threshold
         wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
         match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_battle_pup',
                                                                 threshold=threshold,
@@ -1406,7 +1406,7 @@ class TestProjectEvaluationUnitMove(unittest.TestCase):
         assert_that(match.bottom_right[1]).is_equal_to(176)
 
     def test_frame_2_battlepup_standard_template_matching_corr_coeff(self):
-        threshold = unit_constants.cherrystone_battlepup_standard_template_matching_threshold
+        threshold = unit_constants.cherrystone_battlepup_standard_template_matching_corr_coeff_threshold
         wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_2.png')
         match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_battle_pup',
                                                                 threshold=threshold,
@@ -1514,7 +1514,7 @@ class TestProjectEvaluationUnitMove(unittest.TestCase):
         assert_that(match.bottom_right[1]).is_equal_to(272)
 
     def test_frame_1_alchemist_standard_template_matching_corr_coeff(self):
-        threshold = unit_constants.cherrystone_alchemist_standard_template_matching_threshold
+        threshold = unit_constants.cherrystone_alchemist_standard_template_matching_corr_coeff_threshold
         wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
         match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_alchemist',
                                                                 threshold=threshold,
@@ -1618,7 +1618,7 @@ class TestProjectEvaluationUnitMove(unittest.TestCase):
         assert_that(match.bottom_right[1]).is_equal_to(272)
 
     def test_frame_2_alchemist_standard_template_matching_corr_coeff(self):
-        threshold = unit_constants.cherrystone_alchemist_standard_template_matching_threshold
+        threshold = unit_constants.cherrystone_alchemist_standard_template_matching_corr_coeff_threshold
         wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_2.png')
         match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_alchemist',
                                                                 threshold=threshold,
@@ -1726,7 +1726,7 @@ class TestProjectEvaluationUnitMove(unittest.TestCase):
         assert_that(match.bottom_right[1]).is_equal_to(370)
 
     def test_frame_1_archer_standard_template_matching_corr_coeff(self):
-        threshold = unit_constants.cherrystone_archer_standard_template_matching_threshold
+        threshold = unit_constants.cherrystone_archer_standard_template_matching_corr_coeff_threshold
         wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
         match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_archer',
                                                                 threshold=threshold,
@@ -1830,7 +1830,7 @@ class TestProjectEvaluationUnitMove(unittest.TestCase):
         assert_that(match.bottom_right[1]).is_equal_to(370)
 
     def test_frame_2_archer_standard_template_matching_corr_coeff(self):
-        threshold = unit_constants.cherrystone_archer_standard_template_matching_threshold
+        threshold = unit_constants.cherrystone_archer_standard_template_matching_corr_coeff_threshold
         wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_2.png')
         match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_archer',
                                                                 threshold=threshold,
@@ -1938,7 +1938,7 @@ class TestProjectEvaluationUnitMove(unittest.TestCase):
         assert_that(match.bottom_right[1]).is_equal_to(178)
 
     def test_frame_1_golem_standard_template_matching_corr_coeff(self):
-        threshold = unit_constants.cherrystone_golem_standard_template_matching_threshold
+        threshold = unit_constants.cherrystone_golem_standard_template_matching_corr_coeff_threshold
         wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
         match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_golem',
                                                                 threshold=threshold,
@@ -2042,7 +2042,7 @@ class TestProjectEvaluationUnitMove(unittest.TestCase):
         assert_that(match.bottom_right[1]).is_equal_to(178)
 
     def test_frame_2_golem_standard_template_matching_corr_coeff(self):
-        threshold = unit_constants.cherrystone_golem_standard_template_matching_threshold
+        threshold = unit_constants.cherrystone_golem_standard_template_matching_corr_coeff_threshold
         wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_2.png')
         match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_golem',
                                                                 threshold=threshold,
@@ -2150,7 +2150,7 @@ class TestProjectEvaluationUnitMove(unittest.TestCase):
         assert_that(match.bottom_right[1]).is_equal_to(272)
 
     def test_frame_1_knight_standard_template_matching_corr_coeff(self):
-        threshold = unit_constants.cherrystone_knight_standard_template_matching_threshold
+        threshold = unit_constants.cherrystone_knight_standard_template_matching_corr_coeff_threshold
         wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
         match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_knight',
                                                                 threshold=threshold,
@@ -2254,7 +2254,7 @@ class TestProjectEvaluationUnitMove(unittest.TestCase):
         assert_that(match.bottom_right[1]).is_equal_to(272)
 
     def test_frame_2_knight_standard_template_matching_corr_coeff(self):
-        threshold = unit_constants.cherrystone_knight_standard_template_matching_threshold
+        threshold = unit_constants.cherrystone_knight_standard_template_matching_corr_coeff_threshold
         wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_2.png')
         match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_knight',
                                                                 threshold=threshold,
@@ -2362,7 +2362,7 @@ class TestProjectEvaluationUnitMove(unittest.TestCase):
         assert_that(match.bottom_right[1]).is_equal_to(370)
 
     def test_frame_1_wagon_standard_template_matching_corr_coeff(self):
-        threshold = unit_constants.cherrystone_wagon_standard_template_matching_threshold
+        threshold = unit_constants.cherrystone_wagon_standard_template_matching_corr_coeff_threshold
         wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
         match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_wagon',
                                                                 threshold=threshold,
@@ -2466,7 +2466,7 @@ class TestProjectEvaluationUnitMove(unittest.TestCase):
         assert_that(match.bottom_right[1]).is_equal_to(370)
 
     def test_frame_2_wagon_standard_template_matching_corr_coeff(self):
-        threshold = unit_constants.cherrystone_wagon_standard_template_matching_threshold
+        threshold = unit_constants.cherrystone_wagon_standard_template_matching_corr_coeff_threshold
         wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_2.png')
         match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_wagon',
                                                                 threshold=threshold,
@@ -2574,7 +2574,7 @@ class TestProjectEvaluationUnitMove(unittest.TestCase):
         assert_that(match.bottom_right[1]).is_equal_to(180)
 
     def test_frame_1_ballista_standard_template_matching_corr_coeff(self):
-        threshold = unit_constants.cherrystone_ballista_standard_template_matching_threshold
+        threshold = unit_constants.cherrystone_ballista_standard_template_matching_corr_coeff_threshold
         wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
         match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_ballista',
                                                                 threshold=threshold,
@@ -2678,7 +2678,7 @@ class TestProjectEvaluationUnitMove(unittest.TestCase):
         assert_that(match.bottom_right[1]).is_equal_to(180)
 
     def test_frame_2_ballista_standard_template_matching_corr_coeff(self):
-        threshold = unit_constants.cherrystone_ballista_standard_template_matching_threshold
+        threshold = unit_constants.cherrystone_ballista_standard_template_matching_corr_coeff_threshold
         wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_2.png')
         match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_ballista',
                                                                 threshold=threshold,
@@ -2786,7 +2786,7 @@ class TestProjectEvaluationUnitMove(unittest.TestCase):
         assert_that(match.bottom_right[1]).is_equal_to(276)
 
     def test_frame_1_trebuchet_standard_template_matching_corr_coeff(self):
-        threshold = unit_constants.cherrystone_trebuchet_standard_template_matching_threshold
+        threshold = unit_constants.cherrystone_trebuchet_standard_template_matching_corr_coeff_threshold
         wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
         match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_trebuchet',
                                                                 threshold=threshold,
@@ -2890,7 +2890,7 @@ class TestProjectEvaluationUnitMove(unittest.TestCase):
         assert_that(match.bottom_right[1]).is_equal_to(276)
 
     def test_frame_2_trebuchet_standard_template_matching_corr_coeff(self):
-        threshold = unit_constants.cherrystone_trebuchet_standard_template_matching_threshold
+        threshold = unit_constants.cherrystone_trebuchet_standard_template_matching_corr_coeff_threshold
         wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_2.png')
         match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_trebuchet',
                                                                 threshold=threshold,
@@ -2998,7 +2998,7 @@ class TestProjectEvaluationUnitMove(unittest.TestCase):
         assert_that(match.bottom_right[1]).is_equal_to(362)
 
     def test_frame_1_balloon_standard_template_matching_corr_coeff(self):
-        threshold = unit_constants.cherrystone_balloon_standard_template_matching_threshold
+        threshold = unit_constants.cherrystone_balloon_standard_template_matching_corr_coeff_threshold
         wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
         match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_balloon',
                                                                 threshold=threshold,
@@ -3102,7 +3102,7 @@ class TestProjectEvaluationUnitMove(unittest.TestCase):
         assert_that(match.bottom_right[1]).is_equal_to(362)
 
     def test_frame_2_balloon_standard_template_matching_corr_coeff(self):
-        threshold = unit_constants.cherrystone_balloon_standard_template_matching_threshold
+        threshold = unit_constants.cherrystone_balloon_standard_template_matching_corr_coeff_threshold
         wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_2.png')
         match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_balloon',
                                                                 threshold=threshold,
@@ -3210,7 +3210,7 @@ class TestProjectEvaluationUnitMove(unittest.TestCase):
         assert_that(match.bottom_right[1]).is_equal_to(168)
 
     def test_frame_1_harpy_standard_template_matching_corr_coeff(self):
-        threshold = unit_constants.cherrystone_harpy_standard_template_matching_threshold
+        threshold = unit_constants.cherrystone_harpy_standard_template_matching_corr_coeff_threshold
         wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
         match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_harpy',
                                                                 threshold=threshold,
@@ -3314,7 +3314,7 @@ class TestProjectEvaluationUnitMove(unittest.TestCase):
         assert_that(match.bottom_right[1]).is_equal_to(168)
 
     def test_frame_2_harpy_standard_template_matching_corr_coeff(self):
-        threshold = unit_constants.cherrystone_harpy_standard_template_matching_threshold
+        threshold = unit_constants.cherrystone_harpy_standard_template_matching_corr_coeff_threshold
         wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_2.png')
         match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_harpy',
                                                                 threshold=threshold,
@@ -3422,7 +3422,7 @@ class TestProjectEvaluationUnitMove(unittest.TestCase):
         assert_that(match.bottom_right[1]).is_equal_to(264)
 
     def test_frame_1_witch_standard_template_matching_corr_coeff(self):
-        threshold = unit_constants.cherrystone_witch_standard_template_matching_threshold
+        threshold = unit_constants.cherrystone_witch_standard_template_matching_corr_coeff_threshold
         wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
         match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_witch',
                                                                 threshold=threshold,
@@ -3526,7 +3526,7 @@ class TestProjectEvaluationUnitMove(unittest.TestCase):
         assert_that(match.bottom_right[1]).is_equal_to(264)
 
     def test_frame_2_witch_standard_template_matching_corr_coeff(self):
-        threshold = unit_constants.cherrystone_witch_standard_template_matching_threshold
+        threshold = unit_constants.cherrystone_witch_standard_template_matching_corr_coeff_threshold
         wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_2.png')
         match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_witch',
                                                                 threshold=threshold,
@@ -3634,7 +3634,7 @@ class TestProjectEvaluationUnitMove(unittest.TestCase):
         assert_that(match.bottom_right[1]).is_equal_to(354)
 
     def test_frame_1_dragon_standard_template_matching_corr_coeff(self):
-        threshold = unit_constants.cherrystone_dragon_standard_template_matching_threshold
+        threshold = unit_constants.cherrystone_dragon_standard_template_matching_corr_coeff_threshold
         wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
         match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_emberwing',
                                                                 threshold=threshold,
@@ -3738,7 +3738,7 @@ class TestProjectEvaluationUnitMove(unittest.TestCase):
         assert_that(match.bottom_right[1]).is_equal_to(354)
 
     def test_frame_2_dragon_standard_template_matching_corr_coeff(self):
-        threshold = unit_constants.cherrystone_dragon_standard_template_matching_threshold
+        threshold = unit_constants.cherrystone_dragon_standard_template_matching_corr_coeff_threshold
         wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_2.png')
         match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_emberwing',
                                                                 threshold=threshold,
@@ -3846,7 +3846,7 @@ class TestProjectEvaluationUnitMove(unittest.TestCase):
         assert_that(match.bottom_right[1]).is_equal_to(560)
 
     def test_frame_1_barge_standard_template_matching_corr_coeff(self):
-        threshold = unit_constants.cherrystone_barge_standard_template_matching_threshold
+        threshold = unit_constants.cherrystone_barge_standard_template_matching_corr_coeff_threshold
         wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
         match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_barge',
                                                                 threshold=threshold,
@@ -3950,7 +3950,7 @@ class TestProjectEvaluationUnitMove(unittest.TestCase):
         assert_that(match.bottom_right[1]).is_equal_to(560)
 
     def test_frame_2_barge_standard_template_matching_corr_coeff(self):
-        threshold = unit_constants.cherrystone_barge_standard_template_matching_threshold
+        threshold = unit_constants.cherrystone_barge_standard_template_matching_corr_coeff_threshold
         wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_2.png')
         match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_barge',
                                                                 threshold=threshold,
@@ -4058,7 +4058,7 @@ class TestProjectEvaluationUnitMove(unittest.TestCase):
         assert_that(match.bottom_right[1]).is_equal_to(560)
 
     def test_frame_1_seaturtle_standard_template_matching_corr_coeff(self):
-        threshold = unit_constants.cherrystone_seaturtle_standard_template_matching_threshold
+        threshold = unit_constants.cherrystone_seaturtle_standard_template_matching_corr_coeff_threshold
         wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
         match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_sea_turtle',
                                                                 threshold=threshold,
@@ -4162,7 +4162,7 @@ class TestProjectEvaluationUnitMove(unittest.TestCase):
         assert_that(match.bottom_right[1]).is_equal_to(560)
 
     def test_frame_2_seaturtle_standard_template_matching_corr_coeff(self):
-        threshold = unit_constants.cherrystone_seaturtle_standard_template_matching_threshold
+        threshold = unit_constants.cherrystone_seaturtle_standard_template_matching_corr_coeff_threshold
         wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_2.png')
         match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_sea_turtle',
                                                                 threshold=threshold,
@@ -4270,7 +4270,7 @@ class TestProjectEvaluationUnitMove(unittest.TestCase):
         assert_that(match.bottom_right[1]).is_equal_to(564)
 
     def test_frame_1_harpoonship_standard_template_matching_corr_coeff(self):
-        threshold = unit_constants.cherrystone_harpoonship_standard_template_matching_threshold
+        threshold = unit_constants.cherrystone_harpoonship_standard_template_matching_corr_coeff_threshold
         wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
         match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_harpoon_ship',
                                                                 threshold=threshold,
@@ -4374,7 +4374,7 @@ class TestProjectEvaluationUnitMove(unittest.TestCase):
         assert_that(match.bottom_right[1]).is_equal_to(564)
 
     def test_frame_2_harpoonship_standard_template_matching_corr_coeff(self):
-        threshold = unit_constants.cherrystone_harpoonship_standard_template_matching_threshold
+        threshold = unit_constants.cherrystone_harpoonship_standard_template_matching_corr_coeff_threshold
         wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_2.png')
         match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_harpoon_ship',
                                                                 threshold=threshold,
@@ -4482,7 +4482,7 @@ class TestProjectEvaluationUnitMove(unittest.TestCase):
         assert_that(match.bottom_right[1]).is_equal_to(564)
 
     def test_frame_1_warship_standard_template_matching_corr_coeff(self):
-        threshold = unit_constants.cherrystone_warship_standard_template_matching_threshold
+        threshold = unit_constants.cherrystone_warship_standard_template_matching_corr_coeff_threshold
         wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
         match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_warship',
                                                                 threshold=threshold,
@@ -4586,7 +4586,7 @@ class TestProjectEvaluationUnitMove(unittest.TestCase):
         assert_that(match.bottom_right[1]).is_equal_to(564)
 
     def test_frame_2_warship_standard_template_matching_corr_coeff(self):
-        threshold = unit_constants.cherrystone_warship_standard_template_matching_threshold
+        threshold = unit_constants.cherrystone_warship_standard_template_matching_corr_coeff_threshold
         wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_2.png')
         match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_warship',
                                                                 threshold=threshold,
@@ -4694,7 +4694,7 @@ class TestProjectEvaluationUnitMove(unittest.TestCase):
         assert_that(match.bottom_right[1]).is_equal_to(562)
 
     def test_frame_1_merfolk_standard_template_matching_corr_coeff(self):
-        threshold = unit_constants.cherrystone_merfolk_standard_template_matching_threshold
+        threshold = unit_constants.cherrystone_merfolk_standard_template_matching_corr_coeff_threshold
         wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_1.png')
         match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_merfolk',
                                                                 threshold=threshold,
@@ -4798,7 +4798,7 @@ class TestProjectEvaluationUnitMove(unittest.TestCase):
         assert_that(match.bottom_right[1]).is_equal_to(562)
 
     def test_frame_2_merfolk_standard_template_matching_corr_coeff(self):
-        threshold = unit_constants.cherrystone_merfolk_standard_template_matching_threshold
+        threshold = unit_constants.cherrystone_merfolk_standard_template_matching_corr_coeff_threshold
         wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_movement_config_2.png')
         match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_merfolk',
                                                                 threshold=threshold,
