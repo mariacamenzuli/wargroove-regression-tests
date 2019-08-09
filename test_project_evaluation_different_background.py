@@ -5,11 +5,11 @@ import unittest
 from assertpy import assert_that
 
 
-class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
+class TestProjectEvaluationDifferentBackground(unittest.TestCase):
 
     @staticmethod
     def __get_eval_folder():
-        return 'data/evaluation-frames/units-and-buildings/partial-occlusion/'
+        return 'data/evaluation-frames/units-and-buildings/different-backgrounds/'
 
     # ----------------------------------------------------------------------------
     # ---------------------------------- MERCIA ----------------------------------
@@ -17,7 +17,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_mercia_standard_template_matching_cross_corr(self):
         threshold = unit_constants.cherrystone_mercia_standard_template_matching_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_commander_mercia',
                                                                 threshold=threshold)
 
@@ -31,7 +31,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_mercia_standard_template_matching_corr_coeff(self):
         threshold = unit_constants.cherrystone_mercia_standard_template_matching_corr_coeff_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_commander_mercia',
                                                                 threshold=threshold,
                                                                 method=cmp504.computer_vision.TemplateMatchingMethod.CORRELATION_COEFFICIENT_NORMALIZED)
@@ -46,7 +46,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_mercia_standard_template_matching_square_diff(self):
         threshold = unit_constants.cherrystone_mercia_standard_template_matching_square_diff_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_commander_mercia',
                                                                 threshold=threshold,
                                                                 method=cmp504.computer_vision.TemplateMatchingMethod.SQUARE_DIFFERENCE_NORMALIZED)
@@ -61,7 +61,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_mercia_hu_moment_template_matching_method_1(self):
         threshold = unit_constants.cherrystone_mercia_hu_moment_template_matching_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_commander_mercia',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_1,
@@ -77,7 +77,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_mercia_hu_moment_template_matching_method_2(self):
         threshold = unit_constants.cherrystone_mercia_hu_moment_template_matching_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_commander_mercia',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_2,
@@ -93,7 +93,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_mercia_hu_moment_template_matching_method_3(self):
         threshold = unit_constants.cherrystone_mercia_hu_moment_template_matching_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_commander_mercia',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_3,
@@ -109,7 +109,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_mercia_sift(self):
         threshold = unit_constants.cherrystone_mercia_sift_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_sift('cherrystone_commander_mercia',
                                                    threshold=threshold)
 
@@ -125,7 +125,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_emeric_standard_template_matching_cross_corr(self):
         threshold = unit_constants.cherrystone_emeric_standard_template_matching_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_commander_emeric',
                                                                 threshold=threshold)
 
@@ -139,7 +139,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_emeric_standard_template_matching_corr_coeff(self):
         threshold = unit_constants.cherrystone_emeric_standard_template_matching_corr_coeff_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_commander_emeric',
                                                                 threshold=threshold,
                                                                 method=cmp504.computer_vision.TemplateMatchingMethod.CORRELATION_COEFFICIENT_NORMALIZED)
@@ -154,7 +154,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_emeric_standard_template_matching_square_diff(self):
         threshold = unit_constants.cherrystone_emeric_standard_template_matching_square_diff_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_commander_emeric',
                                                                 threshold=threshold,
                                                                 method=cmp504.computer_vision.TemplateMatchingMethod.SQUARE_DIFFERENCE_NORMALIZED)
@@ -169,7 +169,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_emeric_hu_moment_template_matching_method_1(self):
         threshold = unit_constants.cherrystone_emeric_hu_moment_template_matching_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_commander_emeric',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_1,
@@ -185,7 +185,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_emeric_hu_moment_template_matching_method_2(self):
         threshold = unit_constants.cherrystone_emeric_hu_moment_template_matching_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_commander_emeric',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_2,
@@ -201,7 +201,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_emeric_hu_moment_template_matching_method_3(self):
         threshold = unit_constants.cherrystone_emeric_hu_moment_template_matching_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_commander_emeric',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_3,
@@ -217,7 +217,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_emeric_sift(self):
         threshold = unit_constants.cherrystone_emeric_sift_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_sift('cherrystone_commander_emeric',
                                                    threshold=threshold)
 
@@ -233,7 +233,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_caesar_standard_template_matching_cross_corr(self):
         threshold = unit_constants.cherrystone_caesar_standard_template_matching_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_commander_caesar',
                                                                 threshold=threshold)
 
@@ -247,7 +247,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_caesar_standard_template_matching_corr_coeff(self):
         threshold = unit_constants.cherrystone_caesar_standard_template_matching_corr_coeff_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_commander_caesar',
                                                                 threshold=threshold,
                                                                 method=cmp504.computer_vision.TemplateMatchingMethod.CORRELATION_COEFFICIENT_NORMALIZED)
@@ -262,7 +262,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_caesar_standard_template_matching_square_diff(self):
         threshold = unit_constants.cherrystone_caesar_standard_template_matching_square_diff_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_commander_caesar',
                                                                 threshold=threshold,
                                                                 method=cmp504.computer_vision.TemplateMatchingMethod.SQUARE_DIFFERENCE_NORMALIZED)
@@ -277,7 +277,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_caesar_hu_moment_template_matching_method_1(self):
         threshold = unit_constants.cherrystone_caesar_hu_moment_template_matching_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_commander_caesar',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_1,
@@ -293,7 +293,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_caesar_hu_moment_template_matching_method_2(self):
         threshold = unit_constants.cherrystone_caesar_hu_moment_template_matching_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_commander_caesar',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_2,
@@ -309,7 +309,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_caesar_hu_moment_template_matching_method_3(self):
         threshold = unit_constants.cherrystone_caesar_hu_moment_template_matching_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_commander_caesar',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_3,
@@ -325,7 +325,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_caesar_sift(self):
         threshold = unit_constants.cherrystone_caesar_sift_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_sift('cherrystone_commander_caesar',
                                                    threshold=threshold)
 
@@ -341,7 +341,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_villager_standard_template_matching_cross_corr(self):
         threshold = unit_constants.cherrystone_villager_standard_template_matching_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_villager',
                                                                 threshold=threshold)
 
@@ -355,7 +355,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_villager_standard_template_matching_corr_coeff(self):
         threshold = unit_constants.cherrystone_villager_standard_template_matching_corr_coeff_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_villager',
                                                                 threshold=threshold,
                                                                 method=cmp504.computer_vision.TemplateMatchingMethod.CORRELATION_COEFFICIENT_NORMALIZED)
@@ -370,7 +370,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_villager_standard_template_matching_square_diff(self):
         threshold = unit_constants.cherrystone_villager_standard_template_matching_square_diff_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_villager',
                                                                 threshold=threshold,
                                                                 method=cmp504.computer_vision.TemplateMatchingMethod.SQUARE_DIFFERENCE_NORMALIZED)
@@ -385,7 +385,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_villager_hu_moment_template_matching_method_1(self):
         threshold = unit_constants.cherrystone_villager_hu_moment_template_matching_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_villager',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_1,
@@ -401,7 +401,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_villager_hu_moment_template_matching_method_2(self):
         threshold = unit_constants.cherrystone_villager_hu_moment_template_matching_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_villager',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_2,
@@ -417,7 +417,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_villager_hu_moment_template_matching_method_3(self):
         threshold = unit_constants.cherrystone_villager_hu_moment_template_matching_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_villager',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_3,
@@ -433,7 +433,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_villager_sift(self):
         threshold = unit_constants.cherrystone_villager_sift_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_sift('cherrystone_villager',
                                                    threshold=threshold)
 
@@ -449,7 +449,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_soldier_standard_template_matching_cross_corr(self):
         threshold = unit_constants.cherrystone_soldier_standard_template_matching_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_soldier',
                                                                 threshold=threshold)
 
@@ -463,7 +463,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_soldier_standard_template_matching_corr_coeff(self):
         threshold = unit_constants.cherrystone_soldier_standard_template_matching_corr_coeff_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_soldier',
                                                                 threshold=threshold,
                                                                 method=cmp504.computer_vision.TemplateMatchingMethod.CORRELATION_COEFFICIENT_NORMALIZED)
@@ -478,7 +478,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_soldier_standard_template_matching_square_diff(self):
         threshold = unit_constants.cherrystone_soldier_standard_template_matching_square_diff_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_soldier',
                                                                 threshold=threshold,
                                                                 method=cmp504.computer_vision.TemplateMatchingMethod.SQUARE_DIFFERENCE_NORMALIZED)
@@ -493,7 +493,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_soldier_hu_moment_template_matching_method_1(self):
         threshold = unit_constants.cherrystone_soldier_hu_moment_template_matching_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_soldier',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_1,
@@ -509,7 +509,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_soldier_hu_moment_template_matching_method_2(self):
         threshold = unit_constants.cherrystone_soldier_hu_moment_template_matching_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_soldier',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_2,
@@ -525,7 +525,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_soldier_hu_moment_template_matching_method_3(self):
         threshold = unit_constants.cherrystone_soldier_hu_moment_template_matching_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_soldier',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_3,
@@ -541,7 +541,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_soldier_sift(self):
         threshold = unit_constants.cherrystone_soldier_sift_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_sift('cherrystone_soldier',
                                                    threshold=threshold)
 
@@ -557,7 +557,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_pikeman_standard_template_matching_cross_corr(self):
         threshold = unit_constants.cherrystone_pikeman_standard_template_matching_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_pikeman',
                                                                 threshold=threshold)
 
@@ -571,7 +571,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_pikeman_standard_template_matching_corr_coeff(self):
         threshold = unit_constants.cherrystone_pikeman_standard_template_matching_corr_coeff_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_pikeman',
                                                                 threshold=threshold,
                                                                 method=cmp504.computer_vision.TemplateMatchingMethod.CORRELATION_COEFFICIENT_NORMALIZED)
@@ -586,7 +586,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_pikeman_standard_template_matching_square_diff(self):
         threshold = unit_constants.cherrystone_pikeman_standard_template_matching_square_diff_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_pikeman',
                                                                 threshold=threshold,
                                                                 method=cmp504.computer_vision.TemplateMatchingMethod.SQUARE_DIFFERENCE_NORMALIZED)
@@ -601,7 +601,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_pikeman_hu_moment_template_matching_method_1(self):
         threshold = unit_constants.cherrystone_pikeman_hu_moment_template_matching_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_pikeman',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_1,
@@ -617,7 +617,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_pikeman_hu_moment_template_matching_method_2(self):
         threshold = unit_constants.cherrystone_pikeman_hu_moment_template_matching_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_pikeman',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_2,
@@ -633,7 +633,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_pikeman_hu_moment_template_matching_method_3(self):
         threshold = unit_constants.cherrystone_pikeman_hu_moment_template_matching_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_pikeman',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_3,
@@ -649,7 +649,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_pikeman_sift(self):
         threshold = unit_constants.cherrystone_pikeman_sift_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_sift('cherrystone_pikeman',
                                                    threshold=threshold)
 
@@ -665,7 +665,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_battlepup_standard_template_matching_cross_corr(self):
         threshold = unit_constants.cherrystone_battlepup_standard_template_matching_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_battle_pup',
                                                                 threshold=threshold)
 
@@ -679,7 +679,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_battlepup_standard_template_matching_corr_coeff(self):
         threshold = unit_constants.cherrystone_battlepup_standard_template_matching_corr_coeff_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_battle_pup',
                                                                 threshold=threshold,
                                                                 method=cmp504.computer_vision.TemplateMatchingMethod.CORRELATION_COEFFICIENT_NORMALIZED)
@@ -694,7 +694,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_battlepup_standard_template_matching_square_diff(self):
         threshold = unit_constants.cherrystone_battlepup_standard_template_matching_square_diff_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_battle_pup',
                                                                 threshold=threshold,
                                                                 method=cmp504.computer_vision.TemplateMatchingMethod.SQUARE_DIFFERENCE_NORMALIZED)
@@ -709,7 +709,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_battlepup_hu_moment_template_matching_method_1(self):
         threshold = unit_constants.cherrystone_battlepup_hu_moment_template_matching_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_battle_pup',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_1,
@@ -725,7 +725,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_battlepup_hu_moment_template_matching_method_2(self):
         threshold = unit_constants.cherrystone_battlepup_hu_moment_template_matching_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_battle_pup',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_2,
@@ -741,7 +741,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_battlepup_hu_moment_template_matching_method_3(self):
         threshold = unit_constants.cherrystone_battlepup_hu_moment_template_matching_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_battle_pup',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_3,
@@ -757,7 +757,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_battlepup_sift(self):
         threshold = unit_constants.cherrystone_battlepup_sift_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_sift('cherrystone_battle_pup',
                                                    threshold=threshold)
 
@@ -773,7 +773,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_alchemist_standard_template_matching_cross_corr(self):
         threshold = unit_constants.cherrystone_alchemist_standard_template_matching_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_alchemist',
                                                                 threshold=threshold)
 
@@ -787,7 +787,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_alchemist_standard_template_matching_corr_coeff(self):
         threshold = unit_constants.cherrystone_alchemist_standard_template_matching_corr_coeff_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_alchemist',
                                                                 threshold=threshold,
                                                                 method=cmp504.computer_vision.TemplateMatchingMethod.CORRELATION_COEFFICIENT_NORMALIZED)
@@ -802,7 +802,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_alchemist_standard_template_matching_square_diff(self):
         threshold = unit_constants.cherrystone_alchemist_standard_template_matching_square_diff_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_alchemist',
                                                                 threshold=threshold,
                                                                 method=cmp504.computer_vision.TemplateMatchingMethod.SQUARE_DIFFERENCE_NORMALIZED)
@@ -817,7 +817,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_alchemist_hu_moment_template_matching_method_1(self):
         threshold = unit_constants.cherrystone_alchemist_hu_moment_template_matching_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_alchemist',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_1,
@@ -833,7 +833,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_alchemist_hu_moment_template_matching_method_2(self):
         threshold = unit_constants.cherrystone_alchemist_hu_moment_template_matching_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_alchemist',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_2,
@@ -849,7 +849,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_alchemist_hu_moment_template_matching_method_3(self):
         threshold = unit_constants.cherrystone_alchemist_hu_moment_template_matching_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_alchemist',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_3,
@@ -865,7 +865,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_alchemist_sift(self):
         threshold = unit_constants.cherrystone_alchemist_sift_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_sift('cherrystone_alchemist',
                                                    threshold=threshold)
 
@@ -881,7 +881,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_archer_standard_template_matching_cross_corr(self):
         threshold = unit_constants.cherrystone_archer_standard_template_matching_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_archer',
                                                                 threshold=threshold)
 
@@ -895,7 +895,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_archer_standard_template_matching_corr_coeff(self):
         threshold = unit_constants.cherrystone_archer_standard_template_matching_corr_coeff_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_archer',
                                                                 threshold=threshold,
                                                                 method=cmp504.computer_vision.TemplateMatchingMethod.CORRELATION_COEFFICIENT_NORMALIZED)
@@ -910,7 +910,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_archer_standard_template_matching_square_diff(self):
         threshold = unit_constants.cherrystone_archer_standard_template_matching_square_diff_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_archer',
                                                                 threshold=threshold,
                                                                 method=cmp504.computer_vision.TemplateMatchingMethod.SQUARE_DIFFERENCE_NORMALIZED)
@@ -925,7 +925,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_archer_hu_moment_template_matching_method_1(self):
         threshold = unit_constants.cherrystone_archer_hu_moment_template_matching_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_archer',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_1,
@@ -941,7 +941,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_archer_hu_moment_template_matching_method_2(self):
         threshold = unit_constants.cherrystone_archer_hu_moment_template_matching_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_archer',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_2,
@@ -957,7 +957,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_archer_hu_moment_template_matching_method_3(self):
         threshold = unit_constants.cherrystone_archer_hu_moment_template_matching_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_archer',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_3,
@@ -973,7 +973,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_archer_sift(self):
         threshold = unit_constants.cherrystone_archer_sift_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_sift('cherrystone_archer',
                                                    threshold=threshold)
 
@@ -989,7 +989,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_golem_standard_template_matching_cross_corr(self):
         threshold = unit_constants.cherrystone_golem_standard_template_matching_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_golem',
                                                                 threshold=threshold)
 
@@ -1003,7 +1003,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_golem_standard_template_matching_corr_coeff(self):
         threshold = unit_constants.cherrystone_golem_standard_template_matching_corr_coeff_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_golem',
                                                                 threshold=threshold,
                                                                 method=cmp504.computer_vision.TemplateMatchingMethod.CORRELATION_COEFFICIENT_NORMALIZED)
@@ -1018,7 +1018,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_golem_standard_template_matching_square_diff(self):
         threshold = unit_constants.cherrystone_golem_standard_template_matching_square_diff_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_golem',
                                                                 threshold=threshold,
                                                                 method=cmp504.computer_vision.TemplateMatchingMethod.SQUARE_DIFFERENCE_NORMALIZED)
@@ -1033,7 +1033,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_golem_hu_moment_template_matching_method_1(self):
         threshold = unit_constants.cherrystone_golem_hu_moment_template_matching_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_golem',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_1,
@@ -1049,7 +1049,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_golem_hu_moment_template_matching_method_2(self):
         threshold = unit_constants.cherrystone_golem_hu_moment_template_matching_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_golem',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_2,
@@ -1065,7 +1065,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_golem_hu_moment_template_matching_method_3(self):
         threshold = unit_constants.cherrystone_golem_hu_moment_template_matching_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_golem',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_3,
@@ -1081,7 +1081,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_golem_sift(self):
         threshold = unit_constants.cherrystone_golem_sift_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_sift('cherrystone_golem',
                                                    threshold=threshold)
 
@@ -1097,7 +1097,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_knight_standard_template_matching_cross_corr(self):
         threshold = unit_constants.cherrystone_knight_standard_template_matching_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_knight',
                                                                 threshold=threshold)
 
@@ -1111,7 +1111,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_knight_standard_template_matching_corr_coeff(self):
         threshold = unit_constants.cherrystone_knight_standard_template_matching_corr_coeff_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_knight',
                                                                 threshold=threshold,
                                                                 method=cmp504.computer_vision.TemplateMatchingMethod.CORRELATION_COEFFICIENT_NORMALIZED)
@@ -1126,7 +1126,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_knight_standard_template_matching_square_diff(self):
         threshold = unit_constants.cherrystone_knight_standard_template_matching_square_diff_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_knight',
                                                                 threshold=threshold,
                                                                 method=cmp504.computer_vision.TemplateMatchingMethod.SQUARE_DIFFERENCE_NORMALIZED)
@@ -1141,7 +1141,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_knight_hu_moment_template_matching_method_1(self):
         threshold = unit_constants.cherrystone_knight_hu_moment_template_matching_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_knight',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_1,
@@ -1157,7 +1157,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_knight_hu_moment_template_matching_method_2(self):
         threshold = unit_constants.cherrystone_knight_hu_moment_template_matching_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_knight',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_2,
@@ -1173,7 +1173,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_knight_hu_moment_template_matching_method_3(self):
         threshold = unit_constants.cherrystone_knight_hu_moment_template_matching_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_knight',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_3,
@@ -1189,7 +1189,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_knight_sift(self):
         threshold = unit_constants.cherrystone_knight_sift_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_sift('cherrystone_knight',
                                                    threshold=threshold)
 
@@ -1205,7 +1205,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_wagon_standard_template_matching_cross_corr(self):
         threshold = unit_constants.cherrystone_wagon_standard_template_matching_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_wagon',
                                                                 threshold=threshold)
 
@@ -1219,7 +1219,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_wagon_standard_template_matching_corr_coeff(self):
         threshold = unit_constants.cherrystone_wagon_standard_template_matching_corr_coeff_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_wagon',
                                                                 threshold=threshold,
                                                                 method=cmp504.computer_vision.TemplateMatchingMethod.CORRELATION_COEFFICIENT_NORMALIZED)
@@ -1234,7 +1234,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_wagon_standard_template_matching_square_diff(self):
         threshold = unit_constants.cherrystone_wagon_standard_template_matching_square_diff_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_wagon',
                                                                 threshold=threshold,
                                                                 method=cmp504.computer_vision.TemplateMatchingMethod.SQUARE_DIFFERENCE_NORMALIZED)
@@ -1249,7 +1249,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_wagon_hu_moment_template_matching_method_1(self):
         threshold = unit_constants.cherrystone_wagon_hu_moment_template_matching_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_wagon',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_1,
@@ -1265,7 +1265,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_wagon_hu_moment_template_matching_method_2(self):
         threshold = unit_constants.cherrystone_wagon_hu_moment_template_matching_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_wagon',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_2,
@@ -1281,7 +1281,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_wagon_hu_moment_template_matching_method_3(self):
         threshold = unit_constants.cherrystone_wagon_hu_moment_template_matching_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_wagon',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_3,
@@ -1297,7 +1297,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_wagon_sift(self):
         threshold = unit_constants.cherrystone_wagon_sift_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_sift('cherrystone_wagon',
                                                    threshold=threshold)
 
@@ -1313,7 +1313,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_ballista_standard_template_matching_cross_corr(self):
         threshold = unit_constants.cherrystone_ballista_standard_template_matching_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_ballista',
                                                                 threshold=threshold)
 
@@ -1327,7 +1327,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_ballista_standard_template_matching_corr_coeff(self):
         threshold = unit_constants.cherrystone_ballista_standard_template_matching_corr_coeff_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_ballista',
                                                                 threshold=threshold,
                                                                 method=cmp504.computer_vision.TemplateMatchingMethod.CORRELATION_COEFFICIENT_NORMALIZED)
@@ -1342,7 +1342,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_ballista_standard_template_matching_square_diff(self):
         threshold = unit_constants.cherrystone_ballista_standard_template_matching_square_diff_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_ballista',
                                                                 threshold=threshold,
                                                                 method=cmp504.computer_vision.TemplateMatchingMethod.SQUARE_DIFFERENCE_NORMALIZED)
@@ -1357,7 +1357,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_ballista_hu_moment_template_matching_method_1(self):
         threshold = unit_constants.cherrystone_ballista_hu_moment_template_matching_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_ballista',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_1,
@@ -1373,7 +1373,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_ballista_hu_moment_template_matching_method_2(self):
         threshold = unit_constants.cherrystone_ballista_hu_moment_template_matching_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_ballista',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_2,
@@ -1389,7 +1389,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_ballista_hu_moment_template_matching_method_3(self):
         threshold = unit_constants.cherrystone_ballista_hu_moment_template_matching_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_ballista',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_3,
@@ -1405,7 +1405,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_ballista_sift(self):
         threshold = unit_constants.cherrystone_ballista_sift_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_sift('cherrystone_ballista',
                                                    threshold=threshold)
 
@@ -1421,7 +1421,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_trebuchet_standard_template_matching_cross_corr(self):
         threshold = unit_constants.cherrystone_trebuchet_standard_template_matching_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_trebuchet',
                                                                 threshold=threshold)
 
@@ -1435,7 +1435,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_trebuchet_standard_template_matching_corr_coeff(self):
         threshold = unit_constants.cherrystone_trebuchet_standard_template_matching_corr_coeff_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_trebuchet',
                                                                 threshold=threshold,
                                                                 method=cmp504.computer_vision.TemplateMatchingMethod.CORRELATION_COEFFICIENT_NORMALIZED)
@@ -1450,7 +1450,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_trebuchet_standard_template_matching_square_diff(self):
         threshold = unit_constants.cherrystone_trebuchet_standard_template_matching_square_diff_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_trebuchet',
                                                                 threshold=threshold,
                                                                 method=cmp504.computer_vision.TemplateMatchingMethod.SQUARE_DIFFERENCE_NORMALIZED)
@@ -1465,7 +1465,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_trebuchet_hu_moment_template_matching_method_1(self):
         threshold = unit_constants.cherrystone_trebuchet_hu_moment_template_matching_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_trebuchet',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_1,
@@ -1481,7 +1481,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_trebuchet_hu_moment_template_matching_method_2(self):
         threshold = unit_constants.cherrystone_trebuchet_hu_moment_template_matching_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_trebuchet',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_2,
@@ -1497,7 +1497,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_trebuchet_hu_moment_template_matching_method_3(self):
         threshold = unit_constants.cherrystone_trebuchet_hu_moment_template_matching_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_trebuchet',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_3,
@@ -1513,7 +1513,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_trebuchet_sift(self):
         threshold = unit_constants.cherrystone_trebuchet_sift_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_sift('cherrystone_trebuchet',
                                                    threshold=threshold)
 
@@ -1529,7 +1529,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_balloon_standard_template_matching_cross_corr(self):
         threshold = unit_constants.cherrystone_balloon_standard_template_matching_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_balloon',
                                                                 threshold=threshold)
 
@@ -1543,7 +1543,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_balloon_standard_template_matching_corr_coeff(self):
         threshold = unit_constants.cherrystone_balloon_standard_template_matching_corr_coeff_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_balloon',
                                                                 threshold=threshold,
                                                                 method=cmp504.computer_vision.TemplateMatchingMethod.CORRELATION_COEFFICIENT_NORMALIZED)
@@ -1558,7 +1558,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_balloon_standard_template_matching_square_diff(self):
         threshold = unit_constants.cherrystone_balloon_standard_template_matching_square_diff_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_balloon',
                                                                 threshold=threshold,
                                                                 method=cmp504.computer_vision.TemplateMatchingMethod.SQUARE_DIFFERENCE_NORMALIZED)
@@ -1573,7 +1573,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_balloon_hu_moment_template_matching_method_1(self):
         threshold = unit_constants.cherrystone_balloon_hu_moment_template_matching_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_balloon',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_1,
@@ -1589,7 +1589,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_balloon_hu_moment_template_matching_method_2(self):
         threshold = unit_constants.cherrystone_balloon_hu_moment_template_matching_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_balloon',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_2,
@@ -1605,7 +1605,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_balloon_hu_moment_template_matching_method_3(self):
         threshold = unit_constants.cherrystone_balloon_hu_moment_template_matching_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_balloon',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_3,
@@ -1621,7 +1621,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_balloon_sift(self):
         threshold = unit_constants.cherrystone_balloon_sift_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_sift('cherrystone_balloon',
                                                    threshold=threshold)
 
@@ -1637,7 +1637,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_harpy_standard_template_matching_cross_corr(self):
         threshold = unit_constants.cherrystone_harpy_standard_template_matching_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_harpy',
                                                                 threshold=threshold)
 
@@ -1651,7 +1651,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_harpy_standard_template_matching_corr_coeff(self):
         threshold = unit_constants.cherrystone_harpy_standard_template_matching_corr_coeff_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_harpy',
                                                                 threshold=threshold,
                                                                 method=cmp504.computer_vision.TemplateMatchingMethod.CORRELATION_COEFFICIENT_NORMALIZED)
@@ -1666,7 +1666,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_harpy_standard_template_matching_square_diff(self):
         threshold = unit_constants.cherrystone_harpy_standard_template_matching_square_diff_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_harpy',
                                                                 threshold=threshold,
                                                                 method=cmp504.computer_vision.TemplateMatchingMethod.SQUARE_DIFFERENCE_NORMALIZED)
@@ -1681,7 +1681,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_harpy_hu_moment_template_matching_method_1(self):
         threshold = unit_constants.cherrystone_harpy_hu_moment_template_matching_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_harpy',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_1,
@@ -1697,7 +1697,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_harpy_hu_moment_template_matching_method_2(self):
         threshold = unit_constants.cherrystone_harpy_hu_moment_template_matching_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_harpy',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_2,
@@ -1713,7 +1713,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_harpy_hu_moment_template_matching_method_3(self):
         threshold = unit_constants.cherrystone_harpy_hu_moment_template_matching_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_harpy',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_3,
@@ -1729,7 +1729,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_harpy_sift(self):
         threshold = unit_constants.cherrystone_harpy_sift_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_sift('cherrystone_harpy',
                                                    threshold=threshold)
 
@@ -1745,7 +1745,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_witch_standard_template_matching_cross_corr(self):
         threshold = unit_constants.cherrystone_witch_standard_template_matching_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_witch',
                                                                 threshold=threshold)
 
@@ -1759,7 +1759,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_witch_standard_template_matching_corr_coeff(self):
         threshold = unit_constants.cherrystone_witch_standard_template_matching_corr_coeff_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_witch',
                                                                 threshold=threshold,
                                                                 method=cmp504.computer_vision.TemplateMatchingMethod.CORRELATION_COEFFICIENT_NORMALIZED)
@@ -1774,7 +1774,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_witch_standard_template_matching_square_diff(self):
         threshold = unit_constants.cherrystone_witch_standard_template_matching_square_diff_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_witch',
                                                                 threshold=threshold,
                                                                 method=cmp504.computer_vision.TemplateMatchingMethod.SQUARE_DIFFERENCE_NORMALIZED)
@@ -1789,7 +1789,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_witch_hu_moment_template_matching_method_1(self):
         threshold = unit_constants.cherrystone_witch_hu_moment_template_matching_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_witch',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_1,
@@ -1805,7 +1805,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_witch_hu_moment_template_matching_method_2(self):
         threshold = unit_constants.cherrystone_witch_hu_moment_template_matching_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_witch',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_2,
@@ -1821,7 +1821,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_witch_hu_moment_template_matching_method_3(self):
         threshold = unit_constants.cherrystone_witch_hu_moment_template_matching_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_witch',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_3,
@@ -1837,7 +1837,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_witch_sift(self):
         threshold = unit_constants.cherrystone_witch_sift_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_sift('cherrystone_witch',
                                                    threshold=threshold)
 
@@ -1853,7 +1853,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_dragon_standard_template_matching_cross_corr(self):
         threshold = unit_constants.cherrystone_dragon_standard_template_matching_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_emberwing',
                                                                 threshold=threshold)
 
@@ -1867,7 +1867,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_dragon_standard_template_matching_corr_coeff(self):
         threshold = unit_constants.cherrystone_dragon_standard_template_matching_corr_coeff_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_emberwing',
                                                                 threshold=threshold,
                                                                 method=cmp504.computer_vision.TemplateMatchingMethod.CORRELATION_COEFFICIENT_NORMALIZED)
@@ -1882,7 +1882,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_dragon_standard_template_matching_square_diff(self):
         threshold = unit_constants.cherrystone_dragon_standard_template_matching_square_diff_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_emberwing',
                                                                 threshold=threshold,
                                                                 method=cmp504.computer_vision.TemplateMatchingMethod.SQUARE_DIFFERENCE_NORMALIZED)
@@ -1897,7 +1897,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_dragon_hu_moment_template_matching_method_1(self):
         threshold = unit_constants.cherrystone_dragon_hu_moment_template_matching_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_emberwing',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_1,
@@ -1913,7 +1913,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_dragon_hu_moment_template_matching_method_2(self):
         threshold = unit_constants.cherrystone_dragon_hu_moment_template_matching_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_emberwing',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_2,
@@ -1929,7 +1929,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_dragon_hu_moment_template_matching_method_3(self):
         threshold = unit_constants.cherrystone_dragon_hu_moment_template_matching_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_emberwing',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_3,
@@ -1945,7 +1945,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_dragon_sift(self):
         threshold = unit_constants.cherrystone_dragon_sift_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_sift('cherrystone_emberwing',
                                                    threshold=threshold)
 
@@ -1961,7 +1961,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_barge_standard_template_matching_cross_corr(self):
         threshold = unit_constants.cherrystone_barge_standard_template_matching_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_barge',
                                                                 threshold=threshold)
 
@@ -1975,7 +1975,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_barge_standard_template_matching_corr_coeff(self):
         threshold = unit_constants.cherrystone_barge_standard_template_matching_corr_coeff_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_barge',
                                                                 threshold=threshold,
                                                                 method=cmp504.computer_vision.TemplateMatchingMethod.CORRELATION_COEFFICIENT_NORMALIZED)
@@ -1990,7 +1990,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_barge_standard_template_matching_square_diff(self):
         threshold = unit_constants.cherrystone_barge_standard_template_matching_square_diff_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_barge',
                                                                 threshold=threshold,
                                                                 method=cmp504.computer_vision.TemplateMatchingMethod.SQUARE_DIFFERENCE_NORMALIZED)
@@ -2005,7 +2005,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_barge_hu_moment_template_matching_method_1(self):
         threshold = unit_constants.cherrystone_barge_hu_moment_template_matching_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_barge',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_1,
@@ -2021,7 +2021,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_barge_hu_moment_template_matching_method_2(self):
         threshold = unit_constants.cherrystone_barge_hu_moment_template_matching_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_barge',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_2,
@@ -2037,7 +2037,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_barge_hu_moment_template_matching_method_3(self):
         threshold = unit_constants.cherrystone_barge_hu_moment_template_matching_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_barge',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_3,
@@ -2053,7 +2053,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_barge_sift(self):
         threshold = unit_constants.cherrystone_barge_sift_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_sift('cherrystone_barge',
                                                    threshold=threshold)
 
@@ -2069,7 +2069,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_seaturtle_standard_template_matching_cross_corr(self):
         threshold = unit_constants.cherrystone_seaturtle_standard_template_matching_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_sea_turtle',
                                                                 threshold=threshold)
 
@@ -2083,7 +2083,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_seaturtle_standard_template_matching_corr_coeff(self):
         threshold = unit_constants.cherrystone_seaturtle_standard_template_matching_corr_coeff_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_sea_turtle',
                                                                 threshold=threshold,
                                                                 method=cmp504.computer_vision.TemplateMatchingMethod.CORRELATION_COEFFICIENT_NORMALIZED)
@@ -2098,7 +2098,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_seaturtle_standard_template_matching_square_diff(self):
         threshold = unit_constants.cherrystone_seaturtle_standard_template_matching_square_diff_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_sea_turtle',
                                                                 threshold=threshold,
                                                                 method=cmp504.computer_vision.TemplateMatchingMethod.SQUARE_DIFFERENCE_NORMALIZED)
@@ -2113,7 +2113,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_seaturtle_hu_moment_template_matching_method_1(self):
         threshold = unit_constants.cherrystone_seaturtle_hu_moment_template_matching_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_sea_turtle',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_1,
@@ -2129,7 +2129,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_seaturtle_hu_moment_template_matching_method_2(self):
         threshold = unit_constants.cherrystone_seaturtle_hu_moment_template_matching_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_sea_turtle',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_2,
@@ -2145,7 +2145,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_seaturtle_hu_moment_template_matching_method_3(self):
         threshold = unit_constants.cherrystone_seaturtle_hu_moment_template_matching_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_sea_turtle',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_3,
@@ -2161,7 +2161,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_seaturtle_sift(self):
         threshold = unit_constants.cherrystone_seaturtle_sift_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_sift('cherrystone_sea_turtle',
                                                    threshold=threshold)
 
@@ -2177,7 +2177,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_harpoonship_standard_template_matching_cross_corr(self):
         threshold = unit_constants.cherrystone_harpoonship_standard_template_matching_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_harpoon_ship',
                                                                 threshold=threshold)
 
@@ -2191,7 +2191,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_harpoonship_standard_template_matching_corr_coeff(self):
         threshold = unit_constants.cherrystone_harpoonship_standard_template_matching_corr_coeff_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_harpoon_ship',
                                                                 threshold=threshold,
                                                                 method=cmp504.computer_vision.TemplateMatchingMethod.CORRELATION_COEFFICIENT_NORMALIZED)
@@ -2206,7 +2206,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_harpoonship_standard_template_matching_square_diff(self):
         threshold = unit_constants.cherrystone_harpoonship_standard_template_matching_square_diff_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_harpoon_ship',
                                                                 threshold=threshold,
                                                                 method=cmp504.computer_vision.TemplateMatchingMethod.SQUARE_DIFFERENCE_NORMALIZED)
@@ -2221,7 +2221,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_harpoonship_hu_moment_template_matching_method_1(self):
         threshold = unit_constants.cherrystone_harpoonship_hu_moment_template_matching_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_harpoon_ship',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_1,
@@ -2237,7 +2237,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_harpoonship_hu_moment_template_matching_method_2(self):
         threshold = unit_constants.cherrystone_harpoonship_hu_moment_template_matching_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_harpoon_ship',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_2,
@@ -2253,7 +2253,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_harpoonship_hu_moment_template_matching_method_3(self):
         threshold = unit_constants.cherrystone_harpoonship_hu_moment_template_matching_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_harpoon_ship',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_3,
@@ -2269,7 +2269,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_harpoonship_sift(self):
         threshold = unit_constants.cherrystone_harpoonship_sift_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_sift('cherrystone_harpoon_ship',
                                                    threshold=threshold)
 
@@ -2285,7 +2285,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_warship_standard_template_matching_cross_corr(self):
         threshold = unit_constants.cherrystone_warship_standard_template_matching_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_warship',
                                                                 threshold=threshold)
 
@@ -2299,7 +2299,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_warship_standard_template_matching_corr_coeff(self):
         threshold = unit_constants.cherrystone_warship_standard_template_matching_corr_coeff_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_warship',
                                                                 threshold=threshold,
                                                                 method=cmp504.computer_vision.TemplateMatchingMethod.CORRELATION_COEFFICIENT_NORMALIZED)
@@ -2314,7 +2314,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_warship_standard_template_matching_square_diff(self):
         threshold = unit_constants.cherrystone_warship_standard_template_matching_square_diff_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_warship',
                                                                 threshold=threshold,
                                                                 method=cmp504.computer_vision.TemplateMatchingMethod.SQUARE_DIFFERENCE_NORMALIZED)
@@ -2329,7 +2329,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_warship_hu_moment_template_matching_method_1(self):
         threshold = unit_constants.cherrystone_warship_hu_moment_template_matching_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_warship',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_1,
@@ -2345,7 +2345,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_warship_hu_moment_template_matching_method_2(self):
         threshold = unit_constants.cherrystone_warship_hu_moment_template_matching_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_warship',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_2,
@@ -2361,7 +2361,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_warship_hu_moment_template_matching_method_3(self):
         threshold = unit_constants.cherrystone_warship_hu_moment_template_matching_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_warship',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_3,
@@ -2377,7 +2377,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_warship_sift(self):
         threshold = unit_constants.cherrystone_warship_sift_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_sift('cherrystone_warship',
                                                    threshold=threshold)
 
@@ -2393,7 +2393,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_merfolk_standard_template_matching_cross_corr(self):
         threshold = unit_constants.cherrystone_merfolk_standard_template_matching_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_merfolk',
                                                                 threshold=threshold)
 
@@ -2407,7 +2407,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_merfolk_standard_template_matching_corr_coeff(self):
         threshold = unit_constants.cherrystone_merfolk_standard_template_matching_corr_coeff_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_merfolk',
                                                                 threshold=threshold,
                                                                 method=cmp504.computer_vision.TemplateMatchingMethod.CORRELATION_COEFFICIENT_NORMALIZED)
@@ -2422,7 +2422,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_merfolk_standard_template_matching_square_diff(self):
         threshold = unit_constants.cherrystone_merfolk_standard_template_matching_square_diff_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_template_matching('cherrystone_merfolk',
                                                                 threshold=threshold,
                                                                 method=cmp504.computer_vision.TemplateMatchingMethod.SQUARE_DIFFERENCE_NORMALIZED)
@@ -2437,7 +2437,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_merfolk_hu_moment_template_matching_method_1(self):
         threshold = unit_constants.cherrystone_merfolk_hu_moment_template_matching_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_merfolk',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_1,
@@ -2453,7 +2453,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_merfolk_hu_moment_template_matching_method_2(self):
         threshold = unit_constants.cherrystone_merfolk_hu_moment_template_matching_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_merfolk',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_2,
@@ -2469,7 +2469,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_merfolk_hu_moment_template_matching_method_3(self):
         threshold = unit_constants.cherrystone_merfolk_hu_moment_template_matching_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_merfolk',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_3,
@@ -2485,7 +2485,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_merfolk_sift(self):
         threshold = unit_constants.cherrystone_merfolk_sift_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_unit_with_sift('cherrystone_merfolk',
                                                    threshold=threshold)
 
@@ -2501,7 +2501,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_barracks_standard_template_matching_cross_corr(self):
         threshold = unit_constants.cherrystone_barracks_standard_template_matching_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_building_with_template_matching('cherrystone_barracks',
                                                                     threshold=threshold)
 
@@ -2515,7 +2515,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_barracks_standard_template_matching_corr_coeff(self):
         threshold = unit_constants.cherrystone_barracks_standard_template_matching_corr_coeff_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_building_with_template_matching('cherrystone_barracks',
                                                                     threshold=threshold,
                                                                     method=cmp504.computer_vision.TemplateMatchingMethod.CORRELATION_COEFFICIENT_NORMALIZED)
@@ -2530,7 +2530,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_barracks_standard_template_matching_square_diff(self):
         threshold = unit_constants.cherrystone_barracks_standard_template_matching_square_diff_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_building_with_template_matching('cherrystone_barracks',
                                                                     threshold=threshold,
                                                                     method=cmp504.computer_vision.TemplateMatchingMethod.SQUARE_DIFFERENCE_NORMALIZED)
@@ -2545,7 +2545,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_barracks_hu_moment_template_matching_method_1(self):
         threshold = unit_constants.cherrystone_barracks_hu_moment_template_matching_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_building_with_hu_moment_template_matching('cherrystone_barracks',
                                                                               threshold=threshold,
                                                                               method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_1,
@@ -2561,7 +2561,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_barracks_hu_moment_template_matching_method_2(self):
         threshold = unit_constants.cherrystone_barracks_hu_moment_template_matching_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_building_with_hu_moment_template_matching('cherrystone_barracks',
                                                                               threshold=threshold,
                                                                               method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_2,
@@ -2577,7 +2577,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_barracks_hu_moment_template_matching_method_3(self):
         threshold = unit_constants.cherrystone_barracks_hu_moment_template_matching_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_building_with_hu_moment_template_matching('cherrystone_barracks',
                                                                               threshold=threshold,
                                                                               method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_3,
@@ -2593,9 +2593,9 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_barracks_sift(self):
         threshold = unit_constants.cherrystone_barracks_sift_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_building_with_sift('cherrystone_barracks',
-                                                       threshold=threshold)
+                                                        threshold=threshold)
 
         wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
@@ -2609,7 +2609,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_port_standard_template_matching_cross_corr(self):
         threshold = unit_constants.cherrystone_port_standard_template_matching_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_building_with_template_matching('cherrystone_port',
                                                                     threshold=threshold)
 
@@ -2623,7 +2623,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_port_standard_template_matching_corr_coeff(self):
         threshold = unit_constants.cherrystone_port_standard_template_matching_corr_coeff_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_building_with_template_matching('cherrystone_port',
                                                                     threshold=threshold,
                                                                     method=cmp504.computer_vision.TemplateMatchingMethod.CORRELATION_COEFFICIENT_NORMALIZED)
@@ -2638,7 +2638,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_port_standard_template_matching_square_diff(self):
         threshold = unit_constants.cherrystone_port_standard_template_matching_square_diff_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_building_with_template_matching('cherrystone_port',
                                                                     threshold=threshold,
                                                                     method=cmp504.computer_vision.TemplateMatchingMethod.SQUARE_DIFFERENCE_NORMALIZED)
@@ -2653,7 +2653,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_port_hu_moment_template_matching_method_1(self):
         threshold = unit_constants.cherrystone_port_hu_moment_template_matching_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_building_with_hu_moment_template_matching('cherrystone_port',
                                                                               threshold=threshold,
                                                                               method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_1,
@@ -2669,7 +2669,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_port_hu_moment_template_matching_method_2(self):
         threshold = unit_constants.cherrystone_port_hu_moment_template_matching_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_building_with_hu_moment_template_matching('cherrystone_port',
                                                                               threshold=threshold,
                                                                               method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_2,
@@ -2685,7 +2685,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_port_hu_moment_template_matching_method_3(self):
         threshold = unit_constants.cherrystone_port_hu_moment_template_matching_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_building_with_hu_moment_template_matching('cherrystone_port',
                                                                               threshold=threshold,
                                                                               method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_3,
@@ -2701,7 +2701,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_port_sift(self):
         threshold = unit_constants.cherrystone_port_sift_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_building_with_sift('cherrystone_port',
                                                        threshold=threshold)
 
@@ -2717,7 +2717,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_stronghold_standard_template_matching_cross_corr(self):
         threshold = unit_constants.cherrystone_stronghold_standard_template_matching_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_building_with_template_matching('cherrystone_stronghold',
                                                                     threshold=threshold)
 
@@ -2731,7 +2731,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_stronghold_standard_template_matching_corr_coeff(self):
         threshold = unit_constants.cherrystone_stronghold_standard_template_matching_corr_coeff_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_building_with_template_matching('cherrystone_stronghold',
                                                                     threshold=threshold,
                                                                     method=cmp504.computer_vision.TemplateMatchingMethod.CORRELATION_COEFFICIENT_NORMALIZED)
@@ -2746,7 +2746,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_stronghold_standard_template_matching_square_diff(self):
         threshold = unit_constants.cherrystone_stronghold_standard_template_matching_square_diff_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_building_with_template_matching('cherrystone_stronghold',
                                                                     threshold=threshold,
                                                                     method=cmp504.computer_vision.TemplateMatchingMethod.SQUARE_DIFFERENCE_NORMALIZED)
@@ -2761,7 +2761,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_stronghold_hu_moment_template_matching_method_1(self):
         threshold = unit_constants.cherrystone_stronghold_hu_moment_template_matching_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_building_with_hu_moment_template_matching('cherrystone_stronghold',
                                                                               threshold=threshold,
                                                                               method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_1,
@@ -2777,7 +2777,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_stronghold_hu_moment_template_matching_method_2(self):
         threshold = unit_constants.cherrystone_stronghold_hu_moment_template_matching_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_building_with_hu_moment_template_matching('cherrystone_stronghold',
                                                                               threshold=threshold,
                                                                               method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_2,
@@ -2793,7 +2793,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_stronghold_hu_moment_template_matching_method_3(self):
         threshold = unit_constants.cherrystone_stronghold_hu_moment_template_matching_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_building_with_hu_moment_template_matching('cherrystone_stronghold',
                                                                               threshold=threshold,
                                                                               method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_3,
@@ -2809,7 +2809,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_stronghold_sift(self):
         threshold = unit_constants.cherrystone_stronghold_sift_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_building_with_sift('cherrystone_stronghold',
                                                        threshold=threshold)
 
@@ -2825,7 +2825,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_tower_standard_template_matching_cross_corr(self):
         threshold = unit_constants.cherrystone_tower_standard_template_matching_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_building_with_template_matching('cherrystone_tower',
                                                                     threshold=threshold)
 
@@ -2839,7 +2839,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_tower_standard_template_matching_corr_coeff(self):
         threshold = unit_constants.cherrystone_tower_standard_template_matching_corr_coeff_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_building_with_template_matching('cherrystone_tower',
                                                                     threshold=threshold,
                                                                     method=cmp504.computer_vision.TemplateMatchingMethod.CORRELATION_COEFFICIENT_NORMALIZED)
@@ -2854,7 +2854,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_tower_standard_template_matching_square_diff(self):
         threshold = unit_constants.cherrystone_tower_standard_template_matching_square_diff_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_building_with_template_matching('cherrystone_tower',
                                                                     threshold=threshold,
                                                                     method=cmp504.computer_vision.TemplateMatchingMethod.SQUARE_DIFFERENCE_NORMALIZED)
@@ -2869,7 +2869,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_tower_hu_moment_template_matching_method_1(self):
         threshold = unit_constants.cherrystone_tower_hu_moment_template_matching_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_building_with_hu_moment_template_matching('cherrystone_tower',
                                                                               threshold=threshold,
                                                                               method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_1,
@@ -2885,7 +2885,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_tower_hu_moment_template_matching_method_2(self):
         threshold = unit_constants.cherrystone_tower_hu_moment_template_matching_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_building_with_hu_moment_template_matching('cherrystone_tower',
                                                                               threshold=threshold,
                                                                               method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_2,
@@ -2901,7 +2901,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_tower_hu_moment_template_matching_method_3(self):
         threshold = unit_constants.cherrystone_tower_hu_moment_template_matching_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_building_with_hu_moment_template_matching('cherrystone_tower',
                                                                               threshold=threshold,
                                                                               method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_3,
@@ -2917,7 +2917,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_tower_sift(self):
         threshold = unit_constants.cherrystone_tower_sift_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_building_with_sift('cherrystone_tower',
                                                        threshold=threshold)
 
@@ -2933,7 +2933,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_village_standard_template_matching_cross_corr(self):
         threshold = unit_constants.cherrystone_village_standard_template_matching_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_building_with_template_matching('cherrystone_village',
                                                                     threshold=threshold)
 
@@ -2947,7 +2947,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_village_standard_template_matching_corr_coeff(self):
         threshold = unit_constants.cherrystone_village_standard_template_matching_corr_coeff_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_building_with_template_matching('cherrystone_village',
                                                                     threshold=threshold,
                                                                     method=cmp504.computer_vision.TemplateMatchingMethod.CORRELATION_COEFFICIENT_NORMALIZED)
@@ -2962,7 +2962,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_village_standard_template_matching_square_diff(self):
         threshold = unit_constants.cherrystone_village_standard_template_matching_square_diff_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_building_with_template_matching('cherrystone_village',
                                                                     threshold=threshold,
                                                                     method=cmp504.computer_vision.TemplateMatchingMethod.SQUARE_DIFFERENCE_NORMALIZED)
@@ -2977,7 +2977,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_village_hu_moment_template_matching_method_1(self):
         threshold = unit_constants.cherrystone_village_hu_moment_template_matching_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_building_with_hu_moment_template_matching('cherrystone_village',
                                                                               threshold=threshold,
                                                                               method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_1,
@@ -2993,7 +2993,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_village_hu_moment_template_matching_method_2(self):
         threshold = unit_constants.cherrystone_village_hu_moment_template_matching_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_building_with_hu_moment_template_matching('cherrystone_village',
                                                                               threshold=threshold,
                                                                               method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_2,
@@ -3009,7 +3009,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_village_hu_moment_template_matching_method_3(self):
         threshold = unit_constants.cherrystone_village_hu_moment_template_matching_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_building_with_hu_moment_template_matching('cherrystone_village',
                                                                               threshold=threshold,
                                                                               method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_3,
@@ -3025,7 +3025,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_village_sift(self):
         threshold = unit_constants.cherrystone_village_sift_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_building_with_sift('cherrystone_village',
                                                        threshold=threshold)
 
@@ -3041,7 +3041,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_watervillage_standard_template_matching_cross_corr(self):
         threshold = unit_constants.cherrystone_watervillage_standard_template_matching_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_building_with_template_matching('cherrystone_watervillage',
                                                                     threshold=threshold)
 
@@ -3055,7 +3055,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_watervillage_standard_template_matching_corr_coeff(self):
         threshold = unit_constants.cherrystone_watervillage_standard_template_matching_corr_coeff_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_building_with_template_matching('cherrystone_watervillage',
                                                                     threshold=threshold,
                                                                     method=cmp504.computer_vision.TemplateMatchingMethod.CORRELATION_COEFFICIENT_NORMALIZED)
@@ -3070,7 +3070,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_watervillage_standard_template_matching_square_diff(self):
         threshold = unit_constants.cherrystone_watervillage_standard_template_matching_square_diff_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_building_with_template_matching('cherrystone_watervillage',
                                                                     threshold=threshold,
                                                                     method=cmp504.computer_vision.TemplateMatchingMethod.SQUARE_DIFFERENCE_NORMALIZED)
@@ -3085,7 +3085,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_watervillage_hu_moment_template_matching_method_1(self):
         threshold = unit_constants.cherrystone_watervillage_hu_moment_template_matching_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_building_with_hu_moment_template_matching('cherrystone_watervillage',
                                                                               threshold=threshold,
                                                                               method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_1,
@@ -3101,7 +3101,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_watervillage_hu_moment_template_matching_method_2(self):
         threshold = unit_constants.cherrystone_watervillage_hu_moment_template_matching_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_building_with_hu_moment_template_matching('cherrystone_watervillage',
                                                                               threshold=threshold,
                                                                               method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_2,
@@ -3117,7 +3117,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_watervillage_hu_moment_template_matching_method_3(self):
         threshold = unit_constants.cherrystone_watervillage_hu_moment_template_matching_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_building_with_hu_moment_template_matching('cherrystone_watervillage',
                                                                               threshold=threshold,
                                                                               method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_3,
@@ -3133,7 +3133,7 @@ class TestProjectEvaluationPartialOcclusion(unittest.TestCase):
 
     def test_watervillage_sift(self):
         threshold = unit_constants.cherrystone_watervillage_sift_threshold
-        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'birds-over-all-things.png')
+        wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1280x720_desert.png')
         match = wargroove_ctrl.find_building_with_sift('cherrystone_watervillage',
                                                        threshold=threshold)
 
