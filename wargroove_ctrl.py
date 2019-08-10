@@ -356,7 +356,8 @@ def find_unit_with_hu_moment_template_matching_custom(unit_template_name,
 
 def find_unit_with_sift(unit_template_name, threshold=50.0):
     return vision.find_best_feature_based_match_sift("data/units/" + unit_template_name + ".png",
-                                                     threshold)
+                                                     threshold,
+                                                     match_horizontal_mirror=True)
 
 
 def find_building_with_sift(building_template_name, threshold=50.0):
