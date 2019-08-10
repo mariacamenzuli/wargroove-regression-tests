@@ -53,7 +53,7 @@ class TestProjectEvaluationUnitNotVisible(unittest.TestCase):
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_commander_mercia',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_1,
-                                                                          binarization_threshold=80)
+                                                                          binarization_threshold=unit_constants.hu_moment_binarization_threshold)
 
         wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
@@ -65,7 +65,7 @@ class TestProjectEvaluationUnitNotVisible(unittest.TestCase):
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_commander_mercia',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_2,
-                                                                          binarization_threshold=80)
+                                                                          binarization_threshold=unit_constants.hu_moment_binarization_threshold)
 
         wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
@@ -77,7 +77,7 @@ class TestProjectEvaluationUnitNotVisible(unittest.TestCase):
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_commander_mercia',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_3,
-                                                                          binarization_threshold=80)
+                                                                          binarization_threshold=unit_constants.hu_moment_binarization_threshold)
 
         wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
@@ -135,7 +135,7 @@ class TestProjectEvaluationUnitNotVisible(unittest.TestCase):
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_commander_emeric',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_1,
-                                                                          binarization_threshold=80)
+                                                                          binarization_threshold=unit_constants.hu_moment_binarization_threshold)
 
         wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
@@ -147,7 +147,7 @@ class TestProjectEvaluationUnitNotVisible(unittest.TestCase):
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_commander_emeric',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_2,
-                                                                          binarization_threshold=80)
+                                                                          binarization_threshold=unit_constants.hu_moment_binarization_threshold)
 
         wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
@@ -159,7 +159,7 @@ class TestProjectEvaluationUnitNotVisible(unittest.TestCase):
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_commander_emeric',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_3,
-                                                                          binarization_threshold=80)
+                                                                          binarization_threshold=unit_constants.hu_moment_binarization_threshold)
 
         wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
@@ -217,7 +217,7 @@ class TestProjectEvaluationUnitNotVisible(unittest.TestCase):
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_commander_caesar',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_1,
-                                                                          binarization_threshold=80)
+                                                                          binarization_threshold=unit_constants.hu_moment_binarization_threshold)
 
         wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
@@ -229,7 +229,7 @@ class TestProjectEvaluationUnitNotVisible(unittest.TestCase):
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_commander_caesar',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_2,
-                                                                          binarization_threshold=80)
+                                                                          binarization_threshold=unit_constants.hu_moment_binarization_threshold)
 
         wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
@@ -241,7 +241,7 @@ class TestProjectEvaluationUnitNotVisible(unittest.TestCase):
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_commander_caesar',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_3,
-                                                                          binarization_threshold=80)
+                                                                          binarization_threshold=unit_constants.hu_moment_binarization_threshold)
 
         wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
@@ -299,7 +299,7 @@ class TestProjectEvaluationUnitNotVisible(unittest.TestCase):
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_villager',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_1,
-                                                                          binarization_threshold=80)
+                                                                          binarization_threshold=unit_constants.hu_moment_binarization_threshold)
 
         wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
@@ -311,7 +311,7 @@ class TestProjectEvaluationUnitNotVisible(unittest.TestCase):
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_villager',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_2,
-                                                                          binarization_threshold=80)
+                                                                          binarization_threshold=unit_constants.hu_moment_binarization_threshold)
 
         wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
@@ -323,7 +323,7 @@ class TestProjectEvaluationUnitNotVisible(unittest.TestCase):
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_villager',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_3,
-                                                                          binarization_threshold=80)
+                                                                          binarization_threshold=unit_constants.hu_moment_binarization_threshold)
 
         wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
@@ -381,7 +381,7 @@ class TestProjectEvaluationUnitNotVisible(unittest.TestCase):
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_soldier',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_1,
-                                                                          binarization_threshold=80)
+                                                                          binarization_threshold=unit_constants.hu_moment_binarization_threshold)
 
         wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
@@ -393,7 +393,7 @@ class TestProjectEvaluationUnitNotVisible(unittest.TestCase):
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_soldier',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_2,
-                                                                          binarization_threshold=80)
+                                                                          binarization_threshold=unit_constants.hu_moment_binarization_threshold)
 
         wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
@@ -405,7 +405,7 @@ class TestProjectEvaluationUnitNotVisible(unittest.TestCase):
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_soldier',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_3,
-                                                                          binarization_threshold=80)
+                                                                          binarization_threshold=unit_constants.hu_moment_binarization_threshold)
 
         wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
@@ -463,7 +463,7 @@ class TestProjectEvaluationUnitNotVisible(unittest.TestCase):
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_pikeman',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_1,
-                                                                          binarization_threshold=80)
+                                                                          binarization_threshold=unit_constants.hu_moment_binarization_threshold)
 
         wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
@@ -475,7 +475,7 @@ class TestProjectEvaluationUnitNotVisible(unittest.TestCase):
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_pikeman',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_2,
-                                                                          binarization_threshold=80)
+                                                                          binarization_threshold=unit_constants.hu_moment_binarization_threshold)
 
         wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
@@ -487,7 +487,7 @@ class TestProjectEvaluationUnitNotVisible(unittest.TestCase):
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_pikeman',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_3,
-                                                                          binarization_threshold=80)
+                                                                          binarization_threshold=unit_constants.hu_moment_binarization_threshold)
 
         wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
@@ -545,7 +545,7 @@ class TestProjectEvaluationUnitNotVisible(unittest.TestCase):
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_battle_pup',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_1,
-                                                                          binarization_threshold=80)
+                                                                          binarization_threshold=unit_constants.hu_moment_binarization_threshold)
 
         wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
@@ -557,7 +557,7 @@ class TestProjectEvaluationUnitNotVisible(unittest.TestCase):
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_battle_pup',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_2,
-                                                                          binarization_threshold=80)
+                                                                          binarization_threshold=unit_constants.hu_moment_binarization_threshold)
 
         wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
@@ -569,7 +569,7 @@ class TestProjectEvaluationUnitNotVisible(unittest.TestCase):
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_battle_pup',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_3,
-                                                                          binarization_threshold=80)
+                                                                          binarization_threshold=unit_constants.hu_moment_binarization_threshold)
 
         wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
@@ -627,7 +627,7 @@ class TestProjectEvaluationUnitNotVisible(unittest.TestCase):
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_alchemist',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_1,
-                                                                          binarization_threshold=80)
+                                                                          binarization_threshold=unit_constants.hu_moment_binarization_threshold)
 
         wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
@@ -639,7 +639,7 @@ class TestProjectEvaluationUnitNotVisible(unittest.TestCase):
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_alchemist',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_2,
-                                                                          binarization_threshold=80)
+                                                                          binarization_threshold=unit_constants.hu_moment_binarization_threshold)
 
         wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
@@ -651,7 +651,7 @@ class TestProjectEvaluationUnitNotVisible(unittest.TestCase):
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_alchemist',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_3,
-                                                                          binarization_threshold=80)
+                                                                          binarization_threshold=unit_constants.hu_moment_binarization_threshold)
 
         wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
@@ -709,7 +709,7 @@ class TestProjectEvaluationUnitNotVisible(unittest.TestCase):
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_archer',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_1,
-                                                                          binarization_threshold=80)
+                                                                          binarization_threshold=unit_constants.hu_moment_binarization_threshold)
 
         wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
@@ -721,7 +721,7 @@ class TestProjectEvaluationUnitNotVisible(unittest.TestCase):
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_archer',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_2,
-                                                                          binarization_threshold=80)
+                                                                          binarization_threshold=unit_constants.hu_moment_binarization_threshold)
 
         wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
@@ -733,7 +733,7 @@ class TestProjectEvaluationUnitNotVisible(unittest.TestCase):
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_archer',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_3,
-                                                                          binarization_threshold=80)
+                                                                          binarization_threshold=unit_constants.hu_moment_binarization_threshold)
 
         wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
@@ -791,7 +791,7 @@ class TestProjectEvaluationUnitNotVisible(unittest.TestCase):
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_golem',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_1,
-                                                                          binarization_threshold=80)
+                                                                          binarization_threshold=unit_constants.hu_moment_binarization_threshold)
 
         wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
@@ -803,7 +803,7 @@ class TestProjectEvaluationUnitNotVisible(unittest.TestCase):
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_golem',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_2,
-                                                                          binarization_threshold=80)
+                                                                          binarization_threshold=unit_constants.hu_moment_binarization_threshold)
 
         wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
@@ -815,7 +815,7 @@ class TestProjectEvaluationUnitNotVisible(unittest.TestCase):
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_golem',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_3,
-                                                                          binarization_threshold=80)
+                                                                          binarization_threshold=unit_constants.hu_moment_binarization_threshold)
 
         wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
@@ -873,7 +873,7 @@ class TestProjectEvaluationUnitNotVisible(unittest.TestCase):
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_knight',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_1,
-                                                                          binarization_threshold=80)
+                                                                          binarization_threshold=unit_constants.hu_moment_binarization_threshold)
 
         wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
@@ -885,7 +885,7 @@ class TestProjectEvaluationUnitNotVisible(unittest.TestCase):
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_knight',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_2,
-                                                                          binarization_threshold=80)
+                                                                          binarization_threshold=unit_constants.hu_moment_binarization_threshold)
 
         wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
@@ -897,7 +897,7 @@ class TestProjectEvaluationUnitNotVisible(unittest.TestCase):
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_knight',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_3,
-                                                                          binarization_threshold=80)
+                                                                          binarization_threshold=unit_constants.hu_moment_binarization_threshold)
 
         wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
@@ -955,7 +955,7 @@ class TestProjectEvaluationUnitNotVisible(unittest.TestCase):
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_wagon',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_1,
-                                                                          binarization_threshold=80)
+                                                                          binarization_threshold=unit_constants.hu_moment_binarization_threshold)
 
         wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
@@ -967,7 +967,7 @@ class TestProjectEvaluationUnitNotVisible(unittest.TestCase):
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_wagon',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_2,
-                                                                          binarization_threshold=80)
+                                                                          binarization_threshold=unit_constants.hu_moment_binarization_threshold)
 
         wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
@@ -979,7 +979,7 @@ class TestProjectEvaluationUnitNotVisible(unittest.TestCase):
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_wagon',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_3,
-                                                                          binarization_threshold=80)
+                                                                          binarization_threshold=unit_constants.hu_moment_binarization_threshold)
 
         wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
@@ -1037,7 +1037,7 @@ class TestProjectEvaluationUnitNotVisible(unittest.TestCase):
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_ballista',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_1,
-                                                                          binarization_threshold=80)
+                                                                          binarization_threshold=unit_constants.hu_moment_binarization_threshold)
 
         wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
@@ -1049,7 +1049,7 @@ class TestProjectEvaluationUnitNotVisible(unittest.TestCase):
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_ballista',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_2,
-                                                                          binarization_threshold=80)
+                                                                          binarization_threshold=unit_constants.hu_moment_binarization_threshold)
 
         wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
@@ -1061,7 +1061,7 @@ class TestProjectEvaluationUnitNotVisible(unittest.TestCase):
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_ballista',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_3,
-                                                                          binarization_threshold=80)
+                                                                          binarization_threshold=unit_constants.hu_moment_binarization_threshold)
 
         wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
@@ -1119,7 +1119,7 @@ class TestProjectEvaluationUnitNotVisible(unittest.TestCase):
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_trebuchet',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_1,
-                                                                          binarization_threshold=80)
+                                                                          binarization_threshold=unit_constants.hu_moment_binarization_threshold)
 
         wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
@@ -1131,7 +1131,7 @@ class TestProjectEvaluationUnitNotVisible(unittest.TestCase):
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_trebuchet',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_2,
-                                                                          binarization_threshold=80)
+                                                                          binarization_threshold=unit_constants.hu_moment_binarization_threshold)
 
         wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
@@ -1143,7 +1143,7 @@ class TestProjectEvaluationUnitNotVisible(unittest.TestCase):
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_trebuchet',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_3,
-                                                                          binarization_threshold=80)
+                                                                          binarization_threshold=unit_constants.hu_moment_binarization_threshold)
 
         wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
@@ -1201,7 +1201,7 @@ class TestProjectEvaluationUnitNotVisible(unittest.TestCase):
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_balloon',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_1,
-                                                                          binarization_threshold=80)
+                                                                          binarization_threshold=unit_constants.hu_moment_binarization_threshold)
 
         wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
@@ -1213,7 +1213,7 @@ class TestProjectEvaluationUnitNotVisible(unittest.TestCase):
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_balloon',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_2,
-                                                                          binarization_threshold=80)
+                                                                          binarization_threshold=unit_constants.hu_moment_binarization_threshold)
 
         wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
@@ -1225,7 +1225,7 @@ class TestProjectEvaluationUnitNotVisible(unittest.TestCase):
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_balloon',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_3,
-                                                                          binarization_threshold=80)
+                                                                          binarization_threshold=unit_constants.hu_moment_binarization_threshold)
 
         wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
@@ -1283,7 +1283,7 @@ class TestProjectEvaluationUnitNotVisible(unittest.TestCase):
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_harpy',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_1,
-                                                                          binarization_threshold=80)
+                                                                          binarization_threshold=unit_constants.hu_moment_binarization_threshold)
 
         wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
@@ -1295,7 +1295,7 @@ class TestProjectEvaluationUnitNotVisible(unittest.TestCase):
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_harpy',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_2,
-                                                                          binarization_threshold=80)
+                                                                          binarization_threshold=unit_constants.hu_moment_binarization_threshold)
 
         wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
@@ -1307,7 +1307,7 @@ class TestProjectEvaluationUnitNotVisible(unittest.TestCase):
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_harpy',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_3,
-                                                                          binarization_threshold=80)
+                                                                          binarization_threshold=unit_constants.hu_moment_binarization_threshold)
 
         wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
@@ -1365,7 +1365,7 @@ class TestProjectEvaluationUnitNotVisible(unittest.TestCase):
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_witch',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_1,
-                                                                          binarization_threshold=80)
+                                                                          binarization_threshold=unit_constants.hu_moment_binarization_threshold)
 
         wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
@@ -1377,7 +1377,7 @@ class TestProjectEvaluationUnitNotVisible(unittest.TestCase):
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_witch',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_2,
-                                                                          binarization_threshold=80)
+                                                                          binarization_threshold=unit_constants.hu_moment_binarization_threshold)
 
         wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
@@ -1389,7 +1389,7 @@ class TestProjectEvaluationUnitNotVisible(unittest.TestCase):
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_witch',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_3,
-                                                                          binarization_threshold=80)
+                                                                          binarization_threshold=unit_constants.hu_moment_binarization_threshold)
 
         wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
@@ -1447,7 +1447,7 @@ class TestProjectEvaluationUnitNotVisible(unittest.TestCase):
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_emberwing',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_1,
-                                                                          binarization_threshold=80)
+                                                                          binarization_threshold=unit_constants.hu_moment_binarization_threshold)
 
         wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
@@ -1459,7 +1459,7 @@ class TestProjectEvaluationUnitNotVisible(unittest.TestCase):
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_emberwing',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_2,
-                                                                          binarization_threshold=80)
+                                                                          binarization_threshold=unit_constants.hu_moment_binarization_threshold)
 
         wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
@@ -1471,7 +1471,7 @@ class TestProjectEvaluationUnitNotVisible(unittest.TestCase):
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_emberwing',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_3,
-                                                                          binarization_threshold=80)
+                                                                          binarization_threshold=unit_constants.hu_moment_binarization_threshold)
 
         wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
@@ -1529,7 +1529,7 @@ class TestProjectEvaluationUnitNotVisible(unittest.TestCase):
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_barge',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_1,
-                                                                          binarization_threshold=50)
+                                                                          binarization_threshold=unit_constants.hu_moment_binarization_threshold)
 
         wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
@@ -1541,7 +1541,7 @@ class TestProjectEvaluationUnitNotVisible(unittest.TestCase):
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_barge',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_2,
-                                                                          binarization_threshold=50)
+                                                                          binarization_threshold=unit_constants.hu_moment_binarization_threshold)
 
         wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
@@ -1553,7 +1553,7 @@ class TestProjectEvaluationUnitNotVisible(unittest.TestCase):
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_barge',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_3,
-                                                                          binarization_threshold=50)
+                                                                          binarization_threshold=unit_constants.hu_moment_binarization_threshold)
 
         wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
@@ -1611,7 +1611,7 @@ class TestProjectEvaluationUnitNotVisible(unittest.TestCase):
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_sea_turtle',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_1,
-                                                                          binarization_threshold=50)
+                                                                          binarization_threshold=unit_constants.hu_moment_binarization_threshold)
 
         wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
@@ -1623,7 +1623,7 @@ class TestProjectEvaluationUnitNotVisible(unittest.TestCase):
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_sea_turtle',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_2,
-                                                                          binarization_threshold=50)
+                                                                          binarization_threshold=unit_constants.hu_moment_binarization_threshold)
 
         wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
@@ -1635,7 +1635,7 @@ class TestProjectEvaluationUnitNotVisible(unittest.TestCase):
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_sea_turtle',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_3,
-                                                                          binarization_threshold=50)
+                                                                          binarization_threshold=unit_constants.hu_moment_binarization_threshold)
 
         wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
@@ -1693,7 +1693,7 @@ class TestProjectEvaluationUnitNotVisible(unittest.TestCase):
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_harpoon_ship',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_1,
-                                                                          binarization_threshold=50)
+                                                                          binarization_threshold=unit_constants.hu_moment_binarization_threshold)
 
         wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
@@ -1705,7 +1705,7 @@ class TestProjectEvaluationUnitNotVisible(unittest.TestCase):
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_harpoon_ship',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_2,
-                                                                          binarization_threshold=50)
+                                                                          binarization_threshold=unit_constants.hu_moment_binarization_threshold)
 
         wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
@@ -1717,7 +1717,7 @@ class TestProjectEvaluationUnitNotVisible(unittest.TestCase):
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_harpoon_ship',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_3,
-                                                                          binarization_threshold=50)
+                                                                          binarization_threshold=unit_constants.hu_moment_binarization_threshold)
 
         wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
@@ -1775,7 +1775,7 @@ class TestProjectEvaluationUnitNotVisible(unittest.TestCase):
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_warship',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_1,
-                                                                          binarization_threshold=50)
+                                                                          binarization_threshold=unit_constants.hu_moment_binarization_threshold)
 
         wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
@@ -1787,7 +1787,7 @@ class TestProjectEvaluationUnitNotVisible(unittest.TestCase):
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_warship',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_2,
-                                                                          binarization_threshold=50)
+                                                                          binarization_threshold=unit_constants.hu_moment_binarization_threshold)
 
         wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
@@ -1799,7 +1799,7 @@ class TestProjectEvaluationUnitNotVisible(unittest.TestCase):
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_warship',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_3,
-                                                                          binarization_threshold=50)
+                                                                          binarization_threshold=unit_constants.hu_moment_binarization_threshold)
 
         wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
@@ -1857,7 +1857,7 @@ class TestProjectEvaluationUnitNotVisible(unittest.TestCase):
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_merfolk',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_1,
-                                                                          binarization_threshold=40)
+                                                                          binarization_threshold=unit_constants.hu_moment_binarization_threshold)
 
         wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
@@ -1869,7 +1869,7 @@ class TestProjectEvaluationUnitNotVisible(unittest.TestCase):
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_merfolk',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_2,
-                                                                          binarization_threshold=40)
+                                                                          binarization_threshold=unit_constants.hu_moment_binarization_threshold)
 
         wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
@@ -1881,7 +1881,7 @@ class TestProjectEvaluationUnitNotVisible(unittest.TestCase):
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_merfolk',
                                                                           threshold=threshold,
                                                                           method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_3,
-                                                                          binarization_threshold=40)
+                                                                          binarization_threshold=unit_constants.hu_moment_binarization_threshold)
 
         wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
@@ -1939,7 +1939,7 @@ class TestProjectEvaluationUnitNotVisible(unittest.TestCase):
         match = wargroove_ctrl.find_building_with_hu_moment_template_matching('cherrystone_barracks',
                                                                               threshold=threshold,
                                                                               method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_1,
-                                                                              binarization_threshold=40)
+                                                                              binarization_threshold=unit_constants.hu_moment_binarization_threshold)
 
         wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
@@ -1951,7 +1951,7 @@ class TestProjectEvaluationUnitNotVisible(unittest.TestCase):
         match = wargroove_ctrl.find_building_with_hu_moment_template_matching('cherrystone_barracks',
                                                                               threshold=threshold,
                                                                               method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_2,
-                                                                              binarization_threshold=40)
+                                                                              binarization_threshold=unit_constants.hu_moment_binarization_threshold)
 
         wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
@@ -1963,7 +1963,7 @@ class TestProjectEvaluationUnitNotVisible(unittest.TestCase):
         match = wargroove_ctrl.find_building_with_hu_moment_template_matching('cherrystone_barracks',
                                                                               threshold=threshold,
                                                                               method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_3,
-                                                                              binarization_threshold=40)
+                                                                              binarization_threshold=unit_constants.hu_moment_binarization_threshold)
 
         wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
@@ -2021,7 +2021,7 @@ class TestProjectEvaluationUnitNotVisible(unittest.TestCase):
         match = wargroove_ctrl.find_building_with_hu_moment_template_matching('cherrystone_port',
                                                                               threshold=threshold,
                                                                               method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_1,
-                                                                              binarization_threshold=40)
+                                                                              binarization_threshold=unit_constants.hu_moment_binarization_threshold)
 
         wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
@@ -2033,7 +2033,7 @@ class TestProjectEvaluationUnitNotVisible(unittest.TestCase):
         match = wargroove_ctrl.find_building_with_hu_moment_template_matching('cherrystone_port',
                                                                               threshold=threshold,
                                                                               method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_2,
-                                                                              binarization_threshold=40)
+                                                                              binarization_threshold=unit_constants.hu_moment_binarization_threshold)
 
         wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
@@ -2045,7 +2045,7 @@ class TestProjectEvaluationUnitNotVisible(unittest.TestCase):
         match = wargroove_ctrl.find_building_with_hu_moment_template_matching('cherrystone_port',
                                                                               threshold=threshold,
                                                                               method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_3,
-                                                                              binarization_threshold=40)
+                                                                              binarization_threshold=unit_constants.hu_moment_binarization_threshold)
 
         wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
@@ -2103,7 +2103,7 @@ class TestProjectEvaluationUnitNotVisible(unittest.TestCase):
         match = wargroove_ctrl.find_building_with_hu_moment_template_matching('cherrystone_stronghold',
                                                                               threshold=threshold,
                                                                               method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_1,
-                                                                              binarization_threshold=40)
+                                                                              binarization_threshold=unit_constants.hu_moment_binarization_threshold)
 
         wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
@@ -2115,7 +2115,7 @@ class TestProjectEvaluationUnitNotVisible(unittest.TestCase):
         match = wargroove_ctrl.find_building_with_hu_moment_template_matching('cherrystone_stronghold',
                                                                               threshold=threshold,
                                                                               method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_2,
-                                                                              binarization_threshold=40)
+                                                                              binarization_threshold=unit_constants.hu_moment_binarization_threshold)
 
         wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
@@ -2127,7 +2127,7 @@ class TestProjectEvaluationUnitNotVisible(unittest.TestCase):
         match = wargroove_ctrl.find_building_with_hu_moment_template_matching('cherrystone_stronghold',
                                                                               threshold=threshold,
                                                                               method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_3,
-                                                                              binarization_threshold=40)
+                                                                              binarization_threshold=unit_constants.hu_moment_binarization_threshold)
 
         wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
@@ -2185,7 +2185,7 @@ class TestProjectEvaluationUnitNotVisible(unittest.TestCase):
         match = wargroove_ctrl.find_building_with_hu_moment_template_matching('cherrystone_tower',
                                                                               threshold=threshold,
                                                                               method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_1,
-                                                                              binarization_threshold=40)
+                                                                              binarization_threshold=unit_constants.hu_moment_binarization_threshold)
 
         wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
@@ -2197,7 +2197,7 @@ class TestProjectEvaluationUnitNotVisible(unittest.TestCase):
         match = wargroove_ctrl.find_building_with_hu_moment_template_matching('cherrystone_tower',
                                                                               threshold=threshold,
                                                                               method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_2,
-                                                                              binarization_threshold=40)
+                                                                              binarization_threshold=unit_constants.hu_moment_binarization_threshold)
 
         wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
@@ -2209,7 +2209,7 @@ class TestProjectEvaluationUnitNotVisible(unittest.TestCase):
         match = wargroove_ctrl.find_building_with_hu_moment_template_matching('cherrystone_tower',
                                                                               threshold=threshold,
                                                                               method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_3,
-                                                                              binarization_threshold=40)
+                                                                              binarization_threshold=unit_constants.hu_moment_binarization_threshold)
 
         wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
@@ -2267,7 +2267,7 @@ class TestProjectEvaluationUnitNotVisible(unittest.TestCase):
         match = wargroove_ctrl.find_building_with_hu_moment_template_matching('cherrystone_village',
                                                                               threshold=threshold,
                                                                               method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_1,
-                                                                              binarization_threshold=40)
+                                                                              binarization_threshold=unit_constants.hu_moment_binarization_threshold)
 
         wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
@@ -2279,7 +2279,7 @@ class TestProjectEvaluationUnitNotVisible(unittest.TestCase):
         match = wargroove_ctrl.find_building_with_hu_moment_template_matching('cherrystone_village',
                                                                               threshold=threshold,
                                                                               method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_2,
-                                                                              binarization_threshold=40)
+                                                                              binarization_threshold=unit_constants.hu_moment_binarization_threshold)
 
         wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
@@ -2291,7 +2291,7 @@ class TestProjectEvaluationUnitNotVisible(unittest.TestCase):
         match = wargroove_ctrl.find_building_with_hu_moment_template_matching('cherrystone_village',
                                                                               threshold=threshold,
                                                                               method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_3,
-                                                                              binarization_threshold=40)
+                                                                              binarization_threshold=unit_constants.hu_moment_binarization_threshold)
 
         wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
@@ -2349,7 +2349,7 @@ class TestProjectEvaluationUnitNotVisible(unittest.TestCase):
         match = wargroove_ctrl.find_building_with_hu_moment_template_matching('cherrystone_watervillage',
                                                                               threshold=threshold,
                                                                               method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_1,
-                                                                              binarization_threshold=40)
+                                                                              binarization_threshold=unit_constants.hu_moment_binarization_threshold)
 
         wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
@@ -2361,7 +2361,7 @@ class TestProjectEvaluationUnitNotVisible(unittest.TestCase):
         match = wargroove_ctrl.find_building_with_hu_moment_template_matching('cherrystone_watervillage',
                                                                               threshold=threshold,
                                                                               method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_2,
-                                                                              binarization_threshold=40)
+                                                                              binarization_threshold=unit_constants.hu_moment_binarization_threshold)
 
         wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
@@ -2373,7 +2373,7 @@ class TestProjectEvaluationUnitNotVisible(unittest.TestCase):
         match = wargroove_ctrl.find_building_with_hu_moment_template_matching('cherrystone_watervillage',
                                                                               threshold=threshold,
                                                                               method=cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_3,
-                                                                              binarization_threshold=40)
+                                                                              binarization_threshold=unit_constants.hu_moment_binarization_threshold)
 
         wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 

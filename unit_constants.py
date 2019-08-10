@@ -1,4 +1,4 @@
-hu_moment_binarization_threshold=40
+hu_moment_binarization_threshold = 40
 
 cherrystone_mercia_standard_template_matching_threshold = 0.85
 cherrystone_emeric_standard_template_matching_threshold = 0.85
