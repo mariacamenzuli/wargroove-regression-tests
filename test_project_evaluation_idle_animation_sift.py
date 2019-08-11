@@ -280,8 +280,8 @@ class TestProjectEvaluationAnimationSift(unittest.TestCase):
             wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
             assert_that(match).described_as('match in frame ' + str(frame)).is_not_none()
-            assert_that(match.location[0]).described_as('match x value in frame ' + str(frame)).is_between(876, 938)
-            assert_that(match.location[1]).described_as('match y value in frame ' + str(frame)).is_between(112, 168)
+            assert_that(match.location[0]).described_as('match x value in frame ' + str(frame)).is_between(876 - 6, 938 + 6)
+            assert_that(match.location[1]).described_as('match y value in frame ' + str(frame)).is_between(112 - 4, 168 + 4)
 
     # ----------------------------------------------------------------------------
     # ---------------------------------- WITCH ----------------------------------

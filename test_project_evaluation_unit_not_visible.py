@@ -278,7 +278,7 @@ class TestProjectEvaluationUnitNotVisible(unittest.TestCase):
         assert_that(match).is_none()
 
     def test_pikeman_sift(self):
-        threshold = unit_constants.cherrystone_soldier_sift_threshold
+        threshold = unit_constants.cherrystone_pikeman_sift_threshold
         wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + 'pikeman-missing.png')
         match = wargroove_ctrl.find_unit_with_sift('cherrystone_pikeman',
                                                    threshold=threshold)
