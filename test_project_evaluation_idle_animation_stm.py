@@ -787,9 +787,9 @@ class TestProjectEvaluationAnimationSTM(unittest.TestCase):
             wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
             assert_that(match).described_as('match in frame ' + str(frame)).is_not_none()
-            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(876, 4)
+            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(876, 6)
             assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(112, 4)
-            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(938, 4)
+            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(938, 6)
             assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(168, 4)
 
     def test_harpy_standard_template_matching_corr_coeff(self):
@@ -803,9 +803,9 @@ class TestProjectEvaluationAnimationSTM(unittest.TestCase):
             wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
             assert_that(match).described_as('match in frame ' + str(frame)).is_not_none()
-            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(876, 4)
+            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(876, 6)
             assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(112, 4)
-            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(938, 4)
+            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(938, 6)
             assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(168, 4)
 
     def test_harpy_standard_template_matching_square_diff(self):
@@ -819,9 +819,9 @@ class TestProjectEvaluationAnimationSTM(unittest.TestCase):
             wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
             assert_that(match).described_as('match in frame ' + str(frame)).is_not_none()
-            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(876, 4)
+            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(876, 6)
             assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(112, 4)
-            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(938, 4)
+            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(938, 6)
             assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(168, 4)
 
     # ----------------------------------------------------------------------------
@@ -889,9 +889,9 @@ class TestProjectEvaluationAnimationSTM(unittest.TestCase):
             wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
             assert_that(match).described_as('match in frame ' + str(frame)).is_not_none()
-            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(872, 4)
+            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(872, 8)
             assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(320, 4)
-            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(934, 4)
+            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(934, 8)
             assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(354, 4)
 
     def test_dragon_standard_template_matching_corr_coeff(self):
@@ -905,9 +905,9 @@ class TestProjectEvaluationAnimationSTM(unittest.TestCase):
             wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
             assert_that(match).described_as('match in frame ' + str(frame)).is_not_none()
-            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(872, 4)
+            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(872, 8)
             assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(320, 4)
-            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(934, 4)
+            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(934, 8)
             assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(354, 4)
 
     def test_dragon_standard_template_matching_square_diff(self):
@@ -921,9 +921,9 @@ class TestProjectEvaluationAnimationSTM(unittest.TestCase):
             wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
             assert_that(match).described_as('match in frame ' + str(frame)).is_not_none()
-            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(872, 4)
+            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(872, 8)
             assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(320, 4)
-            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(934, 4)
+            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(934, 8)
             assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(354, 4)
 
     # ----------------------------------------------------------------------------
