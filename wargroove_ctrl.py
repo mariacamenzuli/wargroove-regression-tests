@@ -386,16 +386,6 @@ def find_building_with_hu_moment_template_matching(building_template_name,
     return match
 
 
-def find_unit_with_hu_moment_template_matching_custom(unit_template_name,
-                                                      threshold=0.5,
-                                                      binarization_threshold=127,
-                                                      render_match=False):
-    return vision.find_template_match_hu_moments_custom("data/units/" + unit_template_name + ".png",
-                                                        threshold=threshold,
-                                                        binarization_threshold=binarization_threshold,
-                                                        render_match=render_match)
-
-
 def find_unit_with_sift(unit_template_name, threshold=50.0):
     return vision.find_best_feature_based_match_sift("data/units/" + unit_template_name + ".png",
                                                      threshold,
