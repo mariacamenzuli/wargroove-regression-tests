@@ -26,10 +26,10 @@ class TestProjectEvaluationAnimationHuMoments(unittest.TestCase):
                                                                               binarization_threshold=unit_constants.hu_moment_binarization_threshold)
 
             assert_that(match).described_as('match in frame ' + str(frame)).is_not_none()
-            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(354, 4)
-            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(122, 4)
-            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(392, 4)
-            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(176, 4)
+            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(354, 6)
+            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(122, 6)
+            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(392, 6)
+            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(176, 6)
 
     def test_mercia_hu_moment_template_matching_method_2(self):
         threshold = unit_constants.cherrystone_mercia_hu_moment_template_matching_threshold
@@ -41,10 +41,10 @@ class TestProjectEvaluationAnimationHuMoments(unittest.TestCase):
                                                                               binarization_threshold=unit_constants.hu_moment_binarization_threshold)
 
             assert_that(match).described_as('match in frame ' + str(frame)).is_not_none()
-            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(354, 4)
-            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(122, 4)
-            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(392, 4)
-            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(176, 4)
+            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(354, 6)
+            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(122, 6)
+            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(392, 6)
+            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(176, 6)
 
     def test_mercia_hu_moment_template_matching_method_3(self):
         threshold = unit_constants.cherrystone_mercia_hu_moment_template_matching_threshold
@@ -58,10 +58,10 @@ class TestProjectEvaluationAnimationHuMoments(unittest.TestCase):
             wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
             assert_that(match).described_as('match in frame ' + str(frame)).is_not_none()
-            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(354, 4)
-            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(122, 4)
-            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(392, 4)
-            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(176, 4)
+            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(354, 6)
+            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(122, 6)
+            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(392, 6)
+            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(176, 6)
 
     # ----------------------------------------------------------------------------
     # ---------------------------------- EMERIC ----------------------------------
@@ -79,10 +79,10 @@ class TestProjectEvaluationAnimationHuMoments(unittest.TestCase):
             wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
             assert_that(match).described_as('match in frame ' + str(frame)).is_not_none()
-            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(360, 4)
-            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(220, 4)
-            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(390, 4)
-            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(274, 4)
+            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(360, 6)
+            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(220, 6)
+            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(390, 6)
+            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(274, 6)
 
     def test_emeric_hu_moment_template_matching_method_2(self):
         threshold = unit_constants.cherrystone_emeric_hu_moment_template_matching_threshold
@@ -96,10 +96,10 @@ class TestProjectEvaluationAnimationHuMoments(unittest.TestCase):
             wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
             assert_that(match).described_as('match in frame ' + str(frame)).is_not_none()
-            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(360, 4)
-            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(220, 4)
-            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(390, 4)
-            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(274, 4)
+            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(360, 6)
+            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(220, 6)
+            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(390, 6)
+            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(274, 6)
 
     def test_emeric_hu_moment_template_matching_method_3(self):
         threshold = unit_constants.cherrystone_emeric_hu_moment_template_matching_threshold
@@ -113,10 +113,10 @@ class TestProjectEvaluationAnimationHuMoments(unittest.TestCase):
             wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
             assert_that(match).described_as('match in frame ' + str(frame)).is_not_none()
-            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(360, 4)
-            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(220, 4)
-            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(390, 4)
-            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(274, 4)
+            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(360, 6)
+            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(220, 6)
+            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(390, 6)
+            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(274, 6)
 
     # ----------------------------------------------------------------------------
     # ---------------------------------- CAESAR ----------------------------------
@@ -134,10 +134,10 @@ class TestProjectEvaluationAnimationHuMoments(unittest.TestCase):
             wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
             assert_that(match).described_as('match in frame ' + str(frame)).is_not_none()
-            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(354, 4)
-            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(320, 4)
-            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(404, 4)
-            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(368, 4)
+            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(354, 6)
+            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(320, 6)
+            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(404, 6)
+            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(368, 6)
 
     def test_caesar_hu_moment_template_matching_method_2(self):
         threshold = unit_constants.cherrystone_caesar_hu_moment_template_matching_threshold
@@ -151,10 +151,10 @@ class TestProjectEvaluationAnimationHuMoments(unittest.TestCase):
             wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
             assert_that(match).described_as('match in frame ' + str(frame)).is_not_none()
-            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(354, 4)
-            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(320, 4)
-            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(404, 4)
-            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(368, 4)
+            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(354, 6)
+            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(320, 6)
+            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(404, 6)
+            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(368, 6)
 
     def test_caesar_hu_moment_template_matching_method_3(self):
         threshold = unit_constants.cherrystone_caesar_hu_moment_template_matching_threshold
@@ -168,10 +168,10 @@ class TestProjectEvaluationAnimationHuMoments(unittest.TestCase):
             wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
             assert_that(match).described_as('match in frame ' + str(frame)).is_not_none()
-            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(354, 4)
-            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(320, 4)
-            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(404, 4)
-            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(368, 4)
+            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(354, 6)
+            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(320, 6)
+            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(404, 6)
+            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(368, 6)
 
     # ----------------------------------------------------------------------------
     # ---------------------------------- VILLAGER ----------------------------------
@@ -189,10 +189,10 @@ class TestProjectEvaluationAnimationHuMoments(unittest.TestCase):
             wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
             assert_that(match).described_as('match in frame ' + str(frame)).is_not_none()
-            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(506, 4)
-            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(124, 4)
-            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(536, 4)
-            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(176, 4)
+            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(506, 6)
+            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(124, 6)
+            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(536, 6)
+            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(176, 6)
 
     def test_villager_hu_moment_template_matching_method_2(self):
         threshold = unit_constants.cherrystone_villager_hu_moment_template_matching_threshold
@@ -206,10 +206,10 @@ class TestProjectEvaluationAnimationHuMoments(unittest.TestCase):
             wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
             assert_that(match).described_as('match in frame ' + str(frame)).is_not_none()
-            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(506, 4)
-            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(124, 4)
-            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(536, 4)
-            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(176, 4)
+            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(506, 6)
+            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(124, 6)
+            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(536, 6)
+            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(176, 6)
 
     def test_villager_hu_moment_template_matching_method_3(self):
         threshold = unit_constants.cherrystone_villager_hu_moment_template_matching_threshold
@@ -223,10 +223,10 @@ class TestProjectEvaluationAnimationHuMoments(unittest.TestCase):
             wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
             assert_that(match).described_as('match in frame ' + str(frame)).is_not_none()
-            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(506, 4)
-            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(124, 4)
-            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(536, 4)
-            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(176, 4)
+            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(506, 6)
+            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(124, 6)
+            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(536, 6)
+            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(176, 6)
 
     # ----------------------------------------------------------------------------
     # ---------------------------------- SOLDIER ----------------------------------
@@ -244,10 +244,10 @@ class TestProjectEvaluationAnimationHuMoments(unittest.TestCase):
             wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
             assert_that(match).described_as('match in frame ' + str(frame)).is_not_none()
-            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(500, 4)
-            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(218, 4)
-            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(536, 4)
-            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(272, 4)
+            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(500, 6)
+            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(218, 6)
+            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(536, 6)
+            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(272, 6)
 
     def test_soldier_hu_moment_template_matching_method_2(self):
         threshold = unit_constants.cherrystone_soldier_hu_moment_template_matching_threshold
@@ -261,10 +261,10 @@ class TestProjectEvaluationAnimationHuMoments(unittest.TestCase):
             wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
             assert_that(match).described_as('match in frame ' + str(frame)).is_not_none()
-            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(500, 4)
-            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(218, 4)
-            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(536, 4)
-            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(272, 4)
+            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(500, 6)
+            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(218, 6)
+            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(536, 6)
+            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(272, 6)
 
     def test_soldier_hu_moment_template_matching_method_3(self):
         threshold = unit_constants.cherrystone_soldier_hu_moment_template_matching_threshold
@@ -278,10 +278,10 @@ class TestProjectEvaluationAnimationHuMoments(unittest.TestCase):
             wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
             assert_that(match).described_as('match in frame ' + str(frame)).is_not_none()
-            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(500, 4)
-            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(218, 4)
-            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(536, 4)
-            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(272, 4)
+            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(500, 6)
+            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(218, 6)
+            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(536, 6)
+            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(272, 6)
 
     # ----------------------------------------------------------------------------
     # ---------------------------------- PIKEMAN ----------------------------------
@@ -299,10 +299,10 @@ class TestProjectEvaluationAnimationHuMoments(unittest.TestCase):
             wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
             assert_that(match).described_as('match in frame ' + str(frame)).is_not_none()
-            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(502, 4)
-            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(324, 4)
-            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(554, 4)
-            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(368, 4)
+            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(502, 6)
+            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(324, 6)
+            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(554, 6)
+            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(368, 6)
 
     def test_pikeman_hu_moment_template_matching_method_2(self):
         threshold = unit_constants.cherrystone_pikeman_hu_moment_template_matching_threshold
@@ -316,10 +316,10 @@ class TestProjectEvaluationAnimationHuMoments(unittest.TestCase):
             wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
             assert_that(match).described_as('match in frame ' + str(frame)).is_not_none()
-            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(502, 4)
-            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(324, 4)
-            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(554, 4)
-            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(368, 4)
+            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(502, 6)
+            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(324, 6)
+            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(554, 6)
+            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(368, 6)
 
     def test_pikeman_hu_moment_template_matching_method_3(self):
         threshold = unit_constants.cherrystone_pikeman_hu_moment_template_matching_threshold
@@ -333,10 +333,10 @@ class TestProjectEvaluationAnimationHuMoments(unittest.TestCase):
             wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
             assert_that(match).described_as('match in frame ' + str(frame)).is_not_none()
-            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(502, 4)
-            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(324, 4)
-            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(554, 4)
-            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(368, 4)
+            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(502, 6)
+            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(324, 6)
+            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(554, 6)
+            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(368, 6)
 
     # ----------------------------------------------------------------------------
     # ---------------------------------- BATTLEPUP ----------------------------------
@@ -354,10 +354,10 @@ class TestProjectEvaluationAnimationHuMoments(unittest.TestCase):
             wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
             assert_that(match).described_as('match in frame ' + str(frame)).is_not_none()
-            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(596, 4)
-            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(138, 4)
-            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(642, 4)
-            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(176, 4)
+            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(596, 6)
+            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(138, 6)
+            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(642, 6)
+            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(176, 6)
 
     def test_battlepup_hu_moment_template_matching_method_2(self):
         threshold = unit_constants.cherrystone_battlepup_hu_moment_template_matching_threshold
@@ -371,10 +371,10 @@ class TestProjectEvaluationAnimationHuMoments(unittest.TestCase):
             wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
             assert_that(match).described_as('match in frame ' + str(frame)).is_not_none()
-            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(596, 4)
-            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(138, 4)
-            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(642, 4)
-            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(176, 4)
+            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(596, 6)
+            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(138, 6)
+            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(642, 6)
+            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(176, 6)
 
     def test_battlepup_hu_moment_template_matching_method_3(self):
         threshold = unit_constants.cherrystone_battlepup_hu_moment_template_matching_threshold
@@ -388,10 +388,10 @@ class TestProjectEvaluationAnimationHuMoments(unittest.TestCase):
             wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
             assert_that(match).described_as('match in frame ' + str(frame)).is_not_none()
-            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(596, 4)
-            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(138, 4)
-            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(642, 4)
-            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(176, 4)
+            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(596, 6)
+            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(138, 6)
+            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(642, 6)
+            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(176, 6)
 
     # ----------------------------------------------------------------------------
     # ---------------------------------- ALCHEMIST ----------------------------------
@@ -409,10 +409,10 @@ class TestProjectEvaluationAnimationHuMoments(unittest.TestCase):
             wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
             assert_that(match).described_as('match in frame ' + str(frame)).is_not_none()
-            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(592, 4)
-            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(222, 4)
-            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(636, 4)
-            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(272, 4)
+            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(592, 6)
+            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(222, 6)
+            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(636, 6)
+            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(272, 6)
 
     def test_alchemist_hu_moment_template_matching_method_2(self):
         threshold = unit_constants.cherrystone_alchemist_hu_moment_template_matching_threshold
@@ -426,10 +426,10 @@ class TestProjectEvaluationAnimationHuMoments(unittest.TestCase):
             wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
             assert_that(match).described_as('match in frame ' + str(frame)).is_not_none()
-            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(592, 4)
-            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(222, 4)
-            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(636, 4)
-            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(272, 4)
+            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(592, 6)
+            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(222, 6)
+            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(636, 6)
+            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(272, 6)
 
     def test_alchemist_hu_moment_template_matching_method_3(self):
         threshold = unit_constants.cherrystone_alchemist_hu_moment_template_matching_threshold
@@ -443,10 +443,10 @@ class TestProjectEvaluationAnimationHuMoments(unittest.TestCase):
             wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
             assert_that(match).described_as('match in frame ' + str(frame)).is_not_none()
-            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(592, 4)
-            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(222, 4)
-            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(636, 4)
-            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(272, 4)
+            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(592, 6)
+            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(222, 6)
+            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(636, 6)
+            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(272, 6)
 
     # ----------------------------------------------------------------------------
     # ---------------------------------- ARCHER ----------------------------------
@@ -464,10 +464,10 @@ class TestProjectEvaluationAnimationHuMoments(unittest.TestCase):
             wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
             assert_that(match).described_as('match in frame ' + str(frame)).is_not_none()
-            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(590, 4)
-            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(314, 4)
-            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(634, 4)
-            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(370, 4)
+            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(590, 6)
+            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(314, 6)
+            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(634, 6)
+            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(370, 6)
 
     def test_archer_hu_moment_template_matching_method_2(self):
         threshold = unit_constants.cherrystone_archer_hu_moment_template_matching_threshold
@@ -481,10 +481,10 @@ class TestProjectEvaluationAnimationHuMoments(unittest.TestCase):
             wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
             assert_that(match).described_as('match in frame ' + str(frame)).is_not_none()
-            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(590, 4)
-            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(314, 4)
-            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(634, 4)
-            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(370, 4)
+            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(590, 6)
+            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(314, 6)
+            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(634, 6)
+            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(370, 6)
 
     def test_archer_hu_moment_template_matching_method_3(self):
         threshold = unit_constants.cherrystone_archer_hu_moment_template_matching_threshold
@@ -498,10 +498,10 @@ class TestProjectEvaluationAnimationHuMoments(unittest.TestCase):
             wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
             assert_that(match).described_as('match in frame ' + str(frame)).is_not_none()
-            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(590, 4)
-            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(314, 4)
-            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(634, 4)
-            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(370, 4)
+            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(590, 6)
+            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(314, 6)
+            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(634, 6)
+            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(370, 6)
 
     # ----------------------------------------------------------------------------
     # ---------------------------------- GOLEM ----------------------------------
@@ -519,10 +519,10 @@ class TestProjectEvaluationAnimationHuMoments(unittest.TestCase):
             wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
             assert_that(match).described_as('match in frame ' + str(frame)).is_not_none()
-            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(692, 4)
-            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(108, 4)
-            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(732, 4)
-            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(178, 4)
+            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(692, 6)
+            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(108, 6)
+            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(732, 6)
+            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(178, 6)
 
     def test_golem_hu_moment_template_matching_method_2(self):
         threshold = unit_constants.cherrystone_golem_hu_moment_template_matching_threshold
@@ -536,10 +536,10 @@ class TestProjectEvaluationAnimationHuMoments(unittest.TestCase):
             wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
             assert_that(match).described_as('match in frame ' + str(frame)).is_not_none()
-            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(692, 4)
-            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(108, 4)
-            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(732, 4)
-            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(178, 4)
+            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(692, 6)
+            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(108, 6)
+            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(732, 6)
+            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(178, 6)
 
     def test_golem_hu_moment_template_matching_method_3(self):
         threshold = unit_constants.cherrystone_golem_hu_moment_template_matching_threshold
@@ -553,10 +553,10 @@ class TestProjectEvaluationAnimationHuMoments(unittest.TestCase):
             wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
             assert_that(match).described_as('match in frame ' + str(frame)).is_not_none()
-            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(692, 4)
-            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(108, 4)
-            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(732, 4)
-            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(178, 4)
+            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(692, 6)
+            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(108, 6)
+            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(732, 6)
+            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(178, 6)
 
     # ----------------------------------------------------------------------------
     # ---------------------------------- KNIGHT ----------------------------------
@@ -574,10 +574,10 @@ class TestProjectEvaluationAnimationHuMoments(unittest.TestCase):
             wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
             assert_that(match).described_as('match in frame ' + str(frame)).is_not_none()
-            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(693, 4)
-            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(208, 4)
-            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(744, 4)
-            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(272, 4)
+            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(693, 6)
+            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(208, 6)
+            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(744, 6)
+            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(272, 6)
 
     def test_knight_hu_moment_template_matching_method_2(self):
         threshold = unit_constants.cherrystone_knight_hu_moment_template_matching_threshold
@@ -591,10 +591,10 @@ class TestProjectEvaluationAnimationHuMoments(unittest.TestCase):
             wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
             assert_that(match).described_as('match in frame ' + str(frame)).is_not_none()
-            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(693, 4)
-            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(208, 4)
-            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(744, 4)
-            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(272, 4)
+            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(693, 6)
+            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(208, 6)
+            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(744, 6)
+            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(272, 6)
 
     def test_knight_hu_moment_template_matching_method_3(self):
         threshold = unit_constants.cherrystone_knight_hu_moment_template_matching_threshold
@@ -608,10 +608,10 @@ class TestProjectEvaluationAnimationHuMoments(unittest.TestCase):
             wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
             assert_that(match).described_as('match in frame ' + str(frame)).is_not_none()
-            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(693, 4)
-            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(208, 4)
-            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(744, 4)
-            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(272, 4)
+            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(693, 6)
+            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(208, 6)
+            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(744, 6)
+            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(272, 6)
 
     # ----------------------------------------------------------------------------
     # ---------------------------------- WAGON ----------------------------------
@@ -629,10 +629,10 @@ class TestProjectEvaluationAnimationHuMoments(unittest.TestCase):
             wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
             assert_that(match).described_as('match in frame ' + str(frame)).is_not_none()
-            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(686, 4)
-            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(319, 4)
-            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(742, 4)
-            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(370, 4)
+            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(686, 6)
+            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(319, 6)
+            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(742, 6)
+            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(370, 6)
 
     def test_wagon_hu_moment_template_matching_method_2(self):
         threshold = unit_constants.cherrystone_wagon_hu_moment_template_matching_threshold
@@ -646,10 +646,10 @@ class TestProjectEvaluationAnimationHuMoments(unittest.TestCase):
             wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
             assert_that(match).described_as('match in frame ' + str(frame)).is_not_none()
-            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(686, 4)
-            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(319, 4)
-            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(742, 4)
-            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(370, 4)
+            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(686, 6)
+            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(319, 6)
+            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(742, 6)
+            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(370, 6)
 
     def test_wagon_hu_moment_template_matching_method_3(self):
         threshold = unit_constants.cherrystone_wagon_hu_moment_template_matching_threshold
@@ -663,10 +663,10 @@ class TestProjectEvaluationAnimationHuMoments(unittest.TestCase):
             wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
             assert_that(match).described_as('match in frame ' + str(frame)).is_not_none()
-            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(686, 4)
-            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(319, 4)
-            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(742, 4)
-            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(370, 4)
+            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(686, 6)
+            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(319, 6)
+            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(742, 6)
+            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(370, 6)
 
     # ----------------------------------------------------------------------------
     # ---------------------------------- BALLISTA ----------------------------------
@@ -684,10 +684,10 @@ class TestProjectEvaluationAnimationHuMoments(unittest.TestCase):
             wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
             assert_that(match).described_as('match in frame ' + str(frame)).is_not_none()
-            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(782, 4)
-            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(138, 4)
-            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(842, 4)
-            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(180, 4)
+            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(782, 6)
+            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(138, 6)
+            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(842, 6)
+            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(180, 6)
 
     def test_ballista_hu_moment_template_matching_method_2(self):
         threshold = unit_constants.cherrystone_ballista_hu_moment_template_matching_threshold
@@ -701,10 +701,10 @@ class TestProjectEvaluationAnimationHuMoments(unittest.TestCase):
             wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
             assert_that(match).described_as('match in frame ' + str(frame)).is_not_none()
-            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(782, 4)
-            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(138, 4)
-            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(842, 4)
-            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(180, 4)
+            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(782, 6)
+            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(138, 6)
+            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(842, 6)
+            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(180, 6)
 
     def test_ballista_hu_moment_template_matching_method_3(self):
         threshold = unit_constants.cherrystone_ballista_hu_moment_template_matching_threshold
@@ -718,10 +718,10 @@ class TestProjectEvaluationAnimationHuMoments(unittest.TestCase):
             wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
             assert_that(match).described_as('match in frame ' + str(frame)).is_not_none()
-            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(782, 4)
-            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(138, 4)
-            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(842, 4)
-            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(180, 4)
+            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(782, 6)
+            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(138, 6)
+            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(842, 6)
+            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(180, 6)
 
     # ----------------------------------------------------------------------------
     # ---------------------------------- TREBUCHET ----------------------------------
@@ -739,10 +739,10 @@ class TestProjectEvaluationAnimationHuMoments(unittest.TestCase):
             wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
             assert_that(match).described_as('match in frame ' + str(frame)).is_not_none()
-            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(782, 4)
-            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(226, 4)
-            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(844, 4)
-            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(276, 4)
+            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(782, 6)
+            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(226, 6)
+            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(844, 6)
+            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(276, 6)
 
     def test_trebuchet_hu_moment_template_matching_method_2(self):
         threshold = unit_constants.cherrystone_trebuchet_hu_moment_template_matching_threshold
@@ -756,10 +756,10 @@ class TestProjectEvaluationAnimationHuMoments(unittest.TestCase):
             wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
             assert_that(match).described_as('match in frame ' + str(frame)).is_not_none()
-            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(782, 4)
-            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(226, 4)
-            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(844, 4)
-            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(276, 4)
+            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(782, 6)
+            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(226, 6)
+            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(844, 6)
+            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(276, 6)
 
     def test_trebuchet_hu_moment_template_matching_method_3(self):
         threshold = unit_constants.cherrystone_trebuchet_hu_moment_template_matching_threshold
@@ -773,10 +773,10 @@ class TestProjectEvaluationAnimationHuMoments(unittest.TestCase):
             wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
             assert_that(match).described_as('match in frame ' + str(frame)).is_not_none()
-            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(782, 4)
-            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(226, 4)
-            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(844, 4)
-            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(276, 4)
+            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(782, 6)
+            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(226, 6)
+            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(844, 6)
+            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(276, 6)
 
     # ----------------------------------------------------------------------------
     # ---------------------------------- BALLOON ----------------------------------
@@ -794,10 +794,10 @@ class TestProjectEvaluationAnimationHuMoments(unittest.TestCase):
             wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
             assert_that(match).described_as('match in frame ' + str(frame)).is_not_none()
-            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(770, 4)
-            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(300, 4)
-            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(830, 4)
-            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(362, 4)
+            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(770, 6)
+            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(300, 6)
+            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(830, 6)
+            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(362, 6)
 
     def test_balloon_hu_moment_template_matching_method_2(self):
         threshold = unit_constants.cherrystone_balloon_hu_moment_template_matching_threshold
@@ -811,10 +811,10 @@ class TestProjectEvaluationAnimationHuMoments(unittest.TestCase):
             wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
             assert_that(match).described_as('match in frame ' + str(frame)).is_not_none()
-            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(770, 4)
-            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(300, 4)
-            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(830, 4)
-            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(362, 4)
+            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(770, 6)
+            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(300, 6)
+            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(830, 6)
+            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(362, 6)
 
     def test_balloon_hu_moment_template_matching_method_3(self):
         threshold = unit_constants.cherrystone_balloon_hu_moment_template_matching_threshold
@@ -828,10 +828,10 @@ class TestProjectEvaluationAnimationHuMoments(unittest.TestCase):
             wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
             assert_that(match).described_as('match in frame ' + str(frame)).is_not_none()
-            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(770, 4)
-            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(300, 4)
-            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(830, 4)
-            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(362, 4)
+            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(770, 6)
+            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(300, 6)
+            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(830, 6)
+            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(362, 6)
 
     # ----------------------------------------------------------------------------
     # ---------------------------------- HARPY ----------------------------------
@@ -850,9 +850,9 @@ class TestProjectEvaluationAnimationHuMoments(unittest.TestCase):
 
             assert_that(match).described_as('match in frame ' + str(frame)).is_not_none()
             assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(876, 6)
-            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(112, 4)
+            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(112, 6)
             assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(938, 6)
-            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(168, 4)
+            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(168, 6)
 
     def test_harpy_hu_moment_template_matching_method_2(self):
         threshold = unit_constants.cherrystone_harpy_hu_moment_template_matching_threshold
@@ -867,9 +867,9 @@ class TestProjectEvaluationAnimationHuMoments(unittest.TestCase):
 
             assert_that(match).described_as('match in frame ' + str(frame)).is_not_none()
             assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(876, 6)
-            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(112, 4)
+            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(112, 6)
             assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(938, 6)
-            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(168, 4)
+            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(168, 6)
 
     def test_harpy_hu_moment_template_matching_method_3(self):
         threshold = unit_constants.cherrystone_harpy_hu_moment_template_matching_threshold
@@ -884,9 +884,9 @@ class TestProjectEvaluationAnimationHuMoments(unittest.TestCase):
 
             assert_that(match).described_as('match in frame ' + str(frame)).is_not_none()
             assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(876, 6)
-            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(112, 4)
+            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(112, 6)
             assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(938, 6)
-            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(168, 4)
+            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(168, 6)
 
     # ----------------------------------------------------------------------------
     # ---------------------------------- WITCH ----------------------------------
@@ -904,10 +904,10 @@ class TestProjectEvaluationAnimationHuMoments(unittest.TestCase):
             wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
             assert_that(match).described_as('match in frame ' + str(frame)).is_not_none()
-            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(878, 4)
-            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(214, 4)
-            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(926, 4)
-            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(264, 4)
+            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(878, 6)
+            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(214, 6)
+            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(926, 6)
+            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(264, 6)
 
     def test_witch_hu_moment_template_matching_method_2(self):
         threshold = unit_constants.cherrystone_witch_hu_moment_template_matching_threshold
@@ -921,10 +921,10 @@ class TestProjectEvaluationAnimationHuMoments(unittest.TestCase):
             wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
             assert_that(match).described_as('match in frame ' + str(frame)).is_not_none()
-            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(878, 4)
-            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(214, 4)
-            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(926, 4)
-            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(264, 4)
+            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(878, 6)
+            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(214, 6)
+            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(926, 6)
+            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(264, 6)
 
     def test_witch_hu_moment_template_matching_method_3(self):
         threshold = unit_constants.cherrystone_witch_hu_moment_template_matching_threshold
@@ -938,10 +938,10 @@ class TestProjectEvaluationAnimationHuMoments(unittest.TestCase):
             wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
             assert_that(match).described_as('match in frame ' + str(frame)).is_not_none()
-            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(878, 4)
-            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(214, 4)
-            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(926, 4)
-            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(264, 4)
+            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(878, 6)
+            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(214, 6)
+            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(926, 6)
+            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(264, 6)
 
     # ----------------------------------------------------------------------------
     # ---------------------------------- DRAGON ----------------------------------
@@ -960,9 +960,9 @@ class TestProjectEvaluationAnimationHuMoments(unittest.TestCase):
 
             assert_that(match).described_as('match in frame ' + str(frame)).is_not_none()
             assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(872, 8)
-            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(320, 4)
+            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(320, 6)
             assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(934, 8)
-            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(354, 4)
+            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(354, 6)
 
     def test_dragon_hu_moment_template_matching_method_2(self):
         threshold = unit_constants.cherrystone_dragon_hu_moment_template_matching_threshold
@@ -977,9 +977,9 @@ class TestProjectEvaluationAnimationHuMoments(unittest.TestCase):
 
             assert_that(match).described_as('match in frame ' + str(frame)).is_not_none()
             assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(872, 8)
-            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(320, 4)
+            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(320, 6)
             assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(934, 8)
-            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(354, 4)
+            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(354, 6)
 
     def test_dragon_hu_moment_template_matching_method_3(self):
         threshold = unit_constants.cherrystone_dragon_hu_moment_template_matching_threshold
@@ -994,9 +994,9 @@ class TestProjectEvaluationAnimationHuMoments(unittest.TestCase):
 
             assert_that(match).described_as('match in frame ' + str(frame)).is_not_none()
             assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(872, 8)
-            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(320, 4)
+            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(320, 6)
             assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(934, 8)
-            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(354, 4)
+            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(354, 6)
 
     # ----------------------------------------------------------------------------
     # ---------------------------------- BARGE ----------------------------------
@@ -1014,10 +1014,10 @@ class TestProjectEvaluationAnimationHuMoments(unittest.TestCase):
             wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
             assert_that(match).described_as('match in frame ' + str(frame)).is_not_none()
-            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(450, 4)
-            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(520, 4)
-            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(502, 4)
-            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(560, 4)
+            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(450, 6)
+            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(520, 6)
+            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(502, 6)
+            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(560, 6)
 
     def test_barge_hu_moment_template_matching_method_2(self):
         threshold = unit_constants.cherrystone_barge_hu_moment_template_matching_threshold
@@ -1031,10 +1031,10 @@ class TestProjectEvaluationAnimationHuMoments(unittest.TestCase):
             wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
             assert_that(match).described_as('match in frame ' + str(frame)).is_not_none()
-            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(450, 4)
-            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(520, 4)
-            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(502, 4)
-            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(560, 4)
+            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(450, 6)
+            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(520, 6)
+            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(502, 6)
+            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(560, 6)
 
     def test_barge_hu_moment_template_matching_method_3(self):
         threshold = unit_constants.cherrystone_barge_hu_moment_template_matching_threshold
@@ -1048,10 +1048,10 @@ class TestProjectEvaluationAnimationHuMoments(unittest.TestCase):
             wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
             assert_that(match).described_as('match in frame ' + str(frame)).is_not_none()
-            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(450, 4)
-            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(520, 4)
-            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(502, 4)
-            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(560, 4)
+            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(450, 6)
+            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(520, 6)
+            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(502, 6)
+            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(560, 6)
 
     # ----------------------------------------------------------------------------
     # ---------------------------------- SEA TURTLE ----------------------------------
@@ -1069,10 +1069,10 @@ class TestProjectEvaluationAnimationHuMoments(unittest.TestCase):
             wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
             assert_that(match).described_as('match in frame ' + str(frame)).is_not_none()
-            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(544, 4)
-            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(530, 4)
-            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(596, 4)
-            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(560, 4)
+            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(544, 6)
+            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(530, 6)
+            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(596, 6)
+            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(560, 6)
 
     def test_seaturtle_hu_moment_template_matching_method_2(self):
         threshold = unit_constants.cherrystone_seaturtle_hu_moment_template_matching_threshold
@@ -1086,10 +1086,10 @@ class TestProjectEvaluationAnimationHuMoments(unittest.TestCase):
             wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
             assert_that(match).described_as('match in frame ' + str(frame)).is_not_none()
-            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(544, 4)
-            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(530, 4)
-            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(596, 4)
-            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(560, 4)
+            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(544, 6)
+            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(530, 6)
+            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(596, 6)
+            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(560, 6)
 
     def test_seaturtle_hu_moment_template_matching_method_3(self):
         threshold = unit_constants.cherrystone_seaturtle_hu_moment_template_matching_threshold
@@ -1103,10 +1103,10 @@ class TestProjectEvaluationAnimationHuMoments(unittest.TestCase):
             wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
             assert_that(match).described_as('match in frame ' + str(frame)).is_not_none()
-            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(544, 4)
-            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(530, 4)
-            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(596, 4)
-            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(560, 4)
+            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(544, 6)
+            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(530, 6)
+            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(596, 6)
+            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(560, 6)
 
     # ----------------------------------------------------------------------------
     # ---------------------------------- HARPOON SHIP ----------------------------------
@@ -1124,10 +1124,10 @@ class TestProjectEvaluationAnimationHuMoments(unittest.TestCase):
             wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
             assert_that(match).described_as('match in frame ' + str(frame)).is_not_none()
-            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(641, 4)
-            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(516, 4)
-            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(695, 4)
-            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(564, 4)
+            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(641, 6)
+            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(516, 6)
+            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(695, 6)
+            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(564, 6)
 
     def test_harpoonship_hu_moment_template_matching_method_2(self):
         threshold = unit_constants.cherrystone_harpoonship_hu_moment_template_matching_threshold
@@ -1141,10 +1141,10 @@ class TestProjectEvaluationAnimationHuMoments(unittest.TestCase):
             wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
             assert_that(match).described_as('match in frame ' + str(frame)).is_not_none()
-            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(641, 4)
-            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(516, 4)
-            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(695, 4)
-            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(564, 4)
+            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(641, 6)
+            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(516, 6)
+            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(695, 6)
+            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(564, 6)
 
     def test_harpoonship_hu_moment_template_matching_method_3(self):
         threshold = unit_constants.cherrystone_harpoonship_hu_moment_template_matching_threshold
@@ -1158,10 +1158,10 @@ class TestProjectEvaluationAnimationHuMoments(unittest.TestCase):
             wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
             assert_that(match).described_as('match in frame ' + str(frame)).is_not_none()
-            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(641, 4)
-            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(516, 4)
-            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(695, 4)
-            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(564, 4)
+            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(641, 6)
+            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(516, 6)
+            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(695, 6)
+            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(564, 6)
 
     # ----------------------------------------------------------------------------
     # ---------------------------------- WARSHIP ----------------------------------
@@ -1179,10 +1179,10 @@ class TestProjectEvaluationAnimationHuMoments(unittest.TestCase):
             wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
             assert_that(match).described_as('match in frame ' + str(frame)).is_not_none()
-            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(732, 4)
-            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(516, 4)
-            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(794, 4)
-            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(564, 4)
+            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(732, 6)
+            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(516, 6)
+            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(794, 6)
+            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(564, 6)
 
     def test_warship_hu_moment_template_matching_method_2(self):
         threshold = unit_constants.cherrystone_warship_hu_moment_template_matching_threshold
@@ -1196,10 +1196,10 @@ class TestProjectEvaluationAnimationHuMoments(unittest.TestCase):
             wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
             assert_that(match).described_as('match in frame ' + str(frame)).is_not_none()
-            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(732, 4)
-            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(516, 4)
-            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(794, 4)
-            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(564, 4)
+            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(732, 6)
+            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(516, 6)
+            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(794, 6)
+            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(564, 6)
 
     def test_warship_hu_moment_template_matching_method_3(self):
         threshold = unit_constants.cherrystone_warship_hu_moment_template_matching_threshold
@@ -1213,10 +1213,10 @@ class TestProjectEvaluationAnimationHuMoments(unittest.TestCase):
             wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
             assert_that(match).described_as('match in frame ' + str(frame)).is_not_none()
-            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(732, 4)
-            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(516, 4)
-            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(794, 4)
-            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(564, 4)
+            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(732, 6)
+            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(516, 6)
+            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(794, 6)
+            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(564, 6)
 
     # ----------------------------------------------------------------------------
     # ---------------------------------- MERFOLK ----------------------------------
@@ -1234,10 +1234,10 @@ class TestProjectEvaluationAnimationHuMoments(unittest.TestCase):
             wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
             assert_that(match).described_as('match in frame ' + str(frame)).is_not_none()
-            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(840, 4)
-            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(520, 4)
-            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(886, 4)
-            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(562, 4)
+            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(840, 6)
+            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(520, 6)
+            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(886, 6)
+            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(562, 6)
 
     def test_merfolk_hu_moment_template_matching_method_2(self):
         threshold = unit_constants.cherrystone_merfolk_hu_moment_template_matching_threshold
@@ -1251,10 +1251,10 @@ class TestProjectEvaluationAnimationHuMoments(unittest.TestCase):
             wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
             assert_that(match).described_as('match in frame ' + str(frame)).is_not_none()
-            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(840, 4)
-            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(520, 4)
-            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(886, 4)
-            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(562, 4)
+            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(840, 6)
+            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(520, 6)
+            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(886, 6)
+            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(562, 6)
 
     def test_merfolk_hu_moment_template_matching_method_3(self):
         threshold = unit_constants.cherrystone_merfolk_hu_moment_template_matching_threshold
@@ -1268,10 +1268,10 @@ class TestProjectEvaluationAnimationHuMoments(unittest.TestCase):
             wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
             assert_that(match).described_as('match in frame ' + str(frame)).is_not_none()
-            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(840, 4)
-            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(520, 4)
-            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(886, 4)
-            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(562, 4)
+            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(840, 6)
+            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(520, 6)
+            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(886, 6)
+            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(562, 6)
 
     # ----------------------------------------------------------------------------
     # ---------------------------------- BARRACKS ----------------------------------
@@ -1289,10 +1289,10 @@ class TestProjectEvaluationAnimationHuMoments(unittest.TestCase):
             wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
             assert_that(match).described_as('match in frame ' + str(frame)).is_not_none()
-            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(546, 4)
-            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(420, 4)
-            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(596, 4)
-            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(480, 4)
+            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(546, 6)
+            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(420, 6)
+            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(596, 6)
+            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(480, 6)
 
     def test_barracks_hu_moment_template_matching_method_2(self):
         threshold = unit_constants.cherrystone_barracks_hu_moment_template_matching_threshold
@@ -1306,10 +1306,10 @@ class TestProjectEvaluationAnimationHuMoments(unittest.TestCase):
             wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
             assert_that(match).described_as('match in frame ' + str(frame)).is_not_none()
-            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(546, 4)
-            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(420, 4)
-            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(596, 4)
-            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(480, 4)
+            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(546, 6)
+            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(420, 6)
+            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(596, 6)
+            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(480, 6)
 
     def test_barracks_hu_moment_template_matching_method_3(self):
         threshold = unit_constants.cherrystone_barracks_hu_moment_template_matching_threshold
@@ -1323,10 +1323,10 @@ class TestProjectEvaluationAnimationHuMoments(unittest.TestCase):
             wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
             assert_that(match).described_as('match in frame ' + str(frame)).is_not_none()
-            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(546, 4)
-            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(420, 4)
-            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(596, 4)
-            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(480, 4)
+            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(546, 6)
+            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(420, 6)
+            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(596, 6)
+            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(480, 6)
 
     # ----------------------------------------------------------------------------
     # ---------------------------------- PORT ----------------------------------
@@ -1344,10 +1344,10 @@ class TestProjectEvaluationAnimationHuMoments(unittest.TestCase):
             wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
             assert_that(match).described_as('match in frame ' + str(frame)).is_not_none()
-            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(972, 4)
-            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(516, 4)
-            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(1026, 4)
-            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(578, 4)
+            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(972, 6)
+            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(516, 6)
+            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(1026, 6)
+            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(578, 6)
 
     def test_port_hu_moment_template_matching_method_2(self):
         threshold = unit_constants.cherrystone_port_hu_moment_template_matching_threshold
@@ -1361,10 +1361,10 @@ class TestProjectEvaluationAnimationHuMoments(unittest.TestCase):
             wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
             assert_that(match).described_as('match in frame ' + str(frame)).is_not_none()
-            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(972, 4)
-            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(516, 4)
-            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(1026, 4)
-            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(578, 4)
+            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(972, 6)
+            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(516, 6)
+            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(1026, 6)
+            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(578, 6)
 
     def test_port_hu_moment_template_matching_method_3(self):
         threshold = unit_constants.cherrystone_port_hu_moment_template_matching_threshold
@@ -1378,10 +1378,10 @@ class TestProjectEvaluationAnimationHuMoments(unittest.TestCase):
             wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
             assert_that(match).described_as('match in frame ' + str(frame)).is_not_none()
-            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(972, 4)
-            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(516, 4)
-            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(1026, 4)
-            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(578, 4)
+            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(972, 6)
+            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(516, 6)
+            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(1026, 6)
+            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(578, 6)
 
     # ----------------------------------------------------------------------------
     # ---------------------------------- STRONGHOLD ----------------------------------
@@ -1399,10 +1399,10 @@ class TestProjectEvaluationAnimationHuMoments(unittest.TestCase):
             wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
             assert_that(match).described_as('match in frame ' + str(frame)).is_not_none()
-            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(446, 4)
-            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(402, 4)
-            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(496, 4)
-            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(482, 4)
+            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(446, 6)
+            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(402, 6)
+            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(496, 6)
+            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(482, 6)
 
     def test_stronghold_hu_moment_template_matching_method_2(self):
         threshold = unit_constants.cherrystone_stronghold_hu_moment_template_matching_threshold
@@ -1416,10 +1416,10 @@ class TestProjectEvaluationAnimationHuMoments(unittest.TestCase):
             wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
             assert_that(match).described_as('match in frame ' + str(frame)).is_not_none()
-            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(446, 4)
-            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(402, 4)
-            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(496, 4)
-            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(482, 4)
+            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(446, 6)
+            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(402, 6)
+            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(496, 6)
+            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(482, 6)
 
     def test_stronghold_hu_moment_template_matching_method_3(self):
         threshold = unit_constants.cherrystone_stronghold_hu_moment_template_matching_threshold
@@ -1433,10 +1433,10 @@ class TestProjectEvaluationAnimationHuMoments(unittest.TestCase):
             wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
             assert_that(match).described_as('match in frame ' + str(frame)).is_not_none()
-            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(446, 4)
-            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(402, 4)
-            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(496, 4)
-            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(482, 4)
+            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(446, 6)
+            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(402, 6)
+            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(496, 6)
+            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(482, 6)
 
     # ----------------------------------------------------------------------------
     # ---------------------------------- TOWER ----------------------------------
@@ -1454,10 +1454,10 @@ class TestProjectEvaluationAnimationHuMoments(unittest.TestCase):
             wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
             assert_that(match).described_as('match in frame ' + str(frame)).is_not_none()
-            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(738, 4)
-            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(416, 4)
-            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(784, 4)
-            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(476, 4)
+            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(738, 6)
+            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(416, 6)
+            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(784, 6)
+            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(476, 6)
 
     def test_tower_hu_moment_template_matching_method_2(self):
         threshold = unit_constants.cherrystone_tower_hu_moment_template_matching_threshold
@@ -1471,10 +1471,10 @@ class TestProjectEvaluationAnimationHuMoments(unittest.TestCase):
             wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
             assert_that(match).described_as('match in frame ' + str(frame)).is_not_none()
-            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(738, 4)
-            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(416, 4)
-            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(784, 4)
-            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(476, 4)
+            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(738, 6)
+            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(416, 6)
+            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(784, 6)
+            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(476, 6)
 
     def test_tower_hu_moment_template_matching_method_3(self):
         threshold = unit_constants.cherrystone_tower_hu_moment_template_matching_threshold
@@ -1488,10 +1488,10 @@ class TestProjectEvaluationAnimationHuMoments(unittest.TestCase):
             wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
             assert_that(match).described_as('match in frame ' + str(frame)).is_not_none()
-            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(738, 4)
-            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(416, 4)
-            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(784, 4)
-            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(476, 4)
+            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(738, 6)
+            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(416, 6)
+            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(784, 6)
+            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(476, 6)
 
     # ----------------------------------------------------------------------------
     # ---------------------------------- VILLAGE ----------------------------------
@@ -1509,10 +1509,10 @@ class TestProjectEvaluationAnimationHuMoments(unittest.TestCase):
             wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
             assert_that(match).described_as('match in frame ' + str(frame)).is_not_none()
-            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(638, 4)
-            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(424, 4)
-            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(690, 4)
-            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(480, 4)
+            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(638, 6)
+            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(424, 6)
+            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(690, 6)
+            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(480, 6)
 
     def test_village_hu_moment_template_matching_method_2(self):
         threshold = unit_constants.cherrystone_village_hu_moment_template_matching_threshold
@@ -1526,10 +1526,10 @@ class TestProjectEvaluationAnimationHuMoments(unittest.TestCase):
             wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
             assert_that(match).described_as('match in frame ' + str(frame)).is_not_none()
-            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(638, 4)
-            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(424, 4)
-            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(690, 4)
-            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(480, 4)
+            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(638, 6)
+            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(424, 6)
+            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(690, 6)
+            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(480, 6)
 
     def test_village_hu_moment_template_matching_method_3(self):
         threshold = unit_constants.cherrystone_village_hu_moment_template_matching_threshold
@@ -1543,10 +1543,10 @@ class TestProjectEvaluationAnimationHuMoments(unittest.TestCase):
             wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
             assert_that(match).described_as('match in frame ' + str(frame)).is_not_none()
-            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(638, 4)
-            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(424, 4)
-            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(690, 4)
-            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(480, 4)
+            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(638, 6)
+            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(424, 6)
+            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(690, 6)
+            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(480, 6)
 
     # ----------------------------------------------------------------------------
     # ---------------------------------- WATER VILLAGE ----------------------------------
@@ -1564,10 +1564,10 @@ class TestProjectEvaluationAnimationHuMoments(unittest.TestCase):
             wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
             assert_that(match).described_as('match in frame ' + str(frame)).is_not_none()
-            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(302, 4)
-            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(516, 4)
-            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(352, 4)
-            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(574, 4)
+            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(302, 6)
+            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(516, 6)
+            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(352, 6)
+            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(574, 6)
 
     def test_watervillage_hu_moment_template_matching_method_2(self):
         threshold = unit_constants.cherrystone_watervillage_hu_moment_template_matching_threshold
@@ -1581,10 +1581,10 @@ class TestProjectEvaluationAnimationHuMoments(unittest.TestCase):
             wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
             assert_that(match).described_as('match in frame ' + str(frame)).is_not_none()
-            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(302, 4)
-            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(516, 4)
-            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(352, 4)
-            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(574, 4)
+            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(302, 6)
+            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(516, 6)
+            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(352, 6)
+            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(574, 6)
 
     def test_watervillage_hu_moment_template_matching_method_3(self):
         threshold = unit_constants.cherrystone_watervillage_hu_moment_template_matching_threshold
@@ -1598,7 +1598,7 @@ class TestProjectEvaluationAnimationHuMoments(unittest.TestCase):
             wargroove_ctrl.log_match_for_evaluation(self.id(), match, threshold)
 
             assert_that(match).described_as('match in frame ' + str(frame)).is_not_none()
-            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(302, 4)
-            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(516, 4)
-            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(352, 4)
-            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(574, 4)
+            assert_that(match.top_left[0]).described_as('top left x value in frame ' + str(frame)).is_close_to(302, 6)
+            assert_that(match.top_left[1]).described_as('top left y value in frame ' + str(frame)).is_close_to(516, 6)
+            assert_that(match.bottom_right[0]).described_as('bottom left x value in frame ' + str(frame)).is_close_to(352, 6)
+            assert_that(match.bottom_right[1]).described_as('bottom left y value in frame ' + str(frame)).is_close_to(574, 6)

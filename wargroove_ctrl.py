@@ -331,11 +331,29 @@ def find_unit_with_hu_moment_template_matching(unit_template_name,
                                                method: cmp504.computer_vision.HuTemplateMatchingMethod = cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_1,
                                                binarization_threshold=127,
                                                render_match=False):
-    return vision.find_template_match_hu_moments("data/units/" + unit_template_name + ".png",
-                                                 threshold=threshold,
-                                                 method=method,
-                                                 binarization_threshold=binarization_threshold,
-                                                 render_match=render_match)
+    match = vision.find_template_match_hu_moments("data/units/" + unit_template_name + ".png",
+                                                  threshold=threshold,
+                                                  method=method,
+                                                  binarization_threshold=binarization_threshold,
+                                                  render_match=render_match)
+
+    if match is None:
+        match = vision.find_template_match_hu_moments_with_patch_multiplier("data/units/" + unit_template_name + ".png",
+                                                                            0.5,
+                                                                            threshold=threshold,
+                                                                            method=method,
+                                                                            binarization_threshold=binarization_threshold,
+                                                                            render_match=render_match)
+
+    if match is None:
+        match = vision.find_template_match_hu_moments_with_patch_multiplier("data/units/" + unit_template_name + ".png",
+                                                                            1.5,
+                                                                            threshold=threshold,
+                                                                            method=method,
+                                                                            binarization_threshold=binarization_threshold,
+                                                                            render_match=render_match)
+
+    return match
 
 
 def find_building_with_hu_moment_template_matching(building_template_name,
@@ -343,11 +361,29 @@ def find_building_with_hu_moment_template_matching(building_template_name,
                                                    method: cmp504.computer_vision.HuTemplateMatchingMethod = cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_1,
                                                    binarization_threshold=127,
                                                    render_match=False):
-    return vision.find_template_match_hu_moments("data/buildings/" + building_template_name + ".png",
-                                                 threshold=threshold,
-                                                 method=method,
-                                                 binarization_threshold=binarization_threshold,
-                                                 render_match=render_match)
+    match = vision.find_template_match_hu_moments("data/buildings/" + building_template_name + ".png",
+                                                  threshold=threshold,
+                                                  method=method,
+                                                  binarization_threshold=binarization_threshold,
+                                                  render_match=render_match)
+
+    if match is None:
+        match = vision.find_template_match_hu_moments_with_patch_multiplier("data/buildings/" + building_template_name + ".png",
+                                                                            0.5,
+                                                                            threshold=threshold,
+                                                                            method=method,
+                                                                            binarization_threshold=binarization_threshold,
+                                                                            render_match=render_match)
+
+    if match is None:
+        match = vision.find_template_match_hu_moments_with_patch_multiplier("data/buildings/" + building_template_name + ".png",
+                                                                            1.5,
+                                                                            threshold=threshold,
+                                                                            method=method,
+                                                                            binarization_threshold=binarization_threshold,
+                                                                            render_match=render_match)
+
+    return match
 
 
 def find_unit_with_hu_moment_template_matching_custom(unit_template_name,
