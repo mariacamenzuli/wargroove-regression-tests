@@ -198,7 +198,6 @@ game_state = GameState()
 def mouse_over_unit(unit_template_name, threshold=0.55, render_match: bool = False):
     return mouse_over_bottom_of_element("data/units/" + unit_template_name + ".png",
                                         threshold,
-                                        match_horizontal_mirror=True,
                                         render_match=render_match)
 
 
@@ -231,13 +230,11 @@ def mouse_over_center_of_element(template_path,
                                  mouse_move_offset_y=0,
                                  template_pre_processing_chain: cmp504.image_processing.ImageProcessingStepChain = None,
                                  frame_pre_processing_chain: cmp504.image_processing.ImageProcessingStepChain = None,
-                                 match_horizontal_mirror: bool = False,
                                  render_match: bool = False):
     match = find_element(template_path,
                          threshold=threshold,
                          template_pre_processing_chain=template_pre_processing_chain,
                          frame_pre_processing_chain=frame_pre_processing_chain,
-                         match_horizontal_mirror=match_horizontal_mirror,
                          render_match=render_match)
 
     mouse.move_mouse(match.mid_point[0] + mouse_move_offset_x,
@@ -251,13 +248,11 @@ def mouse_over_bottom_of_element(template_path,
                                  mouse_move_offset_y=0,
                                  template_pre_processing_chain: cmp504.image_processing.ImageProcessingStepChain = None,
                                  frame_pre_processing_chain: cmp504.image_processing.ImageProcessingStepChain = None,
-                                 match_horizontal_mirror: bool = False,
                                  render_match: bool = False):
     match = find_element(template_path,
                          threshold=threshold,
                          template_pre_processing_chain=template_pre_processing_chain,
                          frame_pre_processing_chain=frame_pre_processing_chain,
-                         match_horizontal_mirror=match_horizontal_mirror,
                          render_match=render_match)
 
     mouse.move_mouse(match.mid_point[0] + mouse_move_offset_x,
@@ -269,14 +264,14 @@ def find_element(template_path,
                  threshold=0.9,
                  template_pre_processing_chain: cmp504.image_processing.ImageProcessingStepChain = None,
                  frame_pre_processing_chain: cmp504.image_processing.ImageProcessingStepChain = None,
-                 match_horizontal_mirror: bool = False,
                  render_match: bool = False):
+    template_variation_steps = [cmp504.image_processing.FlipHorizontal()]
     match = vision.find_template_match(template_path,
                                        threshold=threshold,
                                        method=cmp504.computer_vision.TemplateMatchingMethod.CROSS_CORRELATION_NORMALIZED,
                                        template_pre_processing_chain=template_pre_processing_chain,
                                        frame_pre_processing_chain=frame_pre_processing_chain,
-                                       match_horizontal_mirror=match_horizontal_mirror,
+                                       template_variation_steps=template_variation_steps,
                                        render_match=render_match)
 
     assert_that(match).described_as('mouse over target %s' % template_path).is_not_none()
@@ -302,10 +297,17 @@ def find_unit_with_template_matching(unit_template_name,
                                      threshold=0.5,
                                      method=cmp504.computer_vision.TemplateMatchingMethod.CROSS_CORRELATION_NORMALIZED,
                                      render_match=False):
+    template_variation_steps = [
+        cmp504.image_processing.ImageProcessingStepChain([cmp504.image_processing.FlipHorizontal()]),
+        cmp504.image_processing.ImageProcessingStepChain([cmp504.image_processing.Resize(1.5, 1.5)]),
+        cmp504.image_processing.ImageProcessingStepChain([cmp504.image_processing.FlipHorizontal(), cmp504.image_processing.Resize(2, 2)]),
+        cmp504.image_processing.ImageProcessingStepChain([cmp504.image_processing.Resize(0.5, 0.5)]),
+        cmp504.image_processing.ImageProcessingStepChain([cmp504.image_processing.FlipHorizontal(), cmp504.image_processing.Resize(0.5, 0.5)])
+    ]
     return vision.find_template_match("data/units/" + unit_template_name + ".png",
                                       threshold=threshold,
                                       method=method,
-                                      match_horizontal_mirror=True,
+                                      template_variation_steps=template_variation_steps,
                                       render_match=render_match)
 
 
@@ -313,10 +315,14 @@ def find_building_with_template_matching(building_template_name,
                                          threshold=0.5,
                                          method=cmp504.computer_vision.TemplateMatchingMethod.CROSS_CORRELATION_NORMALIZED,
                                          render_match=False):
+    template_variation_steps = [
+        cmp504.image_processing.ImageProcessingStepChain([cmp504.image_processing.Resize(1.5, 1.5)]),
+        cmp504.image_processing.ImageProcessingStepChain([cmp504.image_processing.Resize(0.5, 0.5)]),
+    ]
     return vision.find_template_match("data/buildings/" + building_template_name + ".png",
                                       threshold=threshold,
                                       method=method,
-                                      match_horizontal_mirror=True,
+                                      template_variation_steps=template_variation_steps,
                                       render_match=render_match)
 
 
