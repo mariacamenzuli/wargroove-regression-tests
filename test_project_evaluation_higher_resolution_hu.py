@@ -16,7 +16,7 @@ class TestProjectEvaluationHigherResolutionHuMoments(unittest.TestCase):
     # ----------------------------------------------------------------------------
 
     def test_mercia_hu_moment_template_matching_method_1(self):
-        threshold = unit_constants.cherrystone_mercia_standard_template_matching_threshold
+        threshold = unit_constants.cherrystone_mercia_hu_moment_template_matching_threshold
         wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1920x1080.png')
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_commander_mercia',
                                                                           threshold=threshold,
@@ -69,7 +69,7 @@ class TestProjectEvaluationHigherResolutionHuMoments(unittest.TestCase):
     # ----------------------------------------------------------------------------
 
     def test_emeric_hu_moment_template_matching_method_1(self):
-        threshold = unit_constants.cherrystone_emeric_standard_template_matching_threshold
+        threshold = unit_constants.cherrystone_emeric_hu_moment_template_matching_threshold
         wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1920x1080.png')
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_commander_emeric',
                                                                           threshold=threshold,
@@ -122,7 +122,7 @@ class TestProjectEvaluationHigherResolutionHuMoments(unittest.TestCase):
     # ----------------------------------------------------------------------------
 
     def test_caesar_hu_moment_template_matching_method_1(self):
-        threshold = unit_constants.cherrystone_caesar_standard_template_matching_threshold
+        threshold = unit_constants.cherrystone_caesar_hu_moment_template_matching_threshold
         wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1920x1080.png')
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_commander_caesar',
                                                                           threshold=threshold,
@@ -175,7 +175,7 @@ class TestProjectEvaluationHigherResolutionHuMoments(unittest.TestCase):
     # ----------------------------------------------------------------------------
 
     def test_villager_hu_moment_template_matching_method_1(self):
-        threshold = unit_constants.cherrystone_villager_standard_template_matching_threshold
+        threshold = unit_constants.cherrystone_villager_hu_moment_template_matching_threshold
         wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1920x1080.png')
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_villager',
                                                                           threshold=threshold,
@@ -228,7 +228,7 @@ class TestProjectEvaluationHigherResolutionHuMoments(unittest.TestCase):
     # ----------------------------------------------------------------------------
 
     def test_soldier_hu_moment_template_matching_method_1(self):
-        threshold = unit_constants.cherrystone_soldier_standard_template_matching_threshold
+        threshold = unit_constants.cherrystone_soldier_hu_moment_template_matching_threshold
         wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1920x1080.png')
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_soldier',
                                                                           threshold=threshold,
@@ -281,7 +281,7 @@ class TestProjectEvaluationHigherResolutionHuMoments(unittest.TestCase):
     # ----------------------------------------------------------------------------
 
     def test_pikeman_hu_moment_template_matching_method_1(self):
-        threshold = unit_constants.cherrystone_pikeman_standard_template_matching_threshold
+        threshold = unit_constants.cherrystone_pikeman_hu_moment_template_matching_threshold
         wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1920x1080.png')
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_pikeman',
                                                                           threshold=threshold,
@@ -334,7 +334,7 @@ class TestProjectEvaluationHigherResolutionHuMoments(unittest.TestCase):
     # ----------------------------------------------------------------------------
 
     def test_battlepup_hu_moment_template_matching_method_1(self):
-        threshold = unit_constants.cherrystone_battlepup_standard_template_matching_threshold
+        threshold = unit_constants.cherrystone_battlepup_hu_moment_template_matching_threshold
         wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1920x1080.png')
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_battle_pup',
                                                                           threshold=threshold,
@@ -387,7 +387,7 @@ class TestProjectEvaluationHigherResolutionHuMoments(unittest.TestCase):
     # ----------------------------------------------------------------------------
 
     def test_alchemist_hu_moment_template_matching_method_1(self):
-        threshold = unit_constants.cherrystone_alchemist_standard_template_matching_threshold
+        threshold = unit_constants.cherrystone_alchemist_hu_moment_template_matching_threshold
         wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1920x1080.png')
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_alchemist',
                                                                           threshold=threshold,
@@ -440,7 +440,7 @@ class TestProjectEvaluationHigherResolutionHuMoments(unittest.TestCase):
     # ----------------------------------------------------------------------------
 
     def test_archer_hu_moment_template_matching_method_1(self):
-        threshold = unit_constants.cherrystone_archer_standard_template_matching_threshold
+        threshold = unit_constants.cherrystone_archer_hu_moment_template_matching_threshold
         wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1920x1080.png')
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_archer',
                                                                           threshold=threshold,
@@ -493,7 +493,7 @@ class TestProjectEvaluationHigherResolutionHuMoments(unittest.TestCase):
     # ----------------------------------------------------------------------------
 
     def test_golem_hu_moment_template_matching_method_1(self):
-        threshold = unit_constants.cherrystone_golem_standard_template_matching_threshold
+        threshold = unit_constants.cherrystone_golem_hu_moment_template_matching_threshold
         wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1920x1080.png')
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_golem',
                                                                           threshold=threshold,
@@ -546,7 +546,7 @@ class TestProjectEvaluationHigherResolutionHuMoments(unittest.TestCase):
     # ----------------------------------------------------------------------------
 
     def test_knight_hu_moment_template_matching_method_1(self):
-        threshold = unit_constants.cherrystone_knight_standard_template_matching_threshold
+        threshold = unit_constants.cherrystone_knight_hu_moment_template_matching_threshold
         wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1920x1080.png')
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_knight',
                                                                           threshold=threshold,
@@ -599,7 +599,7 @@ class TestProjectEvaluationHigherResolutionHuMoments(unittest.TestCase):
     # ----------------------------------------------------------------------------
 
     def test_wagon_hu_moment_template_matching_method_1(self):
-        threshold = unit_constants.cherrystone_wagon_standard_template_matching_threshold
+        threshold = unit_constants.cherrystone_wagon_hu_moment_template_matching_threshold
         wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1920x1080.png')
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_wagon',
                                                                           threshold=threshold,
@@ -652,7 +652,7 @@ class TestProjectEvaluationHigherResolutionHuMoments(unittest.TestCase):
     # ----------------------------------------------------------------------------
 
     def test_ballista_hu_moment_template_matching_method_1(self):
-        threshold = unit_constants.cherrystone_ballista_standard_template_matching_threshold
+        threshold = unit_constants.cherrystone_ballista_hu_moment_template_matching_threshold
         wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1920x1080.png')
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_ballista',
                                                                           threshold=threshold,
@@ -705,7 +705,7 @@ class TestProjectEvaluationHigherResolutionHuMoments(unittest.TestCase):
     # ----------------------------------------------------------------------------
 
     def test_trebuchet_hu_moment_template_matching_method_1(self):
-        threshold = unit_constants.cherrystone_trebuchet_standard_template_matching_threshold
+        threshold = unit_constants.cherrystone_trebuchet_hu_moment_template_matching_threshold
         wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1920x1080.png')
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_trebuchet',
                                                                           threshold=threshold,
@@ -758,7 +758,7 @@ class TestProjectEvaluationHigherResolutionHuMoments(unittest.TestCase):
     # ----------------------------------------------------------------------------
 
     def test_balloon_hu_moment_template_matching_method_1(self):
-        threshold = unit_constants.cherrystone_balloon_standard_template_matching_threshold
+        threshold = unit_constants.cherrystone_balloon_hu_moment_template_matching_threshold
         wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1920x1080.png')
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_balloon',
                                                                           threshold=threshold,
@@ -811,7 +811,7 @@ class TestProjectEvaluationHigherResolutionHuMoments(unittest.TestCase):
     # ----------------------------------------------------------------------------
 
     def test_harpy_hu_moment_template_matching_method_1(self):
-        threshold = unit_constants.cherrystone_harpy_standard_template_matching_threshold
+        threshold = unit_constants.cherrystone_harpy_hu_moment_template_matching_threshold
         wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1920x1080.png')
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_harpy',
                                                                           threshold=threshold,
@@ -864,7 +864,7 @@ class TestProjectEvaluationHigherResolutionHuMoments(unittest.TestCase):
     # ----------------------------------------------------------------------------
 
     def test_witch_hu_moment_template_matching_method_1(self):
-        threshold = unit_constants.cherrystone_witch_standard_template_matching_threshold
+        threshold = unit_constants.cherrystone_witch_hu_moment_template_matching_threshold
         wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1920x1080.png')
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_witch',
                                                                           threshold=threshold,
@@ -917,7 +917,7 @@ class TestProjectEvaluationHigherResolutionHuMoments(unittest.TestCase):
     # ----------------------------------------------------------------------------
 
     def test_dragon_hu_moment_template_matching_method_1(self):
-        threshold = unit_constants.cherrystone_dragon_standard_template_matching_threshold
+        threshold = unit_constants.cherrystone_dragon_hu_moment_template_matching_threshold
         wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1920x1080.png')
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_emberwing',
                                                                           threshold=threshold,
@@ -970,7 +970,7 @@ class TestProjectEvaluationHigherResolutionHuMoments(unittest.TestCase):
     # ----------------------------------------------------------------------------
 
     def test_barge_hu_moment_template_matching_method_1(self):
-        threshold = unit_constants.cherrystone_barge_standard_template_matching_threshold
+        threshold = unit_constants.cherrystone_barge_hu_moment_template_matching_threshold
         wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1920x1080.png')
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_barge',
                                                                           threshold=threshold,
@@ -1023,7 +1023,7 @@ class TestProjectEvaluationHigherResolutionHuMoments(unittest.TestCase):
     # ----------------------------------------------------------------------------
 
     def test_seaturtle_hu_moment_template_matching_method_1(self):
-        threshold = unit_constants.cherrystone_seaturtle_standard_template_matching_threshold
+        threshold = unit_constants.cherrystone_seaturtle_hu_moment_template_matching_threshold
         wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1920x1080.png')
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_sea_turtle',
                                                                           threshold=threshold,
@@ -1076,7 +1076,7 @@ class TestProjectEvaluationHigherResolutionHuMoments(unittest.TestCase):
     # ----------------------------------------------------------------------------
 
     def test_harpoonship_hu_moment_template_matching_method_1(self):
-        threshold = unit_constants.cherrystone_harpoonship_standard_template_matching_threshold
+        threshold = unit_constants.cherrystone_harpoonship_hu_moment_template_matching_threshold
         wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1920x1080.png')
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_harpoon_ship',
                                                                           threshold=threshold,
@@ -1129,7 +1129,7 @@ class TestProjectEvaluationHigherResolutionHuMoments(unittest.TestCase):
     # ----------------------------------------------------------------------------
 
     def test_warship_hu_moment_template_matching_method_1(self):
-        threshold = unit_constants.cherrystone_warship_standard_template_matching_threshold
+        threshold = unit_constants.cherrystone_warship_hu_moment_template_matching_threshold
         wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1920x1080.png')
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_warship',
                                                                           threshold=threshold,
@@ -1182,7 +1182,7 @@ class TestProjectEvaluationHigherResolutionHuMoments(unittest.TestCase):
     # ----------------------------------------------------------------------------
 
     def test_merfolk_hu_moment_template_matching_method_1(self):
-        threshold = unit_constants.cherrystone_merfolk_standard_template_matching_threshold
+        threshold = unit_constants.cherrystone_merfolk_hu_moment_template_matching_threshold
         wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1920x1080.png')
         match = wargroove_ctrl.find_unit_with_hu_moment_template_matching('cherrystone_merfolk',
                                                                           threshold=threshold,
@@ -1235,7 +1235,7 @@ class TestProjectEvaluationHigherResolutionHuMoments(unittest.TestCase):
     # ----------------------------------------------------------------------------
 
     def test_barracks_hu_moment_template_matching_method_1(self):
-        threshold = unit_constants.cherrystone_barracks_standard_template_matching_threshold
+        threshold = unit_constants.cherrystone_barracks_hu_moment_template_matching_threshold
         wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1920x1080.png')
         match = wargroove_ctrl.find_building_with_hu_moment_template_matching('cherrystone_barracks',
                                                                               threshold=threshold,
@@ -1288,7 +1288,7 @@ class TestProjectEvaluationHigherResolutionHuMoments(unittest.TestCase):
     # ----------------------------------------------------------------------------
 
     def test_port_hu_moment_template_matching_method_1(self):
-        threshold = unit_constants.cherrystone_port_standard_template_matching_threshold
+        threshold = unit_constants.cherrystone_port_hu_moment_template_matching_threshold
         wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1920x1080.png')
         match = wargroove_ctrl.find_building_with_hu_moment_template_matching('cherrystone_port',
                                                                               threshold=threshold,
@@ -1341,7 +1341,7 @@ class TestProjectEvaluationHigherResolutionHuMoments(unittest.TestCase):
     # ----------------------------------------------------------------------------
 
     def test_stronghold_hu_moment_template_matching_method_1(self):
-        threshold = unit_constants.cherrystone_stronghold_standard_template_matching_threshold
+        threshold = unit_constants.cherrystone_stronghold_hu_moment_template_matching_threshold
         wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1920x1080.png')
         match = wargroove_ctrl.find_building_with_hu_moment_template_matching('cherrystone_stronghold',
                                                                               threshold=threshold,
@@ -1394,7 +1394,7 @@ class TestProjectEvaluationHigherResolutionHuMoments(unittest.TestCase):
     # ----------------------------------------------------------------------------
 
     def test_tower_hu_moment_template_matching_method_1(self):
-        threshold = unit_constants.cherrystone_tower_standard_template_matching_threshold
+        threshold = unit_constants.cherrystone_tower_hu_moment_template_matching_threshold
         wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1920x1080.png')
         match = wargroove_ctrl.find_building_with_hu_moment_template_matching('cherrystone_tower',
                                                                               threshold=threshold,
@@ -1447,7 +1447,7 @@ class TestProjectEvaluationHigherResolutionHuMoments(unittest.TestCase):
     # ----------------------------------------------------------------------------
 
     def test_village_hu_moment_template_matching_method_1(self):
-        threshold = unit_constants.cherrystone_village_standard_template_matching_threshold
+        threshold = unit_constants.cherrystone_village_hu_moment_template_matching_threshold
         wargroove_ctrl.vision.load_frame(self.__get_eval_folder() + '1920x1080.png')
         match = wargroove_ctrl.find_building_with_hu_moment_template_matching('cherrystone_village',
                                                                               threshold=threshold,
