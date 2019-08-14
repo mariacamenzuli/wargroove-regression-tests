@@ -8,6 +8,7 @@ from assertpy import assert_that
 class TestCherrystoneUnitInfoTemplateMatching(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
+        wargroove_ctrl.prepare_for_regression_test_run()
         wargroove_ctrl.game_state.go_to_custom_content()
         wargroove_ctrl.game_state.go_to_custom_content_creation()
         wargroove_ctrl.game_state.go_to_2_player_map_creation()

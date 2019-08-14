@@ -418,13 +418,14 @@ def find_building_with_sift(building_template_name, threshold=50.0):
                                                      threshold)
 
 
-vision.capture_frame()
-if not is_ui_element_visible('main_menu/wargroove_title'):
-    mouse_over_ui_element('wargroove_taskbar_icon',
-                          threshold=0.5,
-                          method=cmp504.computer_vision.TemplateMatchingMethod.CORRELATION_COEFFICIENT_NORMALIZED)
-    mouse.left_mouse_click()
-    wait_for_screen_update()
+def prepare_for_regression_test_run():
     vision.capture_frame()
-    mouse_over_ui_element('main_menu/wargroove_title',
-                          method=cmp504.computer_vision.TemplateMatchingMethod.CROSS_CORRELATION_NORMALIZED)
+    if not is_ui_element_visible('main_menu/wargroove_title'):
+        mouse_over_ui_element('wargroove_taskbar_icon',
+                              threshold=0.5,
+                              method=cmp504.computer_vision.TemplateMatchingMethod.CORRELATION_COEFFICIENT_NORMALIZED)
+        mouse.left_mouse_click()
+        wait_for_screen_update()
+        vision.capture_frame()
+        mouse_over_ui_element('main_menu/wargroove_title',
+                              method=cmp504.computer_vision.TemplateMatchingMethod.CROSS_CORRELATION_NORMALIZED)
