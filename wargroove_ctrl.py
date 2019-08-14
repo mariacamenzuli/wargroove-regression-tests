@@ -180,11 +180,13 @@ class GameState(object):
         self.click_long_animation_button('gameplay/menu/ok_button')
 
     def is_showing_turn_start_banner(self):
-        return self.state == 'gameplay' and is_ui_element_visible('gameplay/turn_start_banner')
+        return self.state == 'gameplay' and is_ui_element_visible('gameplay/turn_start_banner', threshold=0.85)
 
     def clear_turn_start_banner(self):
         if self.is_showing_turn_start_banner():
-            mouse_over_ui_element('gameplay/turn_start_banner')
+            mouse_over_ui_element('gameplay/turn_start_banner',
+                                  threshold=0.85,
+                                  method=cmp504.computer_vision.TemplateMatchingMethod.CROSS_CORRELATION_NORMALIZED)
             mouse.left_mouse_press()
             while self.is_showing_turn_start_banner():
                 wait_for_screen_update()
@@ -195,10 +197,15 @@ class GameState(object):
 game_state = GameState()
 
 
-def mouse_over_unit(unit_template_name, threshold=0.55, render_match: bool = False):
+def mouse_over_unit(unit_template_name,
+                    threshold=0.55,
+                    render_match:
+                    bool = False,
+                    method=cmp504.computer_vision.TemplateMatchingMethod.CORRELATION_COEFFICIENT_NORMALIZED):
     return mouse_over_bottom_of_element("data/units/" + unit_template_name + ".png",
                                         threshold,
-                                        render_match=render_match)
+                                        render_match=render_match,
+                                        method=method)
 
 
 def mouse_over_unit_sift(unit_template_name):
@@ -212,16 +219,21 @@ def mouse_over_building(building_template_name, threshold=0.8):
 
 
 def mouse_over_tile(tile_template_name, threshold=0.9):
-    return mouse_over_center_of_element("data/tiles/" + tile_template_name + ".png", threshold)
+    return mouse_over_center_of_element("data/tiles/" + tile_template_name + ".png", threshold, method=cmp504.computer_vision.TemplateMatchingMethod.CROSS_CORRELATION_NORMALIZED)
 
 
-def mouse_over_ui_element(ui_element_template_name, threshold=0.9, mouse_move_offset_x=0, mouse_move_offset_y=0):
+def mouse_over_ui_element(ui_element_template_name,
+                          threshold=0.9,
+                          mouse_move_offset_x=0,
+                          mouse_move_offset_y=0,
+                          method=cmp504.computer_vision.TemplateMatchingMethod.CROSS_CORRELATION_NORMALIZED):
     # pre_processing_steps = cmp504.image_processing.ImageProcessingStepChain()
     # pre_processing_steps.append(cmp504.image_processing.Resize(1.5, 1.5))
     return mouse_over_center_of_element("data/ui/" + ui_element_template_name + ".png",
                                         threshold,
                                         mouse_move_offset_x,
-                                        mouse_move_offset_y)
+                                        mouse_move_offset_y,
+                                        method=method)
 
 
 def mouse_over_center_of_element(template_path,
@@ -230,15 +242,18 @@ def mouse_over_center_of_element(template_path,
                                  mouse_move_offset_y=0,
                                  template_pre_processing_chain: cmp504.image_processing.ImageProcessingStepChain = None,
                                  frame_pre_processing_chain: cmp504.image_processing.ImageProcessingStepChain = None,
-                                 render_match: bool = False):
+                                 render_match: bool = False,
+                                 method=cmp504.computer_vision.TemplateMatchingMethod.CORRELATION_COEFFICIENT_NORMALIZED):
     match = find_element(template_path,
                          threshold=threshold,
                          template_pre_processing_chain=template_pre_processing_chain,
                          frame_pre_processing_chain=frame_pre_processing_chain,
-                         render_match=render_match)
+                         render_match=render_match,
+                         method=method)
 
-    mouse.move_mouse(match.mid_point[0] + mouse_move_offset_x,
-                     match.mid_point[1] + mouse_move_offset_y)
+    if match is not None:
+        mouse.move_mouse(match.mid_point[0] + mouse_move_offset_x,
+                         match.mid_point[1] + mouse_move_offset_y)
     return match
 
 
@@ -248,15 +263,18 @@ def mouse_over_bottom_of_element(template_path,
                                  mouse_move_offset_y=0,
                                  template_pre_processing_chain: cmp504.image_processing.ImageProcessingStepChain = None,
                                  frame_pre_processing_chain: cmp504.image_processing.ImageProcessingStepChain = None,
-                                 render_match: bool = False):
+                                 render_match: bool = False,
+                                 method = cmp504.computer_vision.TemplateMatchingMethod.CORRELATION_COEFFICIENT_NORMALIZED):
     match = find_element(template_path,
                          threshold=threshold,
                          template_pre_processing_chain=template_pre_processing_chain,
                          frame_pre_processing_chain=frame_pre_processing_chain,
-                         render_match=render_match)
+                         render_match=render_match,
+                         method=method)
 
-    mouse.move_mouse(match.mid_point[0] + mouse_move_offset_x,
-                     match.bottom_right[1] + mouse_move_offset_y)
+    if match is not None:
+        mouse.move_mouse(match.mid_point[0] + mouse_move_offset_x,
+                         match.bottom_right[1] + mouse_move_offset_y)
     return match
 
 
@@ -264,17 +282,20 @@ def find_element(template_path,
                  threshold=0.9,
                  template_pre_processing_chain: cmp504.image_processing.ImageProcessingStepChain = None,
                  frame_pre_processing_chain: cmp504.image_processing.ImageProcessingStepChain = None,
-                 render_match: bool = False):
-    template_variation_steps = [cmp504.image_processing.FlipHorizontal()]
+                 render_match: bool = False,
+                 method=cmp504.computer_vision.TemplateMatchingMethod.CORRELATION_COEFFICIENT_NORMALIZED):
+    template_variation_steps = [
+        cmp504.image_processing.ImageProcessingStepChain([cmp504.image_processing.FlipHorizontal()])
+    ]
     match = vision.find_template_match(template_path,
                                        threshold=threshold,
-                                       method=cmp504.computer_vision.TemplateMatchingMethod.CROSS_CORRELATION_NORMALIZED,
+                                       method=method,
                                        template_pre_processing_chain=template_pre_processing_chain,
                                        frame_pre_processing_chain=frame_pre_processing_chain,
                                        template_variation_steps=template_variation_steps,
                                        render_match=render_match)
 
-    assert_that(match).described_as('mouse over target %s' % template_path).is_not_none()
+    # assert_that(match).described_as('mouse over target %s' % template_path).is_not_none()
     return match
 
 
@@ -397,10 +418,13 @@ def find_building_with_sift(building_template_name, threshold=50.0):
                                                      threshold)
 
 
-# vision.capture_frame()
-# if not is_ui_element_visible('main_menu/wargroove_title'):
-#     mouse_over_ui_element('wargroove_taskbar_icon')
-#     mouse.left_mouse_click()
-#     wait_for_screen_update()
-#     vision.capture_frame()
-#     mouse_over_ui_element('main_menu/wargroove_title')
+vision.capture_frame()
+if not is_ui_element_visible('main_menu/wargroove_title'):
+    mouse_over_ui_element('wargroove_taskbar_icon',
+                          threshold=0.5,
+                          method=cmp504.computer_vision.TemplateMatchingMethod.CORRELATION_COEFFICIENT_NORMALIZED)
+    mouse.left_mouse_click()
+    wait_for_screen_update()
+    vision.capture_frame()
+    mouse_over_ui_element('main_menu/wargroove_title',
+                          method=cmp504.computer_vision.TemplateMatchingMethod.CROSS_CORRELATION_NORMALIZED)
