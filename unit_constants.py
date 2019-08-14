@@ -1,5 +1,9 @@
 hu_moment_binarization_threshold = 40
 
+ui_standard_template_matching_threshold = 0.75
+ui_standard_template_matching_corr_coeff_threshold = 0.8
+ui_standard_template_matching_square_diff_threshold = 0.2
+
 cherrystone_mercia_standard_template_matching_threshold = 0.85
 cherrystone_emeric_standard_template_matching_threshold = 0.826
 cherrystone_caesar_standard_template_matching_threshold = 0.86

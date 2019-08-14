@@ -314,6 +314,58 @@ def is_unit_visible(unit_template_name, threshold=0.9, method=cmp504.computer_vi
     return match is not None
 
 
+def find_ui_item_with_template_matching(item_template_name,
+                                        threshold,
+                                        method=cmp504.computer_vision.TemplateMatchingMethod.CROSS_CORRELATION_NORMALIZED,
+                                        render_match=False,
+                                        template_pre_processing_chain: cmp504.image_processing.ImageProcessingStepChain = None,
+                                        frame_pre_processing_chain: cmp504.image_processing.ImageProcessingStepChain = None):
+    template_variation_steps = [
+        cmp504.image_processing.ImageProcessingStepChain([cmp504.image_processing.FlipHorizontal()]),
+        cmp504.image_processing.ImageProcessingStepChain([cmp504.image_processing.Resize(1.5, 1.5)]),
+        cmp504.image_processing.ImageProcessingStepChain([cmp504.image_processing.FlipHorizontal(), cmp504.image_processing.Resize(2, 2)]),
+        cmp504.image_processing.ImageProcessingStepChain([cmp504.image_processing.Resize(0.5, 0.5)]),
+        cmp504.image_processing.ImageProcessingStepChain([cmp504.image_processing.FlipHorizontal(), cmp504.image_processing.Resize(0.5, 0.5)])
+    ]
+    return vision.find_template_match("data/ui/" + item_template_name + ".png",
+                                      threshold=threshold,
+                                      method=method,
+                                      template_variation_steps=template_variation_steps,
+                                      render_match=render_match,
+                                      template_pre_processing_chain=template_pre_processing_chain,
+                                      frame_pre_processing_chain=frame_pre_processing_chain)
+
+
+def find_ui_item_with_hu_moment_template_matching(item_template_name,
+                                                  threshold,
+                                                  method: cmp504.computer_vision.HuTemplateMatchingMethod = cmp504.computer_vision.HuTemplateMatchingMethod.METHOD_1,
+                                                  binarization_threshold=200,
+                                                  render_match=False):
+    match = vision.find_template_match_hu_moments("data/ui/" + item_template_name + ".png",
+                                                  threshold=threshold,
+                                                  method=method,
+                                                  binarization_threshold=binarization_threshold,
+                                                  render_match=render_match)
+
+    if match is None:
+        match = vision.find_template_match_hu_moments_with_patch_multiplier("data/ui/" + item_template_name + ".png",
+                                                                            0.5,
+                                                                            threshold=threshold,
+                                                                            method=method,
+                                                                            binarization_threshold=binarization_threshold,
+                                                                            render_match=render_match)
+
+    if match is None:
+        match = vision.find_template_match_hu_moments_with_patch_multiplier("data/ui/" + item_template_name + ".png",
+                                                                            1.5,
+                                                                            threshold=threshold,
+                                                                            method=method,
+                                                                            binarization_threshold=binarization_threshold,
+                                                                            render_match=render_match)
+
+    return match
+
+
 def find_unit_with_template_matching(unit_template_name,
                                      threshold=0.5,
                                      method=cmp504.computer_vision.TemplateMatchingMethod.CROSS_CORRELATION_NORMALIZED,
