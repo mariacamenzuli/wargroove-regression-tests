@@ -323,7 +323,7 @@ def find_ui_item_with_template_matching(item_template_name,
     template_variation_steps = [
         cmp504.image_processing.ImageProcessingStepChain([cmp504.image_processing.FlipHorizontal()]),
         cmp504.image_processing.ImageProcessingStepChain([cmp504.image_processing.Resize(1.5, 1.5)]),
-        cmp504.image_processing.ImageProcessingStepChain([cmp504.image_processing.FlipHorizontal(), cmp504.image_processing.Resize(2, 2)]),
+        cmp504.image_processing.ImageProcessingStepChain([cmp504.image_processing.FlipHorizontal(), cmp504.image_processing.Resize(1.5, 1.5)]),
         cmp504.image_processing.ImageProcessingStepChain([cmp504.image_processing.Resize(0.5, 0.5)]),
         cmp504.image_processing.ImageProcessingStepChain([cmp504.image_processing.FlipHorizontal(), cmp504.image_processing.Resize(0.5, 0.5)])
     ]
@@ -373,7 +373,7 @@ def find_unit_with_template_matching(unit_template_name,
     template_variation_steps = [
         cmp504.image_processing.ImageProcessingStepChain([cmp504.image_processing.FlipHorizontal()]),
         cmp504.image_processing.ImageProcessingStepChain([cmp504.image_processing.Resize(1.5, 1.5)]),
-        cmp504.image_processing.ImageProcessingStepChain([cmp504.image_processing.FlipHorizontal(), cmp504.image_processing.Resize(2, 2)]),
+        cmp504.image_processing.ImageProcessingStepChain([cmp504.image_processing.FlipHorizontal(), cmp504.image_processing.Resize(1.5, 1.5)]),
         cmp504.image_processing.ImageProcessingStepChain([cmp504.image_processing.Resize(0.5, 0.5)]),
         cmp504.image_processing.ImageProcessingStepChain([cmp504.image_processing.FlipHorizontal(), cmp504.image_processing.Resize(0.5, 0.5)])
     ]
