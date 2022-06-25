@@ -6,6 +6,6 @@ Developed as part of an MSc project, titled Applying Visual GUI Testing to Compu
 
 ## Related links
 
-- [Computer vision toolkit repository, `cmp504`](https://github.com/maria-camenzuli/cmp504)
+- [Computer vision toolkit repository, `cmp504`](https://github.com/mariacamenzuli/cmp504)
 - [Video of tests running successfully](https://www.youtube.com/watch?v=iIozVPIiLSA)
 - [Applying Visual GUI Testing to Computer Game Testing (MSc research proposal)](https://purpledevcat.com/2019/03/11/applying-visual-gui-testing-to-computer-game-testing-proposal.html)
